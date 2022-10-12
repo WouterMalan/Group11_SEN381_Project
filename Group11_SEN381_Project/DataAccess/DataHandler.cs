@@ -23,5 +23,53 @@ namespace Group11_SEN381_Project.DataAccess
                 return dt;
             }
         }
+        public DataTable getProvider()
+        {
+            {
+                using (SqlConnection con = new SqlConnection(connection))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Provider", con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable getMedicalCondition()
+        {
+            {
+                {
+                    using (SqlConnection con = new SqlConnection(connection))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", con);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        public DataTable getTreatment()
+        {
+            {
+                {
+                    using (SqlConnection con = new SqlConnection(connection))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", con);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
     }
 }
