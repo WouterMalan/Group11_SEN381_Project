@@ -13,11 +13,13 @@ namespace Group11_SEN381_Project.DataAccess
         string connection = "Data Source=DESKTOP-V43B9TN\\SQLEXPRESS;Initial Catalog=MedicalCallCentre;Integrated Security=True";
         public DataTable getPolicy()
         {
-            SqlConnection cn = new SqlConnection(connection);
-            SqlDataAdapter ad = new SqlDataAdapter("getPolicy", cn);
-            ad.SelectCommand.CommandType = CommandType.StoredProcedure;
+            SqlConnection con = new SqlConnection(connection);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            ad.Fill(dt);
+            da.Fill(dt);
+            con.Close();
             return dt;
         }
     }
