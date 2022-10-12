@@ -10,7 +10,7 @@ namespace Group11_SEN381_Project.DataAccess
 {
     class DataHandler
     {
-        string connection = "Server=Nemaiz; Initial Catalog=MedicalCallCentre; Integrated Security=SSPI";
+        string connection = "Data Source=DESKTOP-V43B9TN\\SQLEXPRESS;Initial Catalog=MedicalCallCentre;Integrated Security=True";
         public DataTable getPolicy()
         {
             SqlConnection cn = new SqlConnection(connection);
