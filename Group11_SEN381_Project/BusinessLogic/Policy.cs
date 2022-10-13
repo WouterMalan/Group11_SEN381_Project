@@ -11,8 +11,8 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string PolicyName;
         private string Description;
         private DateTime StartDate;
-        double Fee;
-        int Expired;
+        private double Fee;
+        private int Expired;
         public Policy()
         {
 
