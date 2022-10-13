@@ -5,36 +5,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Group11_SEN381_Project.DataAccess
 {
     class DataHandler
     {
-        string connection = "Data Source=DESKTOP-V43B9TN\\SQLEXPRESS;Initial Catalog=MedicalCallCentre;Integrated Security=True";
-        public DataTable getPolicy()
+        SqlConnection con = new SqlConnection("Server=.;Database=MedicalCallCenter;Trusted_Connection=True"); 
+        public SqlConnection sqlcon()
         {
-            using (SqlConnection con = new SqlConnection(connection))
+            try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", con);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Failed");
+                MessageBox.Show(ex.ToString());
+            }
+
+            return con;
+
+        }
+        
+        public DataTable getPolicy()
+        {
+            
+                
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", sqlcon());
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
-            }
+            
         }
+        
         public DataTable getProvider()
         {
             {
-                using (SqlConnection con = new SqlConnection(connection))
-                {
+               
+                
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Provider", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Provider", sqlcon());
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     return dt;
-                }
+                
             }
         }
 
@@ -42,15 +61,14 @@ namespace Group11_SEN381_Project.DataAccess
         {
             {
                 {
-                    using (SqlConnection con = new SqlConnection(connection))
-                    {
+                    
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", con);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", sqlcon());
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         return dt;
-                    }
+                    
                 }
             }
         }
@@ -59,15 +77,14 @@ namespace Group11_SEN381_Project.DataAccess
         {
             {
                 {
-                    using (SqlConnection con = new SqlConnection(connection))
-                    {
+                   
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", con);
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", sqlcon());
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         return dt;
-                    }
+                    
                 }
             }
         }
