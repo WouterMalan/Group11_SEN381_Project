@@ -8,11 +8,22 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Policy
     {
+        private string PolicyName;
+        private string Description;
+        private DateTime StartDate;
+        double Fee;
+        int Expired;
         public Policy()
         {
 
         }
-        public void createPolicy(string Description, DateTime StartDate, double Fee, int Expired)
+
+        public Policy(string PolicyName, string Description, DateTime StartDate, double Fee, int Expired)
+        {
+
+        }
+
+        public void createPolicy(string PolicyName,string Description, DateTime StartDate, double Fee, int Expired)
         {
 
         }

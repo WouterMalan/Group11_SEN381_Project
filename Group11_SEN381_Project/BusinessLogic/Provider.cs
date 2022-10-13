@@ -8,11 +8,19 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Provider
     {
+        private string ProvName;
+        private string Location;
+        private int PhoneNum;
         public Provider()
         {
 
         }
-        public void createProvider(string ProvName, string Location)
+        public Provider(string ProvName, string Location, int PhoneNum)
+        {
+
+        }
+        
+        public void createProvider(string ProvName, string Location, int PhoneNum)
         {
 
         }

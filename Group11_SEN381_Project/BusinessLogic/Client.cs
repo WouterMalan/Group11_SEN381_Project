@@ -8,11 +8,15 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Client
     {
+        private string FullName;
+        private int PhoneNum;
+        private string Dependants;
+        private int NatID;
         public Client()
         {
 
         }
-        public void createClient(string Fullname, int PhoneNum, string Dependants, int NatID) 
+        public void createClient(string FullName, int PhoneNum, string Dependants, int NatID) 
         {
         
         }
@@ -22,7 +26,7 @@ namespace Group11_SEN381_Project.BusinessLogic
             
         }
 
-        public void updateClient(int ClientID, string Fullname, int PhoneNum, string Dependants, int NatID)
+        public void updateClient(int ClientID, string FullName, int PhoneNum, string Dependants, int NatID)
         {
 
         }
