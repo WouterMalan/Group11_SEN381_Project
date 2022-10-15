@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group11_SEN381_Project.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,8 @@ namespace Group11_SEN381_Project
 
         private void Policy_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'medicalCallCenterDataSet.Policy' table. You can move, or remove it, as needed.
-            this.policyTableAdapter.Fill(this.medicalCallCenterDataSet.Policy);
-
+            DataHandler dataHandler = new DataHandler();
+            dataGridView1.DataSource = dataHandler.getPolicy();//getPolicy() is a method in DataHandler.cs
         }
 
         private void button1_Click(object sender, EventArgs e)
