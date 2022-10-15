@@ -7,27 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Group11_SEN381_Project.DataAccess;
 
 namespace Group11_SEN381_Project
 {
-    public partial class Form1 : Form
+    public partial class Policy : Form
     {
-        public Form1()
+        public Policy()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Policy_Load(object sender, EventArgs e)
         {
-            DataHandler dh = new DataHandler();
-            dh.sqlcon();
+            // TODO: This line of code loads data into the 'medicalCallCenterDataSet.Policy' table. You can move, or remove it, as needed.
+            this.policyTableAdapter.Fill(this.medicalCallCenterDataSet.Policy);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Policy policy = new Policy();
-            policy.Show();
+            //exit button
+            this.Close();
         }
     }
 }
