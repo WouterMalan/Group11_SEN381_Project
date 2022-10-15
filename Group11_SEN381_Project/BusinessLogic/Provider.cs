@@ -11,15 +11,20 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string ProvName;
         private string Location;
         private int PhoneNum;
+        private int Rating;
         public Provider()
         {
 
         }
-        public Provider(string ProvName, string Location, int PhoneNum)
-        {
 
+        public Provider(string provName, string location, int phoneNum, int rating)
+        {
+            ProvName = provName;
+            Location = location;
+            PhoneNum = phoneNum;
+            Rating = rating;
         }
-        
+
         public void createProvider(string ProvName, string Location, int PhoneNum)
         {
 

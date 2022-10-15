@@ -8,16 +8,18 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Treatment
     {
-        private int TreatID;
+        private string Treatment_Name;
         private string Description;
         
         public Treatment()
         {
 
         }
-        public Treatment(int TreatID, string Description)
-        {
 
+        public Treatment(string treatment_Name, string description)
+        {
+            Treatment_Name = treatment_Name;
+            Description = description;
         }
 
         public void createTreatment(string Description)
