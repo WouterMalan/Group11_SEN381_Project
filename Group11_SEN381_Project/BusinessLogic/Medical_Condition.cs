@@ -8,10 +8,22 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Medical_Condition
     {
+        private int ConditionID;
+        private string ConditionName;
+        private string ConditionDescription;
+
         public Medical_Condition()
         {
 
         }
+
+        public Medical_Condition(int conditionID, string conditionName, string conditionDescription)
+        {
+            ConditionID = conditionID;
+            ConditionName = conditionName;
+            ConditionDescription = conditionDescription;
+        }
+
         public void createMedical_Condition(string Description)
         {
 
