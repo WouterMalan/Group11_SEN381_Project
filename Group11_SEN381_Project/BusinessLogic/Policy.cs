@@ -8,7 +8,6 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Policy
     {
-        private int PolicyID;
         private string Description;
         private DateTime StartDate;
         private string PolicyType;
@@ -20,9 +19,8 @@ namespace Group11_SEN381_Project.BusinessLogic
 
         }
 
-        public Policy(int policyID, string description, DateTime startDate, string policyType, double fee, int expired)
+        public Policy( string description, DateTime startDate, string policyType, double fee, int expired)
         {
-            PolicyID = policyID;
             Description = description;
             StartDate = startDate;
             PolicyType = policyType;
