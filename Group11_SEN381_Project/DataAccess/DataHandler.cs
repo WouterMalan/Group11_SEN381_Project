@@ -13,12 +13,12 @@ namespace Group11_SEN381_Project.DataAccess
     {
         SqlConnection con = new SqlConnection("Server=.;Database=MedicalCallCenter;Trusted_Connection=True"); 
         public SqlConnection sqlcon()
-        {
+        {// this will test the connection and open it and retune the connection needed for sqlcommand/saladpater
             try
             {
                 con.Open();
-
-
+                
+                
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace Group11_SEN381_Project.DataAccess
         public DataTable getPolicy()
         {
             
-                
+                // this function will run and send a full view of the respective table in a data table format 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", sqlcon());
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
