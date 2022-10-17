@@ -169,7 +169,7 @@ namespace Group11_SEN381_Project.DataAccess
 
 
      public void UpdateTreatments(int id, string Name, string description)
-        {
+      {
 
             try
             {
@@ -191,7 +191,7 @@ namespace Group11_SEN381_Project.DataAccess
 
             }
             con.Close();
-        }
+      }
 
 
 
