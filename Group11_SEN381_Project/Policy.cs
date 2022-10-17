@@ -27,13 +27,9 @@ namespace Group11_SEN381_Project
         private void Policy_Load(object sender, EventArgs e)
         {
             DataHandler dataHandler = new DataHandler();
-            //dataGridView1.DataSource = dataHandler.getPolicy();//getPolicy() is a method in DataHandler.cs
+            dataGridView1.DataSource = dataHandler.getPolicy();//getPolicy() is a method in DataHandler.cs
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //exit button
-            this.Close();
-        }
+        
+        
     }
 }
