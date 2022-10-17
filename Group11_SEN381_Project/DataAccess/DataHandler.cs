@@ -11,7 +11,7 @@ namespace Group11_SEN381_Project.DataAccess
 {
     class DataHandler
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Database=MedicalCallCenter;Trusted_Connection=True");
+       SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Database=MedicalCallCenter;Trusted_Connection=True");
         public SqlConnection sqlcon()
         {// this will test the connection and open it and retune the connection needed for sqlcommand/saladpater
             try
@@ -41,13 +41,38 @@ namespace Group11_SEN381_Project.DataAccess
                 return dt;
             
         }
+
+         public void UpdatePolicy(int id, string desc, DateTime date_time, string type_of_policy, int fee, int expired)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "Update Policy set  description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '"+expired.ToString()+"' where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, con);                
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
+        }
         
         public DataTable getProvider()
         {
             {
                
                 
-                    con.Open();
+                    
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Providers", sqlcon());
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -57,12 +82,39 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
+        public void UpdateProvider(int id, string Name, string Location, int rating)
+        {
+
+            try
+            {
+
+                string line = "Update Providers set   Name='" + Name + "',Location= '" + Location + "', Rating='" + rating.ToString() + "' where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, sqlcon());
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
+        }
+
+
+
         public DataTable getMedicalCondition()
         {
             {
                 {
                     
-                        con.Open();
+                        
                         SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", sqlcon());
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
@@ -73,12 +125,37 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
+        public void UpdateMedicalConditions(int id, string Name, string description)
+        {
+
+            try
+            {
+
+                string line = "Update Medical_Conditions set   Condition_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, sqlcon());
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
+        }
+
         public DataTable getTreatment()
         {
             {
                 {
                    
-                        con.Open();
+                        
                         SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", sqlcon());
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
@@ -89,5 +166,34 @@ namespace Group11_SEN381_Project.DataAccess
                 }
             }
         }
+
+
+     public void UpdateTreatments(int id, string Name, string description)
+        {
+
+            try
+            {
+
+                string line = "Update Treatments set   Treatment_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line,sqlcon());
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
+        }
+
+
+
     }
 
