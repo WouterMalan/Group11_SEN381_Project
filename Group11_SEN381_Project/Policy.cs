@@ -27,9 +27,14 @@ namespace Group11_SEN381_Project
         private void Policy_Load(object sender, EventArgs e)
         {
             DataHandler dataHandler = new DataHandler();
-            dataGridView1.DataSource = dataHandler.getPolicy();//getPolicy() is a method in DataHandler.cs
+            //dataGridView1.DataSource = dataHandler.getPolicy();//getPolicy() is a method in DataHandler.cs
         }
-        
-        
+
+        private void dataGridViewClient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //let the data be displayed in text boxes
+           
+
+        }
     }
 }

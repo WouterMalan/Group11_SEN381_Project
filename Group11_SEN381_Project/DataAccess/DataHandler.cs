@@ -11,14 +11,14 @@ namespace Group11_SEN381_Project.DataAccess
 {
     class DataHandler
     {
-       SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Database=MedicalCallCenter;Trusted_Connection=True");
+        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Database=MedicalCallCenter;Trusted_Connection=True");
         public SqlConnection sqlcon()
         {// this will test the connection and open it and retune the connection needed for sqlcommand/saladpater
             try
             {
                 con.Open();
-                
-                
+
+
             }
             catch (Exception ex)
             {
@@ -29,27 +29,27 @@ namespace Group11_SEN381_Project.DataAccess
             return con;
 
         }
-        
+
         public DataTable getPolicy()
         {
-            
-                // this function will run and send a full view of the respective table in a data table format 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", sqlcon());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            
+
+            // this function will run and send a full view of the respective table in a data table format 
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", sqlcon());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
         }
 
-         public void UpdatePolicy(int id, string desc, DateTime date_time, string type_of_policy, int fee, int expired)
+        public void UpdatePolicy(int id, string desc, DateTime date_time, string type_of_policy, int fee, int expired)
         {
             con.Open();
             try
             {
 
-                string line = "Update Policy set  description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '"+expired.ToString()+"' where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, con);                
+                string line = "Update Policy set  description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '" + expired.ToString() + "' where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
             }
@@ -66,19 +66,19 @@ namespace Group11_SEN381_Project.DataAccess
             }
             con.Close();
         }
-        
+
         public DataTable getProvider()
         {
             {
-               
-                
-                    
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Providers", sqlcon());
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
-                
+
+
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Providers", sqlcon());
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
             }
         }
 
@@ -113,14 +113,14 @@ namespace Group11_SEN381_Project.DataAccess
         {
             {
                 {
-                    
-                        
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", sqlcon());
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    
+
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", sqlcon());
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+
                 }
             }
         }
@@ -154,28 +154,28 @@ namespace Group11_SEN381_Project.DataAccess
         {
             {
                 {
-                   
-                        
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", sqlcon());
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
-                    
-                    
+
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", sqlcon());
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+
+
                 }
             }
         }
 
 
-     public void UpdateTreatments(int id, string Name, string description)
-      {
+        public void UpdateTreatments(int id, string Name, string description)
+        {
 
             try
             {
 
                 string line = "Update Treatments set   Treatment_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line,sqlcon());
+                SqlCommand command = new SqlCommand(line, sqlcon());
                 command.ExecuteNonQuery();
                 con.Close();
             }
@@ -191,9 +191,11 @@ namespace Group11_SEN381_Project.DataAccess
 
             }
             con.Close();
-      }
-
-
-
+        }
     }
+}
+
+
+
+    
 
