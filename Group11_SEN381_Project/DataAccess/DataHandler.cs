@@ -31,7 +31,7 @@ namespace Group11_SEN381_Project.DataAccess
             return con;
 
         }
-
+        //get all the client details
         public DataTable getClient()
         {
             {
@@ -76,6 +76,32 @@ namespace Group11_SEN381_Project.DataAccess
         //    con.Close();
         //}
 
+        //create a new client and insert it into the database
+        public void CreateClient(string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        {
+            con.Open();
+            try
+            {
+                string line = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
+                SqlCommand command = new SqlCommand(line, con);// this will execute the command
+                command.ExecuteNonQuery();
+                con.Close();// this will close the connection
+            }
+            catch (Exception ex)// catch any errors
+            {
+                MessageBox.Show("Data Failed to be Inserted");// show message box
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was Inserted");// show message box if data was inserted
+
+            }
+            con.Close();
+        }
+
+        // get all the policy details
         public DataTable getPolicy()
         {
 
@@ -88,6 +114,7 @@ namespace Group11_SEN381_Project.DataAccess
 
         }
 
+        // update the policy details
         public void UpdatePolicy(int id, string desc, DateTime date_time, string type_of_policy, int fee, int expired)
         {
             con.Open();
@@ -113,6 +140,33 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        // create a new policy and insert it into the database
+        public void CreatePolicy(string desc, DateTime date_time, string type_of_policy, int fee, int expired)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "INSERT INTO Policy (description,Date_Time,Type_of_Policy,Fee,expired) VALUES ('" + desc + "','" + date_time + "','" + type_of_policy + "','" + fee.ToString() + "','" + expired.ToString() + "')";
+                SqlCommand command = new SqlCommand(line, con);
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Created");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was created!");
+
+            }
+            con.Close();
+        }
+
+        // get all the medical provider details
         public DataTable getProvider()
         {
             {
@@ -128,6 +182,7 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
+        // update the medical provider details
         public void UpdateProvider(int id, string Name, string Location, int rating)
         {
 
@@ -154,7 +209,7 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
 
-
+        // get all the medical condition details
         public DataTable getMedicalCondition()
         {
             {
@@ -171,6 +226,7 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
+        // update the medical condition details
         public void UpdateMedicalConditions(int id, string Name, string description)
         {
 
@@ -196,6 +252,7 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        // get all the treatment details
         public DataTable getTreatment()
         {
             {
@@ -213,7 +270,7 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
-
+        // update the treatment details
         public void UpdateTreatments(int id, string Name, string description)
         {
 

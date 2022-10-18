@@ -64,6 +64,7 @@ namespace Group11_SEN381_Project
             materialListView1.View = View.Details;
         }
 
+
         
     }
 }
