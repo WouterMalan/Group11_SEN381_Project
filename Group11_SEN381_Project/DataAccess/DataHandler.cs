@@ -51,30 +51,30 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
         //TODO: try to fix error
-        public DataTable updateClient(int id, string name_surname, string address, string phone_number, string email,string dependents, int national_id)
-        {
-            con.Open();
-            try
-            {
+        //public DataTable updateClient(int id, string name_surname, string address, string phone_number, string email,string dependents, int national_id)
+        //{
+        //    con.Open();
+        //    try
+        //    {
 
-                string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents+ "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data Failed to be Updated");
-                MessageBox.Show(ex.ToString());
+        //        string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents+ "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
+        //        SqlCommand command = new SqlCommand(line, con);
+        //        command.ExecuteNonQuery();
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Data Failed to be Updated");
+        //        MessageBox.Show(ex.ToString());
 
-            }
-            finally
-            {
-                MessageBox.Show("Data was updated");
+        //    }
+        //    finally
+        //    {
+        //        MessageBox.Show("Data was updated");
 
-            }
-            con.Close();
-        }
+        //    }
+        //    con.Close();
+        //}
 
         public DataTable getPolicy()
         {
