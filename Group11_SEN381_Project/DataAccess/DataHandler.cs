@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Collections.Specialized;
 
 namespace Group11_SEN381_Project.DataAccess
 {
@@ -28,6 +30,50 @@ namespace Group11_SEN381_Project.DataAccess
 
             return con;
 
+        }
+
+        public DataTable getClient()
+        {
+            {
+                DataTable dt = new DataTable();
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Client", con);
+                    sda.Fill(dt);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return dt;
+            }
+        }
+        //TODO: try to fix error
+        public DataTable updateClient(int id, string name_surname, string address, string phone_number, string email,string dependents, int national_id)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents+ "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, con);
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
         }
 
         public DataTable getPolicy()
