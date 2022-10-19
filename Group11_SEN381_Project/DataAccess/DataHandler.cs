@@ -216,7 +216,7 @@ namespace Group11_SEN381_Project.DataAccess
                 {
 
 
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM MedicalCondition", sqlcon());
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Medical_Conditions", sqlcon());
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -259,7 +259,7 @@ namespace Group11_SEN381_Project.DataAccess
                 {
 
 
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Treatment", sqlcon());
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Treatments", sqlcon());
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
