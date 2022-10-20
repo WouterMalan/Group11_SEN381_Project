@@ -33,15 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.1.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +57,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\Client.cs" />
@@ -58,6 +65,12 @@
     <Compile Include="BusinessLogic\Policy.cs" />
     <Compile Include="BusinessLogic\Provider.cs" />
     <Compile Include="BusinessLogic\Treatment.cs" />
+    <Compile Include="CombinedTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CombinedTables.Designer.cs">
+      <DependentUpon>CombinedTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\DataHandler.cs" />
     <Compile Include="MedicalCallCenterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CombinedTables.resx">
+      <DependentUpon>CombinedTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Policy.resx">
       <DependentUpon>Policy.cs</DependentUpon>
     </EmbeddedResource>
