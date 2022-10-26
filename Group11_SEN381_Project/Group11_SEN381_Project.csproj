@@ -108,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MedicalCallCenterDataSet.xsc">
       <DependentUpon>MedicalCallCenterDataSet.xsd</DependentUpon>
@@ -134,6 +135,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Ukupholisa Healthcare-logos.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ukupholisa Healthcare-logos_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ukupholisa Healthcare-logos1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ukupholisa Healthcare-logos_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\92c777c3e98f490b8771085c138dd793.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

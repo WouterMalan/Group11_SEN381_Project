@@ -37,12 +37,23 @@
             this.btnClient = new FontAwesome.Sharp.IconButton();
             this.btnClientCentre = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.panelTitleShow = new System.Windows.Forms.Panel();
+            this.lblTitleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+            this.panelTitleShow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.panelShadow.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 454);
+            this.button1.Location = new System.Drawing.Point(857, 552);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(346, 117);
             this.button1.TabIndex = 0;
@@ -61,9 +72,9 @@
             this.panelMenu.Controls.Add(this.btnClientCentre);
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(3, 64);
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 641);
+            this.panelMenu.Size = new System.Drawing.Size(220, 708);
             this.panelMenu.TabIndex = 1;
             // 
             // btnTreatment
@@ -86,6 +97,7 @@
             this.btnTreatment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTreatment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTreatment.UseVisualStyleBackColor = true;
+            this.btnTreatment.Click += new System.EventHandler(this.btnTreatment_Click);
             // 
             // bntProvider
             // 
@@ -107,6 +119,7 @@
             this.bntProvider.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntProvider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bntProvider.UseVisualStyleBackColor = true;
+            this.bntProvider.Click += new System.EventHandler(this.bntProvider_Click);
             // 
             // btnPolicy
             // 
@@ -128,6 +141,7 @@
             this.btnPolicy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPolicy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPolicy.UseVisualStyleBackColor = true;
+            this.btnPolicy.Click += new System.EventHandler(this.btnPolicy_Click);
             // 
             // btnMedicalCondition
             // 
@@ -135,7 +149,7 @@
             this.btnMedicalCondition.FlatAppearance.BorderSize = 0;
             this.btnMedicalCondition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMedicalCondition.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMedicalCondition.IconChar = FontAwesome.Sharp.IconChar.SuitcaseMedical;
+            this.btnMedicalCondition.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
             this.btnMedicalCondition.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMedicalCondition.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMedicalCondition.IconSize = 32;
@@ -149,6 +163,7 @@
             this.btnMedicalCondition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMedicalCondition.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMedicalCondition.UseVisualStyleBackColor = true;
+            this.btnMedicalCondition.Click += new System.EventHandler(this.btnMedicalCondition_Click);
             // 
             // btnClient
             // 
@@ -170,6 +185,7 @@
             this.btnClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // btnClientCentre
             // 
@@ -191,26 +207,101 @@
             this.btnClientCentre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientCentre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientCentre.UseVisualStyleBackColor = true;
+            this.btnClientCentre.Click += new System.EventHandler(this.btnClientCentre_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnHome);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 140);
             this.panel2.TabIndex = 0;
             // 
+            // btnHome
+            // 
+            this.btnHome.Image = global::Group11_SEN381_Project.Properties.Resources.Ukupholisa_Healthcare_logos_transparent;
+            this.btnHome.Location = new System.Drawing.Point(3, 45);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(211, 95);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHome.TabIndex = 0;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panelTitleShow
+            // 
+            this.panelTitleShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitleShow.Controls.Add(this.lblTitleChildForm);
+            this.panelTitleShow.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleShow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleShow.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleShow.Name = "panelTitleShow";
+            this.panelTitleShow.Size = new System.Drawing.Size(1046, 75);
+            this.panelTitleShow.TabIndex = 2;
+            this.panelTitleShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleShow_MouseDown);
+            // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(56, 45);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
+            this.lblTitleChildForm.TabIndex = 1;
+            this.lblTitleChildForm.Text = "Home";
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(18, 36);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Controls.Add(this.panelDesktop);
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(220, 75);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1046, 9);
+            this.panelShadow.TabIndex = 3;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 0);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1046, 9);
+            this.panelDesktop.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 708);
+            this.Controls.Add(this.panelShadow);
+            this.Controls.Add(this.panelTitleShow);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+            this.panelTitleShow.ResumeLayout(false);
+            this.panelTitleShow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.panelShadow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,6 +317,12 @@
         private FontAwesome.Sharp.IconButton btnPolicy;
         private FontAwesome.Sharp.IconButton btnMedicalCondition;
         private FontAwesome.Sharp.IconButton btnClient;
+        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.Panel panelTitleShow;
+        private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+        private System.Windows.Forms.Label lblTitleChildForm;
+        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.Panel panelDesktop;
     }
 }
 
