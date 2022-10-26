@@ -62,8 +62,8 @@ namespace Group11_SEN381_Project
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
-                iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;
+               // iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                //iconCurrentChildForm.IconColor = color;
             }
         }
 

@@ -208,6 +208,31 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        // create a new medical provider and insert it into the database
+        public void CreateProvider(string Name, string Location, int rating)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "INSERT INTO Providers (Name,Location,Rating) VALUES ('" + Name + "','" + Location + "','" + rating.ToString() + "')";
+                SqlCommand command = new SqlCommand(line, con);
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create Provider");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Provider record was successfully created!");
+
+            }
+            con.Close();
+        }
 
         // get all the medical condition details
         public DataTable getMedicalCondition()
@@ -252,6 +277,32 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        // create a new medical condition and insert it into the database
+        public void CreateMedicalConditions(string Name, string description)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "INSERT INTO Medical_Conditions (Condition_Name,Description) VALUES ('" + Name + "','" + description + "')";
+                SqlCommand command = new SqlCommand(line, con);
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create Medical Condition");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Medical Condition record was successfully created!");
+
+            }
+            con.Close();
+        }
+
         // get all the treatment details
         public DataTable getTreatment()
         {
@@ -291,6 +342,32 @@ namespace Group11_SEN381_Project.DataAccess
             finally
             {
                 MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
+        }
+
+        // create a new treatment and insert it into the database
+        public void CreateTreatments(string Name, string description)
+        {
+            con.Open();
+            try
+            {
+
+                string line = "INSERT INTO Treatments (Treatment_Name,Description) VALUES ('" + Name + "','" + description + "')";
+                SqlCommand command = new SqlCommand(line, con);
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create Treatment");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Treatment record was successfully created!");
 
             }
             con.Close();
