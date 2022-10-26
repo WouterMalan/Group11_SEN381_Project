@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnTreatment = new FontAwesome.Sharp.IconButton();
             this.bntProvider = new FontAwesome.Sharp.IconButton();
@@ -38,28 +37,21 @@
             this.btnClientCentre = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
-            this.panelTitleShow = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
+            this.panelTitleShow = new System.Windows.Forms.Panel();
+            this.btnMaximize = new FontAwesome.Sharp.IconButton();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            this.panelShadow.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(857, 552);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(346, 117);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelMenu
             // 
@@ -211,6 +203,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnMenu);
             this.panel2.Controls.Add(this.btnHome);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -221,25 +214,23 @@
             // btnHome
             // 
             this.btnHome.Image = global::Group11_SEN381_Project.Properties.Resources.Ukupholisa_Healthcare_logos_transparent;
-            this.btnHome.Location = new System.Drawing.Point(3, 45);
+            this.btnHome.Location = new System.Drawing.Point(0, 12);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(211, 95);
+            this.btnHome.Size = new System.Drawing.Size(173, 122);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // panelTitleShow
+            // button1
             // 
-            this.panelTitleShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panelTitleShow.Controls.Add(this.lblTitleChildForm);
-            this.panelTitleShow.Controls.Add(this.iconCurrentChildForm);
-            this.panelTitleShow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleShow.Location = new System.Drawing.Point(220, 0);
-            this.panelTitleShow.Name = "panelTitleShow";
-            this.panelTitleShow.Size = new System.Drawing.Size(1046, 75);
-            this.panelTitleShow.TabIndex = 2;
-            this.panelTitleShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleShow_MouseDown);
+            this.button1.Location = new System.Drawing.Point(612, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 57);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTitleChildForm
             // 
@@ -251,6 +242,70 @@
             this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
+            // 
+            // panelTitleShow
+            // 
+            this.panelTitleShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitleShow.Controls.Add(this.btnMaximize);
+            this.panelTitleShow.Controls.Add(this.btnClose);
+            this.panelTitleShow.Controls.Add(this.btnMinimize);
+            this.panelTitleShow.Controls.Add(this.lblTitleChildForm);
+            this.panelTitleShow.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleShow.Controls.Add(this.button1);
+            this.panelTitleShow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleShow.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleShow.Name = "panelTitleShow";
+            this.panelTitleShow.Size = new System.Drawing.Size(1046, 75);
+            this.panelTitleShow.TabIndex = 2;
+            this.panelTitleShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleShow_MouseDown);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximize.IconSize = 17;
+            this.btnMaximize.Location = new System.Drawing.Point(996, 12);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(16, 19);
+            this.btnMaximize.TabIndex = 4;
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Multiply;
+            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 17;
+            this.btnClose.Location = new System.Drawing.Point(1018, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(16, 19);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 17;
+            this.btnMinimize.Location = new System.Drawing.Point(974, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(16, 19);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // iconCurrentChildForm
             // 
@@ -265,33 +320,35 @@
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
-            // panelShadow
-            // 
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelShadow.Controls.Add(this.panelDesktop);
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 75);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1046, 9);
-            this.panelShadow.TabIndex = 3;
-            // 
             // panelDesktop
             // 
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(0, 0);
+            this.panelDesktop.Location = new System.Drawing.Point(220, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1046, 9);
-            this.panelDesktop.TabIndex = 0;
+            this.panelDesktop.Size = new System.Drawing.Size(1046, 633);
+            this.panelDesktop.TabIndex = 3;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnMenu.IconColor = System.Drawing.Color.Black;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.Location = new System.Drawing.Point(173, 12);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(41, 33);
+            this.btnMenu.TabIndex = 5;
+            this.btnMenu.Text = "iconButton1";
+            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 708);
-            this.Controls.Add(this.panelShadow);
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleShow);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -301,14 +358,11 @@
             this.panelTitleShow.ResumeLayout(false);
             this.panelTitleShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            this.panelShadow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnClientCentre;
         private System.Windows.Forms.Panel panel2;
@@ -318,11 +372,15 @@
         private FontAwesome.Sharp.IconButton btnMedicalCondition;
         private FontAwesome.Sharp.IconButton btnClient;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.Panel panelTitleShow;
+        private System.Windows.Forms.Button button1;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
-        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.Panel panelTitleShow;
         private System.Windows.Forms.Panel panelDesktop;
+        private FontAwesome.Sharp.IconButton btnMaximize;
+        private FontAwesome.Sharp.IconButton btnClose;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private FontAwesome.Sharp.IconButton btnMenu;
     }
 }
 

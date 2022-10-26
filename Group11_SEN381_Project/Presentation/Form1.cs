@@ -13,6 +13,7 @@ using MaterialSkin.Controls;
 using FontAwesome.Sharp;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
+using Group11_SEN381_Project.Presentation;
 
 namespace Group11_SEN381_Project
 {
@@ -140,6 +141,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Client";
+            OpenChildForm(new Client());
 
         }
 
@@ -147,6 +149,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Medical Condition";
+            OpenChildForm(new Medical_Condition_Form());
 
         }
 
@@ -154,6 +157,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Policy";
+            OpenChildForm(new PolicyForm());
 
         }
 
@@ -161,6 +165,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Provider";
+            OpenChildForm(new ProviderForm());
 
         }
 
@@ -173,6 +178,7 @@ namespace Group11_SEN381_Project
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             ResetHome();
         }
 
@@ -194,9 +200,34 @@ namespace Group11_SEN381_Project
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-       
-       
-        
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
     
 }
