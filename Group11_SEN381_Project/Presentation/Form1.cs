@@ -116,7 +116,6 @@ namespace Group11_SEN381_Project
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -226,6 +225,39 @@ namespace Group11_SEN381_Project
             else
             {
                 WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
+
+        private void CollapseMenu()
+        {
+            if(this.panelMenu.Width > 200)
+            {
+                panelMenu.Width = 100;
+                btnHome.Visible = false;
+                btnMenu.Dock = DockStyle.Top;
+                foreach(Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+            }
+            else
+            {
+                panelMenu.Width = 230;
+                btnHome.Visible = true;
+                btnMenu.Dock = DockStyle.Right;
+                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
             }
         }
     }

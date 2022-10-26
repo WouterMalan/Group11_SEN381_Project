@@ -36,6 +36,7 @@
             this.btnClient = new FontAwesome.Sharp.IconButton();
             this.btnClientCentre = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -85,7 +85,8 @@
             this.btnTreatment.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnTreatment.Size = new System.Drawing.Size(220, 60);
             this.btnTreatment.TabIndex = 5;
-            this.btnTreatment.Text = "Treatment";
+            this.btnTreatment.Tag = "Treatment";
+            this.btnTreatment.Text = "   Treatment";
             this.btnTreatment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTreatment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTreatment.UseVisualStyleBackColor = true;
@@ -107,7 +108,8 @@
             this.bntProvider.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.bntProvider.Size = new System.Drawing.Size(220, 60);
             this.bntProvider.TabIndex = 4;
-            this.bntProvider.Text = "Provider";
+            this.bntProvider.Tag = "Provider";
+            this.bntProvider.Text = "   Provider";
             this.bntProvider.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bntProvider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bntProvider.UseVisualStyleBackColor = true;
@@ -129,7 +131,8 @@
             this.btnPolicy.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPolicy.Size = new System.Drawing.Size(220, 60);
             this.btnPolicy.TabIndex = 3;
-            this.btnPolicy.Text = "Policy";
+            this.btnPolicy.Tag = "Polilcy";
+            this.btnPolicy.Text = "   Policy";
             this.btnPolicy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPolicy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPolicy.UseVisualStyleBackColor = true;
@@ -151,7 +154,8 @@
             this.btnMedicalCondition.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMedicalCondition.Size = new System.Drawing.Size(220, 60);
             this.btnMedicalCondition.TabIndex = 2;
-            this.btnMedicalCondition.Text = "Medical Condition";
+            this.btnMedicalCondition.Tag = "Medical Condition";
+            this.btnMedicalCondition.Text = "   Medical Condition";
             this.btnMedicalCondition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMedicalCondition.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMedicalCondition.UseVisualStyleBackColor = true;
@@ -173,7 +177,8 @@
             this.btnClient.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnClient.Size = new System.Drawing.Size(220, 60);
             this.btnClient.TabIndex = 1;
-            this.btnClient.Text = "Client";
+            this.btnClient.Tag = "Client";
+            this.btnClient.Text = "   Client";
             this.btnClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClient.UseVisualStyleBackColor = true;
@@ -195,7 +200,8 @@
             this.btnClientCentre.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnClientCentre.Size = new System.Drawing.Size(220, 60);
             this.btnClientCentre.TabIndex = 0;
-            this.btnClientCentre.Text = "Call Centre";
+            this.btnClientCentre.Tag = "Call Centre";
+            this.btnClientCentre.Text = "   Call Centre";
             this.btnClientCentre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientCentre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientCentre.UseVisualStyleBackColor = true;
@@ -211,12 +217,28 @@
             this.panel2.Size = new System.Drawing.Size(220, 140);
             this.panel2.TabIndex = 0;
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            this.btnMenu.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.IconSize = 30;
+            this.btnMenu.Location = new System.Drawing.Point(179, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(41, 140);
+            this.btnMenu.TabIndex = 5;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // btnHome
             // 
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHome.Image = global::Group11_SEN381_Project.Properties.Resources.Ukupholisa_Healthcare_logos_transparent;
-            this.btnHome.Location = new System.Drawing.Point(0, 12);
+            this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(173, 122);
+            this.btnHome.Size = new System.Drawing.Size(173, 140);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
@@ -262,49 +284,52 @@
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximize.IconSize = 17;
-            this.btnMaximize.Location = new System.Drawing.Point(996, 12);
+            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnMaximize.IconSize = 18;
+            this.btnMaximize.Location = new System.Drawing.Point(988, 12);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(16, 19);
+            this.btnMaximize.Size = new System.Drawing.Size(29, 19);
             this.btnMaximize.TabIndex = 4;
-            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.IndianRed;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Multiply;
-            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 17;
-            this.btnClose.Location = new System.Drawing.Point(1018, 12);
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnClose.IconSize = 18;
+            this.btnClose.Location = new System.Drawing.Point(1014, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(16, 19);
+            this.btnClose.Size = new System.Drawing.Size(29, 19);
             this.btnClose.TabIndex = 3;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 17;
-            this.btnMinimize.Location = new System.Drawing.Point(974, 12);
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimize.IconSize = 20;
+            this.btnMinimize.Location = new System.Drawing.Point(964, 12);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(16, 19);
+            this.btnMinimize.Size = new System.Drawing.Size(29, 19);
             this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // iconCurrentChildForm
@@ -327,19 +352,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1046, 633);
             this.panelDesktop.TabIndex = 3;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.btnMenu.IconColor = System.Drawing.Color.Black;
-            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenu.Location = new System.Drawing.Point(173, 12);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(41, 33);
-            this.btnMenu.TabIndex = 5;
-            this.btnMenu.Text = "iconButton1";
-            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

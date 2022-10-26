@@ -46,6 +46,9 @@
             // 
             // materialListView4
             // 
+            this.materialListView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView4.AutoSizeTable = false;
             this.materialListView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialListView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -91,6 +94,7 @@
             // 
             // materialButton14
             // 
+            this.materialButton14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton14.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton14.Depth = 0;
@@ -111,6 +115,7 @@
             // 
             // materialButton15
             // 
+            this.materialButton15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton15.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton15.Depth = 0;
@@ -131,6 +136,7 @@
             // 
             // materialButton16
             // 
+            this.materialButton16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton16.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton16.Depth = 0;
@@ -151,6 +157,7 @@
             // 
             // cmbProviderRating
             // 
+            this.cmbProviderRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProviderRating.AutoResize = false;
             this.cmbProviderRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cmbProviderRating.Depth = 0;
@@ -179,6 +186,7 @@
             // 
             // materialButton10
             // 
+            this.materialButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton10.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton10.Depth = 0;
@@ -199,6 +207,8 @@
             // 
             // materialTextBox11
             // 
+            this.materialTextBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTextBox11.AnimateReadOnly = false;
             this.materialTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox11.Depth = 0;
@@ -217,6 +227,7 @@
             // 
             // txtBoxProviderName
             // 
+            this.txtBoxProviderName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxProviderName.AnimateReadOnly = false;
             this.txtBoxProviderName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxProviderName.Depth = 0;
@@ -235,6 +246,7 @@
             // 
             // txtBoxProviderLocation
             // 
+            this.txtBoxProviderLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxProviderLocation.AnimateReadOnly = false;
             this.txtBoxProviderLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxProviderLocation.Depth = 0;
@@ -253,6 +265,7 @@
             // 
             // txtBoxProviderId
             // 
+            this.txtBoxProviderId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxProviderId.AnimateReadOnly = false;
             this.txtBoxProviderId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxProviderId.Depth = 0;
