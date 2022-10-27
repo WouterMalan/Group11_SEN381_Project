@@ -12,6 +12,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using FontAwesome.Sharp;
 using System.Drawing.Text;
+using RJCodeAdvance.RJControls;
 using System.Runtime.InteropServices;
 using Group11_SEN381_Project.Presentation;
 
@@ -134,6 +135,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Client Centre";
+            Open_DropDownMenu(rjDropdownMenu1, sender);
         }
 
         private void btnClient_Click(object sender, EventArgs e)
@@ -173,11 +175,15 @@ namespace Group11_SEN381_Project
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Treatment";
 
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             ResetHome();
         }
 
@@ -259,6 +265,29 @@ namespace Group11_SEN381_Project
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
             }
+        }
+
+        private void Open_DropDownMenu(RJDropdownMenu dropDownMenu, object sender)
+        {
+            Control control = (Control)sender;
+            dropDownMenu.VisibleChanged +=new EventHandler((sender2, ev)
+                => DropdownMenu_VisibleChanged(sender2, ev, control));
+            dropDownMenu.Show(control, control.Width, 0);
+        }
+
+        private void DropdownMenu_VisibleChanged(object sender, EventArgs e, Control control)
+        {
+            RJDropdownMenu dropDownMenu = (RJDropdownMenu)sender;
+            if (!dropDownMenu.Visible)
+            {
+                control.BackColor = Color.FromArgb(31, 30, 68);
+            }
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblTitleChildForm.Text = "Report";
+            OpenChildForm(new Report());
         }
     }
     

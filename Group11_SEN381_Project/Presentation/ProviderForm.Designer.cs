@@ -168,6 +168,7 @@
             this.cmbProviderRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbProviderRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbProviderRating.FormattingEnabled = true;
+            this.cmbProviderRating.Hint = "Rating";
             this.cmbProviderRating.IntegralHeight = false;
             this.cmbProviderRating.ItemHeight = 43;
             this.cmbProviderRating.Items.AddRange(new object[] {
