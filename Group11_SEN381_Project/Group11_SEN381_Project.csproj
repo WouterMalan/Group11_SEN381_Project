@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\Client.cs" />
-    <Compile Include="BusinessLogic\ClientPresenter.cs" />
     <Compile Include="BusinessLogic\Medical_Condition.cs" />
     <Compile Include="BusinessLogic\Policy.cs" />
     <Compile Include="BusinessLogic\Provider.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="Presentation\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\IClientView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\Client.resx">

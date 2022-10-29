@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -108,6 +109,11 @@ namespace Group11_SEN381_Project.Presentation
         private void btnCreateClient_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ClientDetailEdit_Create());
+        }
+
+        private void btnSearchClient_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

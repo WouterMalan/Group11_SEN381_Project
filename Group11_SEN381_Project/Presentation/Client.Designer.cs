@@ -37,8 +37,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox8 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnSearchClient = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxClientSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.btnCreateClient = new MaterialSkin.Controls.MaterialButton();
@@ -55,8 +55,8 @@
             // panelClient
             // 
             this.panelClient.Controls.Add(this.materialListView1);
-            this.panelClient.Controls.Add(this.materialButton4);
-            this.panelClient.Controls.Add(this.materialTextBox8);
+            this.panelClient.Controls.Add(this.btnSearchClient);
+            this.panelClient.Controls.Add(this.txtBoxClientSearch);
             this.panelClient.Controls.Add(this.materialButton3);
             this.panelClient.Controls.Add(this.materialButton2);
             this.panelClient.Controls.Add(this.btnCreateClient);
@@ -139,46 +139,47 @@
             this.columnHeader7.Text = "National_id";
             this.columnHeader7.Width = 115;
             // 
-            // materialButton4
+            // btnSearchClient
             // 
-            this.materialButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(338, 36);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(78, 36);
-            this.materialButton4.TabIndex = 39;
-            this.materialButton4.Tag = "";
-            this.materialButton4.Text = "Search";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.btnSearchClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearchClient.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSearchClient.Depth = 0;
+            this.btnSearchClient.HighEmphasis = true;
+            this.btnSearchClient.Icon = null;
+            this.btnSearchClient.Location = new System.Drawing.Point(338, 36);
+            this.btnSearchClient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearchClient.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchClient.Name = "btnSearchClient";
+            this.btnSearchClient.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSearchClient.Size = new System.Drawing.Size(78, 36);
+            this.btnSearchClient.TabIndex = 39;
+            this.btnSearchClient.Tag = "";
+            this.btnSearchClient.Text = "Search";
+            this.btnSearchClient.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSearchClient.UseAccentColor = false;
+            this.btnSearchClient.UseVisualStyleBackColor = true;
+            this.btnSearchClient.Click += new System.EventHandler(this.btnSearchClient_Click);
             // 
-            // materialTextBox8
+            // txtBoxClientSearch
             // 
-            this.materialTextBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxClientSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox8.AnimateReadOnly = false;
-            this.materialTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox8.Depth = 0;
-            this.materialTextBox8.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox8.Hint = "Search ID";
-            this.materialTextBox8.LeadingIcon = null;
-            this.materialTextBox8.Location = new System.Drawing.Point(18, 22);
-            this.materialTextBox8.MaxLength = 50;
-            this.materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox8.Multiline = false;
-            this.materialTextBox8.Name = "materialTextBox8";
-            this.materialTextBox8.Size = new System.Drawing.Size(292, 50);
-            this.materialTextBox8.TabIndex = 38;
-            this.materialTextBox8.Text = "";
-            this.materialTextBox8.TrailingIcon = null;
+            this.txtBoxClientSearch.AnimateReadOnly = false;
+            this.txtBoxClientSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxClientSearch.Depth = 0;
+            this.txtBoxClientSearch.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxClientSearch.Hint = "Search ID";
+            this.txtBoxClientSearch.LeadingIcon = null;
+            this.txtBoxClientSearch.Location = new System.Drawing.Point(18, 22);
+            this.txtBoxClientSearch.MaxLength = 50;
+            this.txtBoxClientSearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxClientSearch.Multiline = false;
+            this.txtBoxClientSearch.Name = "txtBoxClientSearch";
+            this.txtBoxClientSearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxClientSearch.TabIndex = 38;
+            this.txtBoxClientSearch.Text = "";
+            this.txtBoxClientSearch.TrailingIcon = null;
             // 
             // materialButton3
             // 
@@ -404,8 +405,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox8;
+        private MaterialSkin.Controls.MaterialButton btnSearchClient;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxClientSearch;
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton btnCreateClient;
