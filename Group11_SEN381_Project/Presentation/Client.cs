@@ -15,10 +15,15 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class Client : Form
     {
+        private Form currentChildForm;
+        //even handlers
+        public event EventHandler AddNewEvent;
         public Client()
         {
             InitializeComponent();
             
+
+
         }
 
         private void Client_Load(object sender, EventArgs e)
@@ -63,6 +68,46 @@ namespace Group11_SEN381_Project.Presentation
             materialListView1.FullRowSelect = true;
             materialListView1.MultiSelect = false;
             materialListView1.View = View.Details;
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                // open only form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None; // to remove the border of the form
+            childForm.Dock = DockStyle.Fill;
+            panelClient.Controls.Add(childForm);
+            panelClient.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void AddociateAndRaiseViewEvents()
+        {
+            ClientDetailEdit_Create clientDetailEdit_Create = new ClientDetailEdit_Create();
+            // add new
+            btnCreateClient.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+                OpenChildForm(clientDetailEdit_Create);
+                clientDetailEdit_Create.AddNewEvent += delegate
+                {
+                    clientTabSelected();
+                };
+                
+
+            };
+        }
+
+
+        private void btnCreateClient_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ClientDetailEdit_Create());
         }
     }
 }

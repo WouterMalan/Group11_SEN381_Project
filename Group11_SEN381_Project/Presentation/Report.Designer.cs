@@ -354,6 +354,7 @@
             this.Controls.Add(this.txtBoxReportid);
             this.Name = "Report";
             this.Text = "Report";
+            this.Load += new System.EventHandler(this.Report_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

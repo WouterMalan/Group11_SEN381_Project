@@ -45,6 +45,7 @@
       <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
@@ -64,15 +65,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\Client.cs" />
+    <Compile Include="BusinessLogic\ClientPresenter.cs" />
     <Compile Include="BusinessLogic\Medical_Condition.cs" />
     <Compile Include="BusinessLogic\Policy.cs" />
     <Compile Include="BusinessLogic\Provider.cs" />
+    <Compile Include="BusinessLogic\Report.cs" />
     <Compile Include="BusinessLogic\Treatment.cs" />
     <Compile Include="Presentation\Client.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ClientDetailEdit_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ClientDetailEdit_Create.Designer.cs">
+      <DependentUpon>ClientDetailEdit_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\CombinedTables.cs">
       <SubType>Form</SubType>
@@ -122,10 +131,14 @@
     <Compile Include="Presentation\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\IClientView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ClientDetailEdit_Create.resx">
+      <DependentUpon>ClientDetailEdit_Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CombinedTables.resx">
       <DependentUpon>CombinedTables.cs</DependentUpon>

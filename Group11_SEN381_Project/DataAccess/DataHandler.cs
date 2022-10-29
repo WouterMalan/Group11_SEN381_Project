@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Collections.Specialized;
+using Group11_SEN381_Project.BusinessLogic;
 
 namespace Group11_SEN381_Project.DataAccess
 {
@@ -77,29 +78,51 @@ namespace Group11_SEN381_Project.DataAccess
         //}
 
         //create a new client and insert it into the database
-        public void CreateClient(string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        
+        public void createClient(Client client)
         {
-            con.Open();
-            try
+            using(con)
+            using(var command = new SqlCommand())
             {
-                string line = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
-                SqlCommand command = new SqlCommand(line, con);// this will execute the command
+                command.Connection = con;
+                command.CommandText = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES (@Name_Surname,@Address,@Phone_Number,@Email,@Dependents,@National_id)";
+                command.Parameters.AddWithValue("@Name_Surname", client.FullName);
+                command.Parameters.AddWithValue("@Address", client.Address);
+                command.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
+                command.Parameters.AddWithValue("@Email", client.Email);
+                command.Parameters.AddWithValue("@Dependents", client.Dependants);
+                command.Parameters.AddWithValue("@National_id", client.NatID);
+                con.Open();
                 command.ExecuteNonQuery();
-                con.Close();// this will close the connection
+                con.Close();
             }
-            catch (Exception ex)// catch any errors
-            {
-                MessageBox.Show("Data Failed to be Inserted");// show message box
-                MessageBox.Show(ex.ToString());
-
-            }
-            finally
-            {
-                MessageBox.Show("Data was Inserted");// show message box if data was inserted
-
-            }
-            con.Close();
         }
+        
+    
+
+        //public void CreateClient(string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        //{
+        //    con.Open();
+        //    try
+        //    {
+        //        string line = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
+        //        SqlCommand command = new SqlCommand(line, con);// this will execute the command
+        //        command.ExecuteNonQuery();
+        //        con.Close();// this will close the connection
+        //    }
+        //    catch (Exception ex)// catch any errors
+        //    {
+        //        MessageBox.Show("Data Failed to be Inserted");// show message box
+        //        MessageBox.Show(ex.ToString());
+
+        //    }
+        //    finally
+        //    {
+        //        MessageBox.Show("Data was Inserted");// show message box if data was inserted
+
+        //    }
+        //    con.Close();
+        //}
 
         // get all the policy details
         public DataTable getPolicy()
@@ -372,6 +395,30 @@ namespace Group11_SEN381_Project.DataAccess
             }
             con.Close();
         }
+
+        //get all the report details
+        public DataTable getReport()
+        {
+            {
+                {
+
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Report", sqlcon());
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+
+
+                }
+            }
+        }
+
+        //TODO: update the report details
+
+        //TODO: Create the report details
+
+        //TODO: Delete the report details
     }
 }
 
