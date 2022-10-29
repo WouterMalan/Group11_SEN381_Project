@@ -113,7 +113,39 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnSearchClient_Click(object sender, EventArgs e)
         {
-            
+            DataHandler dataHandler = new DataHandler();
+            materialListView1.Items.Clear();
+            if (txtBoxClientSearch.Text != "")// if the search textbox is not empty
+            {
+                // check if the search textbox is a number
+                if(txtBoxClientSearch.Text != null && txtBoxClientSearch.Text.All(char.IsDigit))
+                {
+                    foreach (DataRow row in dataHandler.searchClient(int.Parse(txtBoxClientSearch.Text)).Rows)
+                    {
+                        ListViewItem item = new ListViewItem(row["id"].ToString());
+                        item.SubItems.Add(row["Name_Surname"].ToString());
+                        item.SubItems.Add(row["Address"].ToString());
+                        item.SubItems.Add(row["Phone_Number"].ToString());
+                        item.SubItems.Add(row["Email"].ToString());
+                        item.SubItems.Add(row["Dependents"].ToString());
+                        item.SubItems.Add(row["National_id"].ToString());
+                        materialListView1.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    //show message when the search textbox is not a number
+                    MessageBox.Show("Please enter a ID number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else// if the search box is empty
+            {
+                clientTabSelected();
+                //show error message
+                MessageBox.Show("Please enter a valid client id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

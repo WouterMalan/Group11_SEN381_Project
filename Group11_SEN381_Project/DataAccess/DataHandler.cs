@@ -97,8 +97,26 @@ namespace Group11_SEN381_Project.DataAccess
                 con.Close();
             }
         }
-        
-    
+
+        //search for a client by their id
+        public DataTable searchClient(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Client WHERE id = '" + id.ToString() + "'", con);
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return dt;
+        }
+
+
 
         //public void CreateClient(string name_surname, string address, string phone_number, string email, string dependents, int national_id)
         //{
@@ -255,6 +273,23 @@ namespace Group11_SEN381_Project.DataAccess
 
             }
             con.Close();
+        }
+
+        public DataTable searchProvider(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Providers WHERE id = '" + id.ToString() + "'", con);
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return dt;
         }
 
         // get all the medical condition details

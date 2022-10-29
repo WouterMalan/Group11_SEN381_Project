@@ -12,8 +12,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class ClientDetailEdit_Create : Form
     {
-        //fields
-        private bool isSuccessfull;
+      
 
         public event EventHandler AddNewEvent;
         public ClientDetailEdit_Create()
@@ -46,11 +45,6 @@ namespace Group11_SEN381_Project.Presentation
         }
 
 
-        //getters and setters
-        public bool IsSuccessfull
-        {
-            get { return isSuccessfull; }
-            set { isSuccessfull = value; }
-        }
+        
     }
 }

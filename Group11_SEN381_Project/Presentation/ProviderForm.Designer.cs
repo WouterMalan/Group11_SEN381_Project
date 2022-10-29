@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialListView4 = new MaterialSkin.Controls.MaterialListView();
+            this.ListViewProvider = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,40 +37,40 @@
             this.materialButton15 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton16 = new MaterialSkin.Controls.MaterialButton();
             this.cmbProviderRating = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox11 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnSearch = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxProviderSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderLocation = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderId = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
-            // materialListView4
+            // ListViewProvider
             // 
-            this.materialListView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ListViewProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialListView4.AutoSizeTable = false;
-            this.materialListView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListViewProvider.AutoSizeTable = false;
+            this.ListViewProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ListViewProvider.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListViewProvider.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader17,
             this.columnHeader18,
             this.columnHeader19,
             this.columnHeader20});
-            this.materialListView4.Depth = 0;
-            this.materialListView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialListView4.FullRowSelect = true;
-            this.materialListView4.HideSelection = false;
-            this.materialListView4.Location = new System.Drawing.Point(12, 72);
-            this.materialListView4.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView4.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView4.Name = "materialListView4";
-            this.materialListView4.OwnerDraw = true;
-            this.materialListView4.Size = new System.Drawing.Size(679, 497);
-            this.materialListView4.TabIndex = 47;
-            this.materialListView4.UseCompatibleStateImageBehavior = false;
-            this.materialListView4.View = System.Windows.Forms.View.Details;
+            this.ListViewProvider.Depth = 0;
+            this.ListViewProvider.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewProvider.FullRowSelect = true;
+            this.ListViewProvider.HideSelection = false;
+            this.ListViewProvider.Location = new System.Drawing.Point(12, 72);
+            this.ListViewProvider.MinimumSize = new System.Drawing.Size(200, 100);
+            this.ListViewProvider.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.ListViewProvider.MouseState = MaterialSkin.MouseState.OUT;
+            this.ListViewProvider.Name = "ListViewProvider";
+            this.ListViewProvider.OwnerDraw = true;
+            this.ListViewProvider.Size = new System.Drawing.Size(679, 497);
+            this.ListViewProvider.TabIndex = 47;
+            this.ListViewProvider.UseCompatibleStateImageBehavior = false;
+            this.ListViewProvider.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader17
             // 
@@ -185,46 +185,47 @@
             this.cmbProviderRating.StartIndex = 0;
             this.cmbProviderRating.TabIndex = 43;
             // 
-            // materialButton10
+            // btnSearch
             // 
-            this.materialButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton10.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton10.Depth = 0;
-            this.materialButton10.HighEmphasis = true;
-            this.materialButton10.Icon = null;
-            this.materialButton10.Location = new System.Drawing.Point(332, 30);
-            this.materialButton10.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton10.Name = "materialButton10";
-            this.materialButton10.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton10.Size = new System.Drawing.Size(78, 36);
-            this.materialButton10.TabIndex = 42;
-            this.materialButton10.Tag = "";
-            this.materialButton10.Text = "Search";
-            this.materialButton10.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton10.UseAccentColor = false;
-            this.materialButton10.UseVisualStyleBackColor = true;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSearch.Depth = 0;
+            this.btnSearch.HighEmphasis = true;
+            this.btnSearch.Icon = null;
+            this.btnSearch.Location = new System.Drawing.Point(332, 30);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSearch.Size = new System.Drawing.Size(78, 36);
+            this.btnSearch.TabIndex = 42;
+            this.btnSearch.Tag = "";
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSearch.UseAccentColor = false;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // materialTextBox11
+            // txtBoxProviderSearch
             // 
-            this.materialTextBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxProviderSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox11.AnimateReadOnly = false;
-            this.materialTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox11.Depth = 0;
-            this.materialTextBox11.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox11.Hint = "Search ID";
-            this.materialTextBox11.LeadingIcon = null;
-            this.materialTextBox11.Location = new System.Drawing.Point(12, 16);
-            this.materialTextBox11.MaxLength = 50;
-            this.materialTextBox11.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox11.Multiline = false;
-            this.materialTextBox11.Name = "materialTextBox11";
-            this.materialTextBox11.Size = new System.Drawing.Size(292, 50);
-            this.materialTextBox11.TabIndex = 41;
-            this.materialTextBox11.Text = "";
-            this.materialTextBox11.TrailingIcon = null;
+            this.txtBoxProviderSearch.AnimateReadOnly = false;
+            this.txtBoxProviderSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxProviderSearch.Depth = 0;
+            this.txtBoxProviderSearch.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxProviderSearch.Hint = "Search ID";
+            this.txtBoxProviderSearch.LeadingIcon = null;
+            this.txtBoxProviderSearch.Location = new System.Drawing.Point(12, 16);
+            this.txtBoxProviderSearch.MaxLength = 50;
+            this.txtBoxProviderSearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxProviderSearch.Multiline = false;
+            this.txtBoxProviderSearch.Name = "txtBoxProviderSearch";
+            this.txtBoxProviderSearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxProviderSearch.TabIndex = 41;
+            this.txtBoxProviderSearch.Text = "";
+            this.txtBoxProviderSearch.TrailingIcon = null;
             // 
             // txtBoxProviderName
             // 
@@ -288,13 +289,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 585);
-            this.Controls.Add(this.materialListView4);
+            this.Controls.Add(this.ListViewProvider);
             this.Controls.Add(this.materialButton14);
             this.Controls.Add(this.materialButton15);
             this.Controls.Add(this.materialButton16);
             this.Controls.Add(this.cmbProviderRating);
-            this.Controls.Add(this.materialButton10);
-            this.Controls.Add(this.materialTextBox11);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtBoxProviderSearch);
             this.Controls.Add(this.txtBoxProviderName);
             this.Controls.Add(this.txtBoxProviderLocation);
             this.Controls.Add(this.txtBoxProviderId);
@@ -308,7 +309,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialListView materialListView4;
+        private MaterialSkin.Controls.MaterialListView ListViewProvider;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.ColumnHeader columnHeader19;
@@ -317,8 +318,8 @@
         private MaterialSkin.Controls.MaterialButton materialButton15;
         private MaterialSkin.Controls.MaterialButton materialButton16;
         private MaterialSkin.Controls.MaterialComboBox cmbProviderRating;
-        private MaterialSkin.Controls.MaterialButton materialButton10;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox11;
+        private MaterialSkin.Controls.MaterialButton btnSearch;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxProviderSearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderLocation;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderId;
