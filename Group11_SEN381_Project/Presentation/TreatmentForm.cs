@@ -14,6 +14,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class TreatmentForm : Form
     {
+        DataHandler dataHandler1 = new DataHandler();
         public TreatmentForm()
         {
             InitializeComponent();
@@ -53,6 +54,49 @@ namespace Group11_SEN381_Project.Presentation
             materialListView5.FullRowSelect = true;
             materialListView5.MultiSelect = false;
             materialListView5.View = View.Details;
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.CreateTreatments(int.Parse(txtBoxTreatmentId.Text),txtBoxTreatmentName.Text, txtBoxTreatmentDesc.Text);
+            treatmentTabSelected();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.UpdateTreatments(int.Parse(txtBoxTreatmentId.Text), txtBoxTreatmentName.Text, txtBoxTreatmentDesc.Text);
+            treatmentTabSelected();
+        }
+
+        private void btnTreatmentSearch_Click(object sender, EventArgs e)
+        {
+            DataHandler dataHandler = new DataHandler();
+            materialListView5.Items.Clear();
+            if (txtBoxTreatmentSearch.Text != "")// if the search textbox is not empty
+            {
+                // check if the search textbox is a number
+                if (txtBoxTreatmentSearch.Text != null && txtBoxTreatmentSearch.Text.All(char.IsDigit))
+                {
+                    foreach (DataRow row in dataHandler.searchTreatment(int.Parse(txtBoxTreatmentSearch.Text)).Rows)
+                    {
+                        ListViewItem item = new ListViewItem(row["id"].ToString());
+                        item.SubItems.Add(row["Treatment_Name"].ToString());
+                        item.SubItems.Add(row["Description"].ToString());
+                        materialListView5.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    //show message when the search textbox is not a number
+                    MessageBox.Show("Please enter a ID number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else// if the search box is empty
+            {
+                treatmentTabSelected();
+                MessageBox.Show("Please enter a valid Treatment id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class Medical_Condition_Form : Form
     {
+        DataHandler dataHandler1 = new DataHandler();
         public Medical_Condition_Form()
         {
             InitializeComponent();
@@ -81,33 +82,23 @@ namespace Group11_SEN381_Project.Presentation
             }
             else// if the search box is empty
             {
-                //show all the medical conditions
-                foreach (DataRow row in dataHandler.getMedicalCondition().Rows)
-                {
-                    ListViewItem item = new ListViewItem(row["id"].ToString());
-                    item.SubItems.Add(row["Condition_Name"].ToString());
-                    item.SubItems.Add(row["Description"].ToString());
-                    materialListView2.Items.Add(item);
-                }
-                //display the selected listview item in the textboxes
-                materialListView2.SelectedIndexChanged += (s, args) =>
-                {
-                    if (materialListView2.SelectedItems.Count > 0)
-                    {
-                        ListViewItem item = materialListView2.SelectedItems[0];
-                        txtBoxConditionId.Text = item.SubItems[0].Text;
-                        txtBoxConditionName.Text = item.SubItems[1].Text;
-                        txtBoxConditionDesc.Text = item.SubItems[2].Text;
-
-                    }
-                };
-                materialListView2.GridLines = false;
-                materialListView2.FullRowSelect = true;
-                materialListView2.MultiSelect = false;
-                materialListView2.View = View.Details;
+                medicalConditionTabSelected();
                 //show error message
                 MessageBox.Show("Please enter a valid client id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCreateMedicalCondition_Click(object sender, EventArgs e)
+        {
+            dataHandler1.CreateMedicalConditions(int.Parse(txtBoxConditionId.Text),txtBoxConditionName.Text, txtBoxConditionDesc.Text);
+            medicalConditionTabSelected();// refresh the listview
+
+        }
+
+        private void btnUpdateMedicalCondition_Click(object sender, EventArgs e)
+        {
+            dataHandler1.UpdateMedicalConditions(int.Parse(txtBoxConditionId.Text), txtBoxConditionName.Text, txtBoxConditionDesc.Text);
+            medicalConditionTabSelected();// refresh the listview
         }
     }
 }

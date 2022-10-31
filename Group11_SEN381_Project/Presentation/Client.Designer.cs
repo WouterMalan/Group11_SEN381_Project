@@ -39,8 +39,8 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSearchClient = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxClientSearch = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.btnDelete = new MaterialSkin.Controls.MaterialButton();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialButton();
             this.btnCreateClient = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxDependents = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxNationalId = new MaterialSkin.Controls.MaterialTextBox();
@@ -57,8 +57,8 @@
             this.panelClient.Controls.Add(this.materialListView1);
             this.panelClient.Controls.Add(this.btnSearchClient);
             this.panelClient.Controls.Add(this.txtBoxClientSearch);
-            this.panelClient.Controls.Add(this.materialButton3);
-            this.panelClient.Controls.Add(this.materialButton2);
+            this.panelClient.Controls.Add(this.btnDelete);
+            this.panelClient.Controls.Add(this.btnUpdate);
             this.panelClient.Controls.Add(this.btnCreateClient);
             this.panelClient.Controls.Add(this.txtBoxDependents);
             this.panelClient.Controls.Add(this.txtBoxNationalId);
@@ -181,47 +181,48 @@
             this.txtBoxClientSearch.Text = "";
             this.txtBoxClientSearch.TrailingIcon = null;
             // 
-            // materialButton3
+            // btnDelete
             // 
-            this.materialButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(929, 544);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(73, 36);
-            this.materialButton3.TabIndex = 37;
-            this.materialButton3.Tag = "";
-            this.materialButton3.Text = "Delete";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.HighEmphasis = true;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(929, 544);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDelete.Size = new System.Drawing.Size(73, 36);
+            this.btnDelete.TabIndex = 37;
+            this.btnDelete.Tag = "";
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDelete.UseAccentColor = false;
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // materialButton2
+            // btnUpdate
             // 
-            this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(822, 544);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(77, 36);
-            this.materialButton2.TabIndex = 36;
-            this.materialButton2.Tag = "";
-            this.materialButton2.Text = "Update";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.HighEmphasis = true;
+            this.btnUpdate.Icon = null;
+            this.btnUpdate.Location = new System.Drawing.Point(822, 544);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Size = new System.Drawing.Size(77, 36);
+            this.btnUpdate.TabIndex = 36;
+            this.btnUpdate.Tag = "";
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUpdate.UseAccentColor = false;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreateClient
             // 
@@ -407,8 +408,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private MaterialSkin.Controls.MaterialButton btnSearchClient;
         private MaterialSkin.Controls.MaterialTextBox txtBoxClientSearch;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton btnDelete;
+        private MaterialSkin.Controls.MaterialButton btnUpdate;
         private MaterialSkin.Controls.MaterialButton btnCreateClient;
         private MaterialSkin.Controls.MaterialTextBox txtBoxDependents;
         private MaterialSkin.Controls.MaterialTextBox txtBoxNationalId;

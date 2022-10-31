@@ -17,8 +17,7 @@ namespace Group11_SEN381_Project.Presentation
     public partial class Client : Form
     {
         private Form currentChildForm;
-        //even handlers
-        public event EventHandler AddNewEvent;
+        DataHandler dataHandler1 = new DataHandler();
         public Client()
         {
             InitializeComponent();
@@ -71,6 +70,7 @@ namespace Group11_SEN381_Project.Presentation
             materialListView1.View = View.Details;
         }
 
+        // This method is used to open a child form inside a panel
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -88,27 +88,12 @@ namespace Group11_SEN381_Project.Presentation
             childForm.Show();
         }
 
-        private void AddociateAndRaiseViewEvents()
-        {
-            ClientDetailEdit_Create clientDetailEdit_Create = new ClientDetailEdit_Create();
-            // add new
-            btnCreateClient.Click += delegate
-            {
-                AddNewEvent?.Invoke(this, EventArgs.Empty);
-                OpenChildForm(clientDetailEdit_Create);
-                clientDetailEdit_Create.AddNewEvent += delegate
-                {
-                    clientTabSelected();
-                };
-                
-
-            };
-        }
-
 
         private void btnCreateClient_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ClientDetailEdit_Create());
+            dataHandler1.CreateClient(int.Parse(txtBoxId.Text),txtBoxFullName.Text, txtBoxAddress.Text, txtBoxPhoneNumber.Text, txtBoxEmail.Text, 
+                txtBoxDependents.Text, int.Parse(txtBoxNationalId.Text));
+            clientTabSelected();
         }
 
         private void btnSearchClient_Click(object sender, EventArgs e)
@@ -146,6 +131,13 @@ namespace Group11_SEN381_Project.Presentation
                 MessageBox.Show("Please enter a valid client id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.updateClient(int.Parse(txtBoxId.Text), txtBoxFullName.Text, txtBoxAddress.Text, txtBoxPhoneNumber.Text, txtBoxEmail.Text,
+                txtBoxDependents.Text, int.Parse(txtBoxNationalId.Text));
+            clientTabSelected();
         }
     }
 }

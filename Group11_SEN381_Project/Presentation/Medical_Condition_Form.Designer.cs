@@ -167,6 +167,7 @@
             this.btnUpdateMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdateMedicalCondition.UseAccentColor = false;
             this.btnUpdateMedicalCondition.UseVisualStyleBackColor = true;
+            this.btnUpdateMedicalCondition.Click += new System.EventHandler(this.btnUpdateMedicalCondition_Click);
             // 
             // btnCreateMedicalCondition
             // 
@@ -188,6 +189,7 @@
             this.btnCreateMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCreateMedicalCondition.UseAccentColor = false;
             this.btnCreateMedicalCondition.UseVisualStyleBackColor = true;
+            this.btnCreateMedicalCondition.Click += new System.EventHandler(this.btnCreateMedicalCondition_Click);
             // 
             // txtBoxConditionName
             // 

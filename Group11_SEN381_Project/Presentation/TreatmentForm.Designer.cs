@@ -100,6 +100,7 @@
             this.btnTreatmentSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnTreatmentSearch.UseAccentColor = false;
             this.btnTreatmentSearch.UseVisualStyleBackColor = true;
+            this.btnTreatmentSearch.Click += new System.EventHandler(this.btnTreatmentSearch_Click);
             // 
             // txtBoxTreatmentSearch
             // 
@@ -158,6 +159,7 @@
             this.btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUpdate.UseAccentColor = false;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
@@ -178,6 +180,7 @@
             this.btnCreate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCreate.UseAccentColor = false;
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // txtBoxTreatmentName
             // 

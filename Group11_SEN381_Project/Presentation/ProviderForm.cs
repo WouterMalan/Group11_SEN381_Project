@@ -14,6 +14,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class ProviderForm : Form
     {
+        DataHandler dataHandler1 = new DataHandler();
         public ProviderForm()
         {
             InitializeComponent();
@@ -103,19 +104,24 @@ namespace Group11_SEN381_Project.Presentation
             }
             else// if the search box is empty
             {
+                providerTabSelected();
                 //show error message
                 MessageBox.Show("Please enter a valid Provider ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //show all values still in listview
-                foreach (DataRow row in dataHandler.getProvider().Rows)
-                {
-                    ListViewItem item = new ListViewItem(row["id"].ToString());
-                    item.SubItems.Add(row["Name"].ToString());
-                    item.SubItems.Add(row["Location"].ToString());
-                    item.SubItems.Add(row["Rating"].ToString());
-                    ListViewProvider.Items.Add(item);
-                }
             }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.CreateProvider(int.Parse(txtBoxProviderId.Text),txtBoxProviderName.Text, txtBoxProviderLocation.Text, 
+                int.Parse(cmbProviderRating.SelectedIndex.ToString()));
+            providerTabSelected();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.UpdateProvider(int.Parse(txtBoxProviderId.Text), txtBoxProviderName.Text, txtBoxProviderLocation.Text,
+                int.Parse(cmbProviderRating.SelectedIndex.ToString()));
+            providerTabSelected();
         }
     }
 }

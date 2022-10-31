@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group11_SEN381_Project.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,23 +29,20 @@ namespace Group11_SEN381_Project.Presentation
 
         private void AddociateAndRaiseViewEvents()
         {
+            DataHandler dataHandler = new DataHandler();
             // add new
             btnSaveClient.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                CreateEditTabControl.TabPages.Remove(MedicalTabPage);
-                CreateEditTabControl.TabPages.Add(ClientEditCreate);
-                ClientEditCreate.Text = "Create Client";
+                //dataHandler.CreateClient(int.Parse(txtBoxId.Text),txtBoxFullName.Text, txtBoxAddress.Text, txtBoxPhoneNumber.Text, txtBoxEmail.Text, 
+                //    txtBoxDependents.Text, int.Parse(txtBoxNationalId.Text));
 
             };
         }
 
-        private void btnCreateClient_Click(object sender, EventArgs e)
+        private void btnSaveClient_Click(object sender, EventArgs e)
         {
-
+            //AddociateAndRaiseViewEvents();// add new event handler to the button
         }
-
-
-        
     }
 }

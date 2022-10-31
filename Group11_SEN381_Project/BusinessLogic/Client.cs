@@ -19,6 +19,8 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string dependants;
         private int natID;
 
+        
+
         public string FullName { get => fullName; set => fullName = value; }
         public string Address { get => address; set => address = value; }
         public int PhoneNum { get => phoneNum; set => phoneNum = value; }

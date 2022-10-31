@@ -51,52 +51,34 @@ namespace Group11_SEN381_Project.DataAccess
                 return dt;
             }
         }
-        //TODO: try to fix error
-        //public DataTable updateClient(int id, string name_surname, string address, string phone_number, string email,string dependents, int national_id)
-        //{
-        //    con.Open();
-        //    try
-        //    {
 
-        //        string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents+ "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
-        //        SqlCommand command = new SqlCommand(line, con);
-        //        command.ExecuteNonQuery();
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Data Failed to be Updated");
-        //        MessageBox.Show(ex.ToString());
-
-        //    }
-        //    finally
-        //    {
-        //        MessageBox.Show("Data was updated");
-
-        //    }
-        //    con.Close();
-        //}
-
-        //create a new client and insert it into the database
-        
-        public void createClient(Client client)
+        // update the client details
+        public void updateClient(int id, string name_surname, string address, string phone_number, string email, string dependents, int national_id)
         {
-            using(con)
-            using(var command = new SqlCommand())
+            con.Open();
+            try
             {
-                command.Connection = con;
-                command.CommandText = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES (@Name_Surname,@Address,@Phone_Number,@Email,@Dependents,@National_id)";
-                command.Parameters.AddWithValue("@Name_Surname", client.FullName);
-                command.Parameters.AddWithValue("@Address", client.Address);
-                command.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
-                command.Parameters.AddWithValue("@Email", client.Email);
-                command.Parameters.AddWithValue("@Dependents", client.Dependants);
-                command.Parameters.AddWithValue("@National_id", client.NatID);
-                con.Open();
+
+                string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents + "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
+                SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+                MessageBox.Show("Data was updated");
+
+            }
+            con.Close();
         }
+
+
 
         //search for a client by their id
         public DataTable searchClient(int id)
@@ -117,30 +99,32 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
 
+        // add a new client to the database
+        public void CreateClient(int id,string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        {
+            con.Open();
+            try
+            {
+                string line = "INSERT INTO Client (id,Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('"+ id+"','" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
+                SqlCommand command = new SqlCommand(line, con);// this will execute the command
+                command.ExecuteNonQuery();
+                con.Close();// this will close the connection
+            }
+            catch (Exception ex)// catch any errors
+            {
+                MessageBox.Show("Data Failed to be Inserted");// show message box
+                MessageBox.Show(ex.ToString());
 
-        //public void CreateClient(string name_surname, string address, string phone_number, string email, string dependents, int national_id)
-        //{
-        //    con.Open();
-        //    try
-        //    {
-        //        string line = "INSERT INTO Client (Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
-        //        SqlCommand command = new SqlCommand(line, con);// this will execute the command
-        //        command.ExecuteNonQuery();
-        //        con.Close();// this will close the connection
-        //    }
-        //    catch (Exception ex)// catch any errors
-        //    {
-        //        MessageBox.Show("Data Failed to be Inserted");// show message box
-        //        MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Data was Inserted");// show message box if data was inserted
 
-        //    }
-        //    finally
-        //    {
-        //        MessageBox.Show("Data was Inserted");// show message box if data was inserted
+            }
+            con.Close();
+        }
 
-        //    }
-        //    con.Close();
-        //}
+        //TODO: CREATE DELETE METHOD FOR CLIENT
 
         // get all the policy details
         public DataTable getPolicy()
@@ -156,13 +140,13 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // update the policy details
-        public void UpdatePolicy(int id, string desc, DateTime date_time, string type_of_policy, int fee, int expired)
+        public void UpdatePolicy(int id, string desc, string date_time, string type_of_policy, int fee, int expired)
         {
             con.Open();
             try
             {
 
-                string line = "Update Policy set  description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '" + expired.ToString() + "' where id= '" + id.ToString() + "'";
+                string line = "Update Policy set description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '" + expired.ToString() + "' where id= '" + id.ToString() + "'";
                 SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
@@ -182,13 +166,13 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // create a new policy and insert it into the database
-        public void CreatePolicy(string desc, DateTime date_time, string type_of_policy, int fee, int expired)
+        public void CreatePolicy(int id,string desc, string date_time, string type_of_policy,int fee, int expired)
         {
             con.Open();
             try
             {
 
-                string line = "INSERT INTO Policy (description,Date_Time,Type_of_Policy,Fee,expired) VALUES ('" + desc + "','" + date_time + "','" + type_of_policy + "','" + fee.ToString() + "','" + expired.ToString() + "')";
+                string line = "INSERT INTO Policy (id,description,Date_Time,Type_of_Policy,Fee,expired) VALUES ('"+ id+ "','" + desc + "','" + date_time + "','" + type_of_policy + "','" + fee.ToString() + "','" + expired.ToString() + "')";
                 SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
@@ -206,6 +190,8 @@ namespace Group11_SEN381_Project.DataAccess
             }
             con.Close();
         }
+
+        //TODO: CREATE DELETE METHOD FOR POLICY
 
         //search the policy by ID
         public DataTable searchPolicy(int id)
@@ -229,9 +215,6 @@ namespace Group11_SEN381_Project.DataAccess
         public DataTable getProvider()
         {
             {
-
-
-
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Providers", sqlcon());
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -248,7 +231,7 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
 
-                string line = "Update Providers set   Name='" + Name + "',Location= '" + Location + "', Rating='" + rating.ToString() + "' where id= '" + id.ToString() + "'";
+                string line = "Update Providers set Name='" + Name + "',Location= '" + Location + "', Rating='" + rating.ToString() + "' where id= '" + id.ToString() + "'";
                 SqlCommand command = new SqlCommand(line, sqlcon());
                 command.ExecuteNonQuery();
                 con.Close();
@@ -268,13 +251,13 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // create a new medical provider and insert it into the database
-        public void CreateProvider(string Name, string Location, int rating)
+        public void CreateProvider(int id,string Name, string Location, int rating)
         {
             con.Open();
             try
             {
 
-                string line = "INSERT INTO Providers (Name,Location,Rating) VALUES ('" + Name + "','" + Location + "','" + rating.ToString() + "')";
+                string line = "INSERT INTO Providers (id,Name,Location,Rating) VALUES ('"+ id +"','" + Name + "','" + Location + "','" + rating.ToString() + "')";
                 SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
@@ -292,6 +275,8 @@ namespace Group11_SEN381_Project.DataAccess
             }
             con.Close();
         }
+
+        //TODO: CREATE DELETE METHOD FOR PROVIDER
 
         public DataTable searchProvider(int id)
         {
@@ -334,7 +319,7 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
 
-                string line = "Update Medical_Conditions set   Condition_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
+                string line = "Update Medical_Conditions set Condition_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
                 SqlCommand command = new SqlCommand(line, sqlcon());
                 command.ExecuteNonQuery();
                 con.Close();
@@ -353,14 +338,14 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
-        // create a new medical condition and insert it into the database
-        public void CreateMedicalConditions(string Name, string description)
+        //create a new medical condition and insert it into the database
+        public void CreateMedicalConditions(int id,string Name, string description)
         {
             con.Open();
             try
             {
 
-                string line = "INSERT INTO Medical_Conditions (Condition_Name,Description) VALUES ('" + Name + "','" + description + "')";
+                string line = "INSERT INTO Medical_Conditions (id,Condition_Name,Description) VALUES ('" +id+"','"+ Name + "','" + description + "')";
                 SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
@@ -378,6 +363,8 @@ namespace Group11_SEN381_Project.DataAccess
             }
             con.Close();
         }
+
+        //TODO: CREATE DELETE METHOD FOR MEDICAL CONDITION
 
         //search medical condition by ID
         public DataTable searchMedicalCondition(int id)
@@ -401,10 +388,7 @@ namespace Group11_SEN381_Project.DataAccess
         // get all the treatment details
         public DataTable getTreatment()
         {
-            {
                 {
-
-
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Treatments", sqlcon());
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -413,7 +397,6 @@ namespace Group11_SEN381_Project.DataAccess
 
 
                 }
-            }
         }
 
         // update the treatment details
@@ -423,7 +406,7 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
 
-                string line = "Update Treatments set   Treatment_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
+                string line = "Update Treatments set Treatment_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
                 SqlCommand command = new SqlCommand(line, sqlcon());
                 command.ExecuteNonQuery();
                 con.Close();
@@ -443,13 +426,13 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // create a new treatment and insert it into the database
-        public void CreateTreatments(string Name, string description)
+        public void CreateTreatments(int id,string Name, string description)
         {
             con.Open();
             try
             {
 
-                string line = "INSERT INTO Treatments (Treatment_Name,Description) VALUES ('" + Name + "','" + description + "')";
+                string line = "INSERT INTO Treatments (id,Treatment_Name,Description) VALUES ('" +id+ "','"+Name + "','" + description + "')";
                 SqlCommand command = new SqlCommand(line, con);
                 command.ExecuteNonQuery();
                 con.Close();
@@ -468,11 +451,21 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        //search for treatment by ID
+        public DataTable searchTreatment(int id)
+        {
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Treatments WHERE id = '" + id.ToString() + "'", sqlcon());
+            dataAdapter.Fill(dataTable);
+            return dataTable;
+        }
+
+        //TODO: CREATE DELETE METHOD FOR TREATMENTS
+
         //get all the report details
         public DataTable getReport()
         {
-            {
-                {
+            
 
 
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Report", sqlcon());
@@ -480,10 +473,6 @@ namespace Group11_SEN381_Project.DataAccess
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     return dt;
-
-
-                }
-            }
         }
 
         //TODO: update the report details

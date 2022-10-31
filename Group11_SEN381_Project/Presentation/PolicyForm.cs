@@ -14,6 +14,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class PolicyForm : Form
     {
+        DataHandler dataHandler1 = new DataHandler();
         public PolicyForm()
         {
             InitializeComponent();
@@ -100,47 +101,23 @@ namespace Group11_SEN381_Project.Presentation
             }
             else// if the search box is empty
             {
-                //show all the medical conditions
-                foreach (DataRow row in dataHandler.getMedicalCondition().Rows)
-                {
-                    ListViewItem item = new ListViewItem(row["id"].ToString());
-                    item.SubItems.Add(row["description"].ToString());
-                    item.SubItems.Add(row["Date_Time"].ToString());
-                    item.SubItems.Add(row["Type_of_Policy"].ToString());
-                    item.SubItems.Add(row["Fee"].ToString());
-                    item.SubItems.Add(row["expired"].ToString());
-                    materialListView3.Items.Add(item);
-                }
-                //display the selected listview item in the textboxes
-                materialListView3.SelectedIndexChanged += (s, args) =>
-                {
-                    if (materialListView3.SelectedItems.Count > 0)
-                    {
-                        ListViewItem item = materialListView3.SelectedItems[0];
-                        txtBoxPolicyId.Text = item.SubItems[0].Text;
-                        txtBoxPolicyDesc.Text = item.SubItems[1].Text;
-                        txtBoxPolicyDate.Text = item.SubItems[2].Text;
-                        txtBoxPolicyType.Text = item.SubItems[3].Text;
-                        txtBoxPolicyFee.Text = item.SubItems[4].Text;
-                        //display value from listview in combo box
-                        if (item.SubItems[5].Text == "True")
-                        {
-                            cmbExpired.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            cmbExpired.SelectedIndex = 1;
-                        }
-
-                    }
-                };
-                materialListView3.GridLines = false;
-                materialListView3.FullRowSelect = true;
-                materialListView3.MultiSelect = false;
-                materialListView3.View = View.Details;
-                //show error message
+                policyTabSelected();
                 MessageBox.Show("Please enter a valid Policy id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.CreatePolicy(int.Parse(txtBoxPolicyId.Text), txtBoxPolicyDesc.Text, txtBoxPolicyDate.Text, txtBoxPolicyType.Text, int.Parse(txtBoxPolicyFee.Text),
+                int.Parse(cmbExpired.SelectedIndex.ToString()));
+            policyTabSelected();// refresh the listview
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            dataHandler1.UpdatePolicy(int.Parse(txtBoxPolicyId.Text), txtBoxPolicyDesc.Text, txtBoxPolicyDate.Text, txtBoxPolicyType.Text, 
+                int.Parse(txtBoxPolicyFee.Text), int.Parse(cmbExpired.SelectedIndex.ToString()));
+            policyTabSelected();//refresh the listview
         }
     }
 }
