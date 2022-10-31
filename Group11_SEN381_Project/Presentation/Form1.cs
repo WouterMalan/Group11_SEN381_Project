@@ -174,6 +174,7 @@ namespace Group11_SEN381_Project
         {
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Treatment";
+            OpenChildForm(new TreatmentForm());
 
 
         }

@@ -37,7 +37,7 @@
             this.materialButton15 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton16 = new MaterialSkin.Controls.MaterialButton();
             this.cmbProviderRating = new MaterialSkin.Controls.MaterialComboBox();
-            this.btnSearch = new MaterialSkin.Controls.MaterialButton();
+            this.btnProviderSearch = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxProviderSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderLocation = new MaterialSkin.Controls.MaterialTextBox();
@@ -185,27 +185,27 @@
             this.cmbProviderRating.StartIndex = 0;
             this.cmbProviderRating.TabIndex = 43;
             // 
-            // btnSearch
+            // btnProviderSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSearch.Depth = 0;
-            this.btnSearch.HighEmphasis = true;
-            this.btnSearch.Icon = null;
-            this.btnSearch.Location = new System.Drawing.Point(332, 30);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSearch.Size = new System.Drawing.Size(78, 36);
-            this.btnSearch.TabIndex = 42;
-            this.btnSearch.Tag = "";
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSearch.UseAccentColor = false;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnProviderSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProviderSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnProviderSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnProviderSearch.Depth = 0;
+            this.btnProviderSearch.HighEmphasis = true;
+            this.btnProviderSearch.Icon = null;
+            this.btnProviderSearch.Location = new System.Drawing.Point(332, 30);
+            this.btnProviderSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnProviderSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnProviderSearch.Name = "btnProviderSearch";
+            this.btnProviderSearch.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnProviderSearch.Size = new System.Drawing.Size(78, 36);
+            this.btnProviderSearch.TabIndex = 42;
+            this.btnProviderSearch.Tag = "";
+            this.btnProviderSearch.Text = "Search";
+            this.btnProviderSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnProviderSearch.UseAccentColor = false;
+            this.btnProviderSearch.UseVisualStyleBackColor = true;
+            this.btnProviderSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtBoxProviderSearch
             // 
@@ -294,7 +294,7 @@
             this.Controls.Add(this.materialButton15);
             this.Controls.Add(this.materialButton16);
             this.Controls.Add(this.cmbProviderRating);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnProviderSearch);
             this.Controls.Add(this.txtBoxProviderSearch);
             this.Controls.Add(this.txtBoxProviderName);
             this.Controls.Add(this.txtBoxProviderLocation);
@@ -318,7 +318,7 @@
         private MaterialSkin.Controls.MaterialButton materialButton15;
         private MaterialSkin.Controls.MaterialButton materialButton16;
         private MaterialSkin.Controls.MaterialComboBox cmbProviderRating;
-        private MaterialSkin.Controls.MaterialButton btnSearch;
+        private MaterialSkin.Controls.MaterialButton btnProviderSearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderSearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderLocation;

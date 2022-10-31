@@ -207,6 +207,24 @@ namespace Group11_SEN381_Project.DataAccess
             con.Close();
         }
 
+        //search the policy by ID
+        public DataTable searchPolicy(int id)
+        {
+                DataTable dt = new DataTable();
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Policy WHERE id = '" + id.ToString() + "'", con);
+                    sda.Fill(dt);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return dt;
+        }
+
         // get all the medical provider details
         public DataTable getProvider()
         {
@@ -359,6 +377,25 @@ namespace Group11_SEN381_Project.DataAccess
 
             }
             con.Close();
+        }
+
+        //search medical condition by ID
+        public DataTable searchMedicalCondition(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Medical_Conditions WHERE id = '" + id.ToString() + "'", con);
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            return dt;
         }
 
         // get all the treatment details

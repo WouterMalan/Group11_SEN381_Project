@@ -59,7 +59,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(92)))), ((int)(((byte)(44)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.panelMenu.Controls.Add(this.btnTreatment);
             this.panelMenu.Controls.Add(this.bntProvider);
             this.panelMenu.Controls.Add(this.btnPolicy);

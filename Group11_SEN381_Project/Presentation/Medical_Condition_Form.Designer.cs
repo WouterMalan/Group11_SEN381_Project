@@ -32,11 +32,11 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox9 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.btnMedicalConditionSearch = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxMedicalConditionSearch = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnDeleteMedicalCondition = new MaterialSkin.Controls.MaterialButton();
+            this.btnUpdateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
+            this.btnCreateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionDesc = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
@@ -84,109 +84,110 @@
             this.columnHeader10.Text = "Description";
             this.columnHeader10.Width = 300;
             // 
-            // materialButton5
+            // btnMedicalConditionSearch
             // 
-            this.materialButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton5.Depth = 0;
-            this.materialButton5.HighEmphasis = true;
-            this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(332, 26);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton5.Name = "materialButton5";
-            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton5.Size = new System.Drawing.Size(78, 36);
-            this.materialButton5.TabIndex = 35;
-            this.materialButton5.Tag = "";
-            this.materialButton5.Text = "Search";
-            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton5.UseAccentColor = false;
-            this.materialButton5.UseVisualStyleBackColor = true;
+            this.btnMedicalConditionSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMedicalConditionSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnMedicalConditionSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnMedicalConditionSearch.Depth = 0;
+            this.btnMedicalConditionSearch.HighEmphasis = true;
+            this.btnMedicalConditionSearch.Icon = null;
+            this.btnMedicalConditionSearch.Location = new System.Drawing.Point(332, 26);
+            this.btnMedicalConditionSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnMedicalConditionSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnMedicalConditionSearch.Name = "btnMedicalConditionSearch";
+            this.btnMedicalConditionSearch.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnMedicalConditionSearch.Size = new System.Drawing.Size(78, 36);
+            this.btnMedicalConditionSearch.TabIndex = 35;
+            this.btnMedicalConditionSearch.Tag = "";
+            this.btnMedicalConditionSearch.Text = "Search";
+            this.btnMedicalConditionSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnMedicalConditionSearch.UseAccentColor = false;
+            this.btnMedicalConditionSearch.UseVisualStyleBackColor = true;
+            this.btnMedicalConditionSearch.Click += new System.EventHandler(this.btnMedicalConditionSearch_Click);
             // 
-            // materialTextBox9
+            // txtBoxMedicalConditionSearch
             // 
-            this.materialTextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxMedicalConditionSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox9.AnimateReadOnly = false;
-            this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox9.Depth = 0;
-            this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox9.Hint = "Search ID";
-            this.materialTextBox9.LeadingIcon = null;
-            this.materialTextBox9.Location = new System.Drawing.Point(12, 12);
-            this.materialTextBox9.MaxLength = 50;
-            this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox9.Multiline = false;
-            this.materialTextBox9.Name = "materialTextBox9";
-            this.materialTextBox9.Size = new System.Drawing.Size(292, 50);
-            this.materialTextBox9.TabIndex = 34;
-            this.materialTextBox9.Text = "";
-            this.materialTextBox9.TrailingIcon = null;
+            this.txtBoxMedicalConditionSearch.AnimateReadOnly = false;
+            this.txtBoxMedicalConditionSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxMedicalConditionSearch.Depth = 0;
+            this.txtBoxMedicalConditionSearch.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxMedicalConditionSearch.Hint = "Search ID";
+            this.txtBoxMedicalConditionSearch.LeadingIcon = null;
+            this.txtBoxMedicalConditionSearch.Location = new System.Drawing.Point(12, 12);
+            this.txtBoxMedicalConditionSearch.MaxLength = 50;
+            this.txtBoxMedicalConditionSearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxMedicalConditionSearch.Multiline = false;
+            this.txtBoxMedicalConditionSearch.Name = "txtBoxMedicalConditionSearch";
+            this.txtBoxMedicalConditionSearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxMedicalConditionSearch.TabIndex = 34;
+            this.txtBoxMedicalConditionSearch.Text = "";
+            this.txtBoxMedicalConditionSearch.TrailingIcon = null;
             // 
-            // materialButton6
+            // btnDeleteMedicalCondition
             // 
-            this.materialButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(926, 388);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(73, 36);
-            this.materialButton6.TabIndex = 33;
-            this.materialButton6.Tag = "";
-            this.materialButton6.Text = "Delete";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.btnDeleteMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDeleteMedicalCondition.Depth = 0;
+            this.btnDeleteMedicalCondition.HighEmphasis = true;
+            this.btnDeleteMedicalCondition.Icon = null;
+            this.btnDeleteMedicalCondition.Location = new System.Drawing.Point(926, 388);
+            this.btnDeleteMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDeleteMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDeleteMedicalCondition.Name = "btnDeleteMedicalCondition";
+            this.btnDeleteMedicalCondition.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDeleteMedicalCondition.Size = new System.Drawing.Size(73, 36);
+            this.btnDeleteMedicalCondition.TabIndex = 33;
+            this.btnDeleteMedicalCondition.Tag = "";
+            this.btnDeleteMedicalCondition.Text = "Delete";
+            this.btnDeleteMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDeleteMedicalCondition.UseAccentColor = false;
+            this.btnDeleteMedicalCondition.UseVisualStyleBackColor = true;
             // 
-            // materialButton7
+            // btnUpdateMedicalCondition
             // 
-            this.materialButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton7.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton7.Depth = 0;
-            this.materialButton7.HighEmphasis = true;
-            this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(819, 388);
-            this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton7.Name = "materialButton7";
-            this.materialButton7.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton7.Size = new System.Drawing.Size(77, 36);
-            this.materialButton7.TabIndex = 32;
-            this.materialButton7.Tag = "";
-            this.materialButton7.Text = "Update";
-            this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton7.UseAccentColor = false;
-            this.materialButton7.UseVisualStyleBackColor = true;
+            this.btnUpdateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdateMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUpdateMedicalCondition.Depth = 0;
+            this.btnUpdateMedicalCondition.HighEmphasis = true;
+            this.btnUpdateMedicalCondition.Icon = null;
+            this.btnUpdateMedicalCondition.Location = new System.Drawing.Point(819, 388);
+            this.btnUpdateMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpdateMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdateMedicalCondition.Name = "btnUpdateMedicalCondition";
+            this.btnUpdateMedicalCondition.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUpdateMedicalCondition.Size = new System.Drawing.Size(77, 36);
+            this.btnUpdateMedicalCondition.TabIndex = 32;
+            this.btnUpdateMedicalCondition.Tag = "";
+            this.btnUpdateMedicalCondition.Text = "Update";
+            this.btnUpdateMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUpdateMedicalCondition.UseAccentColor = false;
+            this.btnUpdateMedicalCondition.UseVisualStyleBackColor = true;
             // 
-            // materialButton8
+            // btnCreateMedicalCondition
             // 
-            this.materialButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(707, 388);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(76, 36);
-            this.materialButton8.TabIndex = 28;
-            this.materialButton8.Tag = "";
-            this.materialButton8.Text = "Create";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.btnCreateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreateMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnCreateMedicalCondition.Depth = 0;
+            this.btnCreateMedicalCondition.HighEmphasis = true;
+            this.btnCreateMedicalCondition.Icon = null;
+            this.btnCreateMedicalCondition.Location = new System.Drawing.Point(707, 388);
+            this.btnCreateMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCreateMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCreateMedicalCondition.Name = "btnCreateMedicalCondition";
+            this.btnCreateMedicalCondition.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnCreateMedicalCondition.Size = new System.Drawing.Size(76, 36);
+            this.btnCreateMedicalCondition.TabIndex = 28;
+            this.btnCreateMedicalCondition.Tag = "";
+            this.btnCreateMedicalCondition.Text = "Create";
+            this.btnCreateMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnCreateMedicalCondition.UseAccentColor = false;
+            this.btnCreateMedicalCondition.UseVisualStyleBackColor = true;
             // 
             // txtBoxConditionName
             // 
@@ -251,11 +252,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 574);
             this.Controls.Add(this.materialListView2);
-            this.Controls.Add(this.materialButton5);
-            this.Controls.Add(this.materialTextBox9);
-            this.Controls.Add(this.materialButton6);
-            this.Controls.Add(this.materialButton7);
-            this.Controls.Add(this.materialButton8);
+            this.Controls.Add(this.btnMedicalConditionSearch);
+            this.Controls.Add(this.txtBoxMedicalConditionSearch);
+            this.Controls.Add(this.btnDeleteMedicalCondition);
+            this.Controls.Add(this.btnUpdateMedicalCondition);
+            this.Controls.Add(this.btnCreateMedicalCondition);
             this.Controls.Add(this.txtBoxConditionName);
             this.Controls.Add(this.txtBoxConditionDesc);
             this.Controls.Add(this.txtBoxConditionId);
@@ -273,11 +274,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
-        private MaterialSkin.Controls.MaterialButton materialButton7;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton btnMedicalConditionSearch;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxMedicalConditionSearch;
+        private MaterialSkin.Controls.MaterialButton btnDeleteMedicalCondition;
+        private MaterialSkin.Controls.MaterialButton btnUpdateMedicalCondition;
+        private MaterialSkin.Controls.MaterialButton btnCreateMedicalCondition;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionDesc;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;

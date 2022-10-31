@@ -39,8 +39,8 @@
             this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
             this.cmbExpired = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox10 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnPolicySearch = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxPolicySearch = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyType = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyFee = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyDesc = new MaterialSkin.Controls.MaterialTextBox();
@@ -198,46 +198,47 @@
             this.cmbExpired.StartIndex = 0;
             this.cmbExpired.TabIndex = 36;
             // 
-            // materialButton9
+            // btnPolicySearch
             // 
-            this.materialButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton9.Depth = 0;
-            this.materialButton9.HighEmphasis = true;
-            this.materialButton9.Icon = null;
-            this.materialButton9.Location = new System.Drawing.Point(335, 22);
-            this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton9.Name = "materialButton9";
-            this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton9.Size = new System.Drawing.Size(78, 36);
-            this.materialButton9.TabIndex = 35;
-            this.materialButton9.Tag = "";
-            this.materialButton9.Text = "Search";
-            this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton9.UseAccentColor = false;
-            this.materialButton9.UseVisualStyleBackColor = true;
+            this.btnPolicySearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPolicySearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPolicySearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnPolicySearch.Depth = 0;
+            this.btnPolicySearch.HighEmphasis = true;
+            this.btnPolicySearch.Icon = null;
+            this.btnPolicySearch.Location = new System.Drawing.Point(335, 22);
+            this.btnPolicySearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnPolicySearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPolicySearch.Name = "btnPolicySearch";
+            this.btnPolicySearch.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnPolicySearch.Size = new System.Drawing.Size(78, 36);
+            this.btnPolicySearch.TabIndex = 35;
+            this.btnPolicySearch.Tag = "";
+            this.btnPolicySearch.Text = "Search";
+            this.btnPolicySearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnPolicySearch.UseAccentColor = false;
+            this.btnPolicySearch.UseVisualStyleBackColor = true;
+            this.btnPolicySearch.Click += new System.EventHandler(this.btnPolicySearch_Click);
             // 
-            // materialTextBox10
+            // txtBoxPolicySearch
             // 
-            this.materialTextBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxPolicySearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox10.AnimateReadOnly = false;
-            this.materialTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox10.Depth = 0;
-            this.materialTextBox10.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox10.Hint = "Search ID";
-            this.materialTextBox10.LeadingIcon = null;
-            this.materialTextBox10.Location = new System.Drawing.Point(15, 8);
-            this.materialTextBox10.MaxLength = 50;
-            this.materialTextBox10.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox10.Multiline = false;
-            this.materialTextBox10.Name = "materialTextBox10";
-            this.materialTextBox10.Size = new System.Drawing.Size(292, 50);
-            this.materialTextBox10.TabIndex = 34;
-            this.materialTextBox10.Text = "";
-            this.materialTextBox10.TrailingIcon = null;
+            this.txtBoxPolicySearch.AnimateReadOnly = false;
+            this.txtBoxPolicySearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPolicySearch.Depth = 0;
+            this.txtBoxPolicySearch.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxPolicySearch.Hint = "Search ID";
+            this.txtBoxPolicySearch.LeadingIcon = null;
+            this.txtBoxPolicySearch.Location = new System.Drawing.Point(15, 8);
+            this.txtBoxPolicySearch.MaxLength = 50;
+            this.txtBoxPolicySearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxPolicySearch.Multiline = false;
+            this.txtBoxPolicySearch.Name = "txtBoxPolicySearch";
+            this.txtBoxPolicySearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPolicySearch.TabIndex = 34;
+            this.txtBoxPolicySearch.Text = "";
+            this.txtBoxPolicySearch.TrailingIcon = null;
             // 
             // txtBoxPolicyType
             // 
@@ -344,8 +345,8 @@
             this.Controls.Add(this.materialButton12);
             this.Controls.Add(this.materialButton13);
             this.Controls.Add(this.cmbExpired);
-            this.Controls.Add(this.materialButton9);
-            this.Controls.Add(this.materialTextBox10);
+            this.Controls.Add(this.btnPolicySearch);
+            this.Controls.Add(this.txtBoxPolicySearch);
             this.Controls.Add(this.txtBoxPolicyType);
             this.Controls.Add(this.txtBoxPolicyFee);
             this.Controls.Add(this.txtBoxPolicyDesc);
@@ -372,8 +373,8 @@
         private MaterialSkin.Controls.MaterialButton materialButton12;
         private MaterialSkin.Controls.MaterialButton materialButton13;
         private MaterialSkin.Controls.MaterialComboBox cmbExpired;
-        private MaterialSkin.Controls.MaterialButton materialButton9;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox10;
+        private MaterialSkin.Controls.MaterialButton btnPolicySearch;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxPolicySearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyType;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyFee;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyDesc;

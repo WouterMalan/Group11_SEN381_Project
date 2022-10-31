@@ -30,7 +30,6 @@
         {
             this.CreateEditTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.ClientEditCreate = new System.Windows.Forms.TabPage();
-            this.MedicalTabPage = new System.Windows.Forms.TabPage();
             this.btnCancel = new MaterialSkin.Controls.MaterialButton();
             this.btnSaveClient = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxDependents = new MaterialSkin.Controls.MaterialTextBox();
@@ -40,8 +39,15 @@
             this.txtBoxFullName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxAddress = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxId = new MaterialSkin.Controls.MaterialTextBox();
+            this.MedicalTabPage = new System.Windows.Forms.TabPage();
+            this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxConditionDesc = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.CreateEditTabControl.SuspendLayout();
             this.ClientEditCreate.SuspendLayout();
+            this.MedicalTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // CreateEditTabControl
@@ -55,7 +61,7 @@
             this.CreateEditTabControl.Multiline = true;
             this.CreateEditTabControl.Name = "CreateEditTabControl";
             this.CreateEditTabControl.SelectedIndex = 0;
-            this.CreateEditTabControl.Size = new System.Drawing.Size(677, 605);
+            this.CreateEditTabControl.Size = new System.Drawing.Size(675, 605);
             this.CreateEditTabControl.TabIndex = 43;
             // 
             // ClientEditCreate
@@ -72,20 +78,10 @@
             this.ClientEditCreate.Location = new System.Drawing.Point(4, 22);
             this.ClientEditCreate.Name = "ClientEditCreate";
             this.ClientEditCreate.Padding = new System.Windows.Forms.Padding(3);
-            this.ClientEditCreate.Size = new System.Drawing.Size(669, 579);
+            this.ClientEditCreate.Size = new System.Drawing.Size(667, 579);
             this.ClientEditCreate.TabIndex = 0;
             this.ClientEditCreate.Text = "Client";
             this.ClientEditCreate.UseVisualStyleBackColor = true;
-            // 
-            // MedicalTabPage
-            // 
-            this.MedicalTabPage.Location = new System.Drawing.Point(4, 22);
-            this.MedicalTabPage.Name = "MedicalTabPage";
-            this.MedicalTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MedicalTabPage.Size = new System.Drawing.Size(669, 579);
-            this.MedicalTabPage.TabIndex = 1;
-            this.MedicalTabPage.Text = "Medical";
-            this.MedicalTabPage.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -149,7 +145,7 @@
             this.txtBoxDependents.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxDependents.Multiline = false;
             this.txtBoxDependents.Name = "txtBoxDependents";
-            this.txtBoxDependents.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxDependents.Size = new System.Drawing.Size(290, 50);
             this.txtBoxDependents.TabIndex = 50;
             this.txtBoxDependents.Text = "";
             this.txtBoxDependents.TrailingIcon = null;
@@ -165,12 +161,12 @@
             this.txtBoxNationalId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxNationalId.Hint = "National ID";
             this.txtBoxNationalId.LeadingIcon = null;
-            this.txtBoxNationalId.Location = new System.Drawing.Point(316, 388);
+            this.txtBoxNationalId.Location = new System.Drawing.Point(330, 388);
             this.txtBoxNationalId.MaxLength = 50;
             this.txtBoxNationalId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxNationalId.Multiline = false;
             this.txtBoxNationalId.Name = "txtBoxNationalId";
-            this.txtBoxNationalId.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxNationalId.Size = new System.Drawing.Size(290, 50);
             this.txtBoxNationalId.TabIndex = 49;
             this.txtBoxNationalId.Text = "";
             this.txtBoxNationalId.TrailingIcon = null;
@@ -191,7 +187,7 @@
             this.txtBoxPhoneNumber.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPhoneNumber.Multiline = false;
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
-            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(290, 50);
             this.txtBoxPhoneNumber.TabIndex = 48;
             this.txtBoxPhoneNumber.Text = "";
             this.txtBoxPhoneNumber.TrailingIcon = null;
@@ -207,12 +203,12 @@
             this.txtBoxEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxEmail.Hint = "Email";
             this.txtBoxEmail.LeadingIcon = null;
-            this.txtBoxEmail.Location = new System.Drawing.Point(316, 304);
+            this.txtBoxEmail.Location = new System.Drawing.Point(330, 304);
             this.txtBoxEmail.MaxLength = 50;
             this.txtBoxEmail.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxEmail.Multiline = false;
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxEmail.Size = new System.Drawing.Size(290, 50);
             this.txtBoxEmail.TabIndex = 47;
             this.txtBoxEmail.Text = "";
             this.txtBoxEmail.TrailingIcon = null;
@@ -233,7 +229,7 @@
             this.txtBoxFullName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxFullName.Multiline = false;
             this.txtBoxFullName.Name = "txtBoxFullName";
-            this.txtBoxFullName.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxFullName.Size = new System.Drawing.Size(290, 50);
             this.txtBoxFullName.TabIndex = 46;
             this.txtBoxFullName.Text = "";
             this.txtBoxFullName.TrailingIcon = null;
@@ -254,7 +250,7 @@
             this.txtBoxAddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxAddress.Multiline = false;
             this.txtBoxAddress.Name = "txtBoxAddress";
-            this.txtBoxAddress.Size = new System.Drawing.Size(600, 50);
+            this.txtBoxAddress.Size = new System.Drawing.Size(612, 50);
             this.txtBoxAddress.TabIndex = 45;
             this.txtBoxAddress.Text = "";
             this.txtBoxAddress.TrailingIcon = null;
@@ -275,16 +271,133 @@
             this.txtBoxId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxId.Multiline = false;
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxId.Size = new System.Drawing.Size(290, 50);
             this.txtBoxId.TabIndex = 44;
             this.txtBoxId.Text = "";
             this.txtBoxId.TrailingIcon = null;
+            // 
+            // MedicalTabPage
+            // 
+            this.MedicalTabPage.Controls.Add(this.materialButton1);
+            this.MedicalTabPage.Controls.Add(this.materialButton2);
+            this.MedicalTabPage.Controls.Add(this.txtBoxConditionName);
+            this.MedicalTabPage.Controls.Add(this.txtBoxConditionDesc);
+            this.MedicalTabPage.Controls.Add(this.txtBoxConditionId);
+            this.MedicalTabPage.Location = new System.Drawing.Point(4, 22);
+            this.MedicalTabPage.Name = "MedicalTabPage";
+            this.MedicalTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.MedicalTabPage.Size = new System.Drawing.Size(667, 579);
+            this.MedicalTabPage.TabIndex = 1;
+            this.MedicalTabPage.Text = "Medical";
+            this.MedicalTabPage.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxConditionName
+            // 
+            this.txtBoxConditionName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxConditionName.AnimateReadOnly = false;
+            this.txtBoxConditionName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxConditionName.Depth = 0;
+            this.txtBoxConditionName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxConditionName.Hint = "Condition Name";
+            this.txtBoxConditionName.LeadingIcon = null;
+            this.txtBoxConditionName.Location = new System.Drawing.Point(20, 164);
+            this.txtBoxConditionName.MaxLength = 50;
+            this.txtBoxConditionName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxConditionName.Multiline = false;
+            this.txtBoxConditionName.Name = "txtBoxConditionName";
+            this.txtBoxConditionName.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxConditionName.TabIndex = 37;
+            this.txtBoxConditionName.Text = "";
+            this.txtBoxConditionName.TrailingIcon = null;
+            // 
+            // txtBoxConditionDesc
+            // 
+            this.txtBoxConditionDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxConditionDesc.AnimateReadOnly = false;
+            this.txtBoxConditionDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxConditionDesc.Depth = 0;
+            this.txtBoxConditionDesc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxConditionDesc.Hint = "Description";
+            this.txtBoxConditionDesc.LeadingIcon = null;
+            this.txtBoxConditionDesc.Location = new System.Drawing.Point(20, 245);
+            this.txtBoxConditionDesc.MaxLength = 50;
+            this.txtBoxConditionDesc.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxConditionDesc.Multiline = false;
+            this.txtBoxConditionDesc.Name = "txtBoxConditionDesc";
+            this.txtBoxConditionDesc.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxConditionDesc.TabIndex = 36;
+            this.txtBoxConditionDesc.Text = "";
+            this.txtBoxConditionDesc.TrailingIcon = null;
+            // 
+            // txtBoxConditionId
+            // 
+            this.txtBoxConditionId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxConditionId.AnimateReadOnly = false;
+            this.txtBoxConditionId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxConditionId.Depth = 0;
+            this.txtBoxConditionId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxConditionId.Hint = "ID";
+            this.txtBoxConditionId.LeadingIcon = null;
+            this.txtBoxConditionId.Location = new System.Drawing.Point(20, 83);
+            this.txtBoxConditionId.MaxLength = 50;
+            this.txtBoxConditionId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxConditionId.Multiline = false;
+            this.txtBoxConditionId.Name = "txtBoxConditionId";
+            this.txtBoxConditionId.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxConditionId.TabIndex = 35;
+            this.txtBoxConditionId.Text = "";
+            this.txtBoxConditionId.TrailingIcon = null;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(124, 357);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(77, 36);
+            this.materialButton1.TabIndex = 53;
+            this.materialButton1.Tag = "";
+            this.materialButton1.Text = "Cancel";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.BackColor = System.Drawing.Color.LimeGreen;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(26, 357);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(64, 36);
+            this.materialButton2.TabIndex = 52;
+            this.materialButton2.Tag = "";
+            this.materialButton2.Text = "Save";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = false;
             // 
             // ClientDetailEdit_Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 605);
+            this.ClientSize = new System.Drawing.Size(675, 605);
             this.Controls.Add(this.CreateEditTabControl);
             this.Name = "ClientDetailEdit_Create";
             this.Text = "ClientDetailEdit_Create";
@@ -292,6 +405,8 @@
             this.CreateEditTabControl.ResumeLayout(false);
             this.ClientEditCreate.ResumeLayout(false);
             this.ClientEditCreate.PerformLayout();
+            this.MedicalTabPage.ResumeLayout(false);
+            this.MedicalTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +425,10 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxAddress;
         private MaterialSkin.Controls.MaterialTextBox txtBoxId;
         private System.Windows.Forms.TabPage MedicalTabPage;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionDesc;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
     }
 }
