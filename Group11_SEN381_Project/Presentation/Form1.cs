@@ -136,6 +136,7 @@ namespace Group11_SEN381_Project
             ActivateButton(sender, RGBColors.color1);
             lblTitleChildForm.Text = "Client Centre";
             Open_DropDownMenu(rjDropdownMenu1, sender);
+            OpenChildForm(new CallCentreForm());
         }
 
         private void btnClient_Click(object sender, EventArgs e)

@@ -44,6 +44,9 @@
             // 
             // materialListView5
             // 
+            this.materialListView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView5.AutoSizeTable = false;
             this.materialListView5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialListView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -83,6 +86,7 @@
             // 
             // btnTreatmentSearch
             // 
+            this.btnTreatmentSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTreatmentSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnTreatmentSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnTreatmentSearch.Depth = 0;
@@ -104,6 +108,8 @@
             // 
             // txtBoxTreatmentSearch
             // 
+            this.txtBoxTreatmentSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxTreatmentSearch.AnimateReadOnly = false;
             this.txtBoxTreatmentSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTreatmentSearch.Depth = 0;
@@ -122,6 +128,8 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDelete.Depth = 0;
@@ -142,6 +150,8 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnUpdate.Depth = 0;
@@ -163,6 +173,8 @@
             // 
             // btnCreate
             // 
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCreate.Depth = 0;
@@ -184,6 +196,7 @@
             // 
             // txtBoxTreatmentName
             // 
+            this.txtBoxTreatmentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxTreatmentName.AnimateReadOnly = false;
             this.txtBoxTreatmentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTreatmentName.Depth = 0;
@@ -202,6 +215,7 @@
             // 
             // txtBoxTreatmentDesc
             // 
+            this.txtBoxTreatmentDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxTreatmentDesc.AnimateReadOnly = false;
             this.txtBoxTreatmentDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTreatmentDesc.Depth = 0;
@@ -220,6 +234,7 @@
             // 
             // txtBoxTreatmentId
             // 
+            this.txtBoxTreatmentId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxTreatmentId.AnimateReadOnly = false;
             this.txtBoxTreatmentId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTreatmentId.Depth = 0;
