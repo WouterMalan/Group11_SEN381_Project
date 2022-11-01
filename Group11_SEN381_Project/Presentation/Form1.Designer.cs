@@ -39,7 +39,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.btnHome = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.panelTitleShow = new System.Windows.Forms.Panel();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
@@ -248,16 +247,6 @@
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(612, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 57);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
@@ -277,7 +266,6 @@
             this.panelTitleShow.Controls.Add(this.btnMinimize);
             this.panelTitleShow.Controls.Add(this.lblTitleChildForm);
             this.panelTitleShow.Controls.Add(this.iconCurrentChildForm);
-            this.panelTitleShow.Controls.Add(this.button1);
             this.panelTitleShow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleShow.Location = new System.Drawing.Point(220, 0);
             this.panelTitleShow.Name = "panelTitleShow";
@@ -410,7 +398,6 @@
         private FontAwesome.Sharp.IconButton btnMedicalCondition;
         private FontAwesome.Sharp.IconButton btnClient;
         private System.Windows.Forms.PictureBox btnHome;
-        private System.Windows.Forms.Button button1;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelTitleShow;
