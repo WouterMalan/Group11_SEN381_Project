@@ -67,7 +67,7 @@
     <Compile Include="BusinessLogic\Client.cs" />
     <Compile Include="BusinessLogic\Client_LogicHandler.cs" />
     <Compile Include="BusinessLogic\Medical_Condition.cs" />
-    <Compile Include="BusinessLogic\Policy.cs" />
+    <Compile Include="BusinessLogic\PolicyBL.cs" />
     <Compile Include="BusinessLogic\Provider.cs" />
     <Compile Include="BusinessLogic\Report.cs" />
     <Compile Include="BusinessLogic\Treatment.cs" />

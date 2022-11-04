@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Collections.Specialized;
 using Group11_SEN381_Project.BusinessLogic;
+using System.Security.Policy;
 
 namespace Group11_SEN381_Project.DataAccess
 {
@@ -52,30 +53,28 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
+        //TODO: ADD POLICY_ID FIELD!!!!!
         // update the client details
-        public void updateClient(int id, string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        public void updateClient(Client client)
         {
-            con.Open();
             try
             {
-
-                string line = "Update Client set  Name_Surname='" + name_surname + "',address= '" + address + "', phone_number='" + phone_number + "',Email='" + email + "',Dependents=  '" + dependents + "',National_id=  '" + national_id + "' where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Client SET Name_Surname = @FullName, Address = @Address, Phone_Number = @PhoneNum, Email = @Email, Dependants = @Dependants, National_id = @NatID WHERE ID = @ID", con);
+                cmd.Parameters.AddWithValue("@ID", client.ID);
+                cmd.Parameters.AddWithValue("@FullName", client.FullName);
+                cmd.Parameters.AddWithValue("@Address", client.Address);
+                cmd.Parameters.AddWithValue("@PhoneNum", client.PhoneNum);
+                cmd.Parameters.AddWithValue("@Email", client.Email);
+                cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
+                cmd.Parameters.AddWithValue("@NatID", client.NatID);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Updated");
                 MessageBox.Show(ex.ToString());
-
             }
-            finally
-            {
-                MessageBox.Show("Data was updated");
-
-            }
-            con.Close();
         }
 
 
@@ -100,31 +99,57 @@ namespace Group11_SEN381_Project.DataAccess
 
 
         // add a new client to the database
-        public void CreateClient(int id,string name_surname, string address, string phone_number, string email, string dependents, int national_id)
+        //TODO: Add Policy_ID field!!!!!!
+        public void CreateClient(Client client)
         {
-            con.Open();
             try
             {
-                string line = "INSERT INTO Client (id,Name_Surname,Address,Phone_Number,Email,Dependents,National_id) VALUES ('"+ id+"','" + name_surname + "','" + address + "','" + phone_number + "','" + email + "','" + dependents + "','" + national_id + "')";
-                SqlCommand command = new SqlCommand(line, con);// this will execute the command
-                command.ExecuteNonQuery();
-                con.Close();// this will close the connection
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Client (Name_Surname, Address, Phone_Number, Email, Dependants, National_id) VALUES (@FullName, @Address, @PhoneNum, @Email, @Dependants, @NatID)", con);
+                cmd.Parameters.AddWithValue("@FullName", client.FullName);
+                cmd.Parameters.AddWithValue("@Address", client.Address);
+                cmd.Parameters.AddWithValue("@PhoneNum", client.PhoneNum);
+                cmd.Parameters.AddWithValue("@Email", client.Email);
+                cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
+                cmd.Parameters.AddWithValue("@NatID", client.NatID);
+                cmd.ExecuteNonQuery();
+                con.Close();
             }
-            catch (Exception ex)// catch any errors
+            catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Inserted");// show message box
+                MessageBox.Show("Failed to create client");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Data was Inserted");// show message box if data was inserted
-
+                MessageBox.Show("Client created successfully");
             }
-            con.Close();
         }
 
-        //TODO: CREATE DELETE METHOD FOR CLIENT
+        // delete a client from the database
+        public void DeleteClient(Client client)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Client WHERE ID = @ID", con);
+                cmd.Parameters.AddWithValue("@ID", client.ID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete client");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Client deleted successfully");
+            }
+        }
+    
+            
+   
 
         // get all the policy details
         public DataTable getPolicy()
@@ -136,62 +161,85 @@ namespace Group11_SEN381_Project.DataAccess
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-
         }
-
+    
+        
         // update the policy details
-        public void UpdatePolicy(int id, string desc, string date_time, string type_of_policy, int fee, int expired)
+        public void UpdatePolicy(PolicyBL policy)
         {
-            con.Open();
             try
             {
-
-                string line = "Update Policy set description='" + desc + "',Date_Time= '" + date_time + "', Type_of_Policy='" + type_of_policy + "',Fee='" + fee.ToString() + "',expired=  '" + expired.ToString() + "' where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Policy SET description = @Description, Date_Time = @StartDate, Importance = @Importance, Fee = @Fee, expired = @Expired WHERE id = @PolicyID", con);
+                cmd.Parameters.AddWithValue("@PolicyID", policy.PolicyID1);
+                cmd.Parameters.AddWithValue("@Description", policy.Description1);
+                cmd.Parameters.AddWithValue("@StartDate", policy.StartDate1);
+                cmd.Parameters.AddWithValue("@Importance", policy.Importance1);
+                cmd.Parameters.AddWithValue("@Fee", policy.Fee1);
+                cmd.Parameters.AddWithValue("@Expired", policy.Expired1);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show("Failed to update policy");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Data was updated");
-
+                MessageBox.Show("Policy updated successfully");
+                
             }
-            con.Close();
         }
 
         // create a new policy and insert it into the database
-        public void CreatePolicy(int id,string desc, string date_time, string type_of_policy,int fee, int expired)
+       public void CreatePolicy(PolicyBL policy)
         {
-            con.Open();
             try
             {
-
-                string line = "INSERT INTO Policy (id,description,Date_Time,Type_of_Policy,Fee,expired) VALUES ('"+ id+ "','" + desc + "','" + date_time + "','" + type_of_policy + "','" + fee.ToString() + "','" + expired.ToString() + "')";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Policy (description, Date_Time, Importance, Fee, expired) " +
+                    "VALUES (@Description, @StartDate, @Importance, @Fee, @Expired)", con);
+                cmd.Parameters.AddWithValue("@Description", policy.Description1);
+                cmd.Parameters.AddWithValue("@StartDate", policy.StartDate1);
+                cmd.Parameters.AddWithValue("@Importance", policy.Importance1);
+                cmd.Parameters.AddWithValue("@Fee", policy.Fee1);
+                cmd.Parameters.AddWithValue("@Expired", policy.Expired1);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Data Failed to be Created");
-                MessageBox.Show(ex.ToString());
 
+                MessageBox.Show("Failed to create policy");
             }
             finally
             {
-                MessageBox.Show("Data was created!");
-
+                MessageBox.Show("Policy created successfully");
             }
-            con.Close();
         }
 
-        //TODO: CREATE DELETE METHOD FOR POLICY
+        // delete a policy from the database
+        public void DeletePolicy(PolicyBL policy)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Policy WHERE id = @PolicyID", con);
+                cmd.Parameters.AddWithValue("@PolicyID", policy.PolicyID1);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Failed to delete policy");
+            }
+            finally
+            {
+                MessageBox.Show("Policy deleted successfully");
+            }
+        }
 
         //search the policy by ID
         public DataTable searchPolicy(int id)
@@ -225,58 +273,76 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // update the medical provider details
-        public void UpdateProvider(int id, string Name, string Location, int rating)
+        public void UpdateProvider(Provider provider)
         {
-
             try
             {
-
-                string line = "Update Providers set Name='" + Name + "',Location= '" + Location + "', Rating='" + rating.ToString() + "' where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, sqlcon());
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Providers SET Name = @Name, Location = @Location, Rating = @Rating WHERE id = @ProviderID", con);
+                cmd.Parameters.AddWithValue("@ProviderID", provider.ProviderID);
+                cmd.Parameters.AddWithValue("@Name", provider.ProvName);
+                cmd.Parameters.AddWithValue("@Location", provider.Location);
+                cmd.Parameters.AddWithValue("@Rating", provider.Rating);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show("Failed to update provider");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Data was updated");
-
+                MessageBox.Show("Provider updated successfully");
             }
-            con.Close();
         }
 
         // create a new medical provider and insert it into the database
-        public void CreateProvider(int id,string Name, string Location, int rating)
+        public void CreateProvider(Provider provider)
         {
-            con.Open();
             try
             {
-
-                string line = "INSERT INTO Providers (id,Name,Location,Rating) VALUES ('"+ id +"','" + Name + "','" + Location + "','" + rating.ToString() + "')";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Providers (Name, Location, Rating) " +
+                    "VALUES (@Name, @Location, @Rating)", con);
+                cmd.Parameters.AddWithValue("@Name", provider.ProvName);
+                cmd.Parameters.AddWithValue("@Location", provider.Location);
+                cmd.Parameters.AddWithValue("@Rating", provider.Rating);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create Provider");
+                MessageBox.Show("Failed to create provider");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Provider record was successfully created!");
-
+                MessageBox.Show("Provider created successfully");
             }
-            con.Close();
         }
 
-        //TODO: CREATE DELETE METHOD FOR PROVIDER
+        // delete a medical provider from the database
+        public void DeleteProvider(Provider provider)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Providers WHERE id = @ProviderID", con);
+                cmd.Parameters.AddWithValue("@ProviderID", provider.ProviderID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete provider");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Provider deleted successfully");
+            }
+        }
 
         public DataTable searchProvider(int id)
         {
@@ -313,58 +379,74 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // update the medical condition details
-        public void UpdateMedicalConditions(int id, string Name, string description)
+        public void UpdateMedicalConditions(Medical_Condition medicalCondition)
         {
-
             try
             {
-
-                string line = "Update Medical_Conditions set Condition_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, sqlcon());
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Medical_Conditions SET Condition_Name = @Name, Priority = @Priority, Treatment = @Treatment WHERE id = @MedicalConditionID", con);
+                cmd.Parameters.AddWithValue("@MedicalConditionID", medicalCondition.ConditionID);
+                cmd.Parameters.AddWithValue("@Name", medicalCondition.ConditionName1);
+                cmd.Parameters.AddWithValue("@Priority", medicalCondition.Priority1);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show("Failed to update medical condition");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Data was updated");
-
+                MessageBox.Show("Medical condition updated successfully");
             }
-            con.Close();
         }
 
         //create a new medical condition and insert it into the database
-        public void CreateMedicalConditions(int id,string Name, string description)
+        public void CreateMedicalConditions(Medical_Condition medicalCondition)
         {
-            con.Open();
             try
             {
-
-                string line = "INSERT INTO Medical_Conditions (id,Condition_Name,Description) VALUES ('" +id+"','"+ Name + "','" + description + "')";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Medical_Conditions (Condition_Name, Priority) " +
+                    "VALUES (@Name, @Priority)", con);
+                cmd.Parameters.AddWithValue("@Name", medicalCondition.ConditionName1);
+                cmd.Parameters.AddWithValue("@Priority", medicalCondition.Priority1);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create Medical Condition");
+                MessageBox.Show("Failed to create medical condition");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Medical Condition record was successfully created!");
-
+                MessageBox.Show("Medical condition created successfully");
             }
-            con.Close();
         }
 
-        //TODO: CREATE DELETE METHOD FOR MEDICAL CONDITION
+        // delete a medical condition from the database
+        public void DeleteMedicalCondition(Medical_Condition medicalCondition)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Medical_Conditions WHERE id = @MedicalConditionID", con);
+                cmd.Parameters.AddWithValue("@MedicalConditionID", medicalCondition.ConditionID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete medical condition");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Medical condition deleted successfully");
+            }
+        }
 
         //search medical condition by ID
         public DataTable searchMedicalCondition(int id)
@@ -400,55 +482,53 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         // update the treatment details
-        public void UpdateTreatments(int id, string Name, string description)
+        public void UpdateTreatments(Treatment treatment)
         {
-
             try
             {
-
-                string line = "Update Treatments set Treatment_Name='" + Name + "',Description= '" + description + "'  where id= '" + id.ToString() + "'";
-                SqlCommand command = new SqlCommand(line, sqlcon());
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Treatments SET Treatment_Name = @Name, Level = @Level, Days = @Days WHERE id = @TreatmentID", con);
+                cmd.Parameters.AddWithValue("@TreatmentID", treatment.TreatmentID);
+                cmd.Parameters.AddWithValue("@Name", treatment.TreatmentName);
+                cmd.Parameters.AddWithValue("@Level", treatment.Level);
+                cmd.Parameters.AddWithValue("@Days", treatment.Days);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Failed to be Updated");
+                MessageBox.Show("Failed to update treatment");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Data was updated");
-
+                MessageBox.Show("Treatment updated successfully");
             }
-            con.Close();
         }
 
         // create a new treatment and insert it into the database
-        public void CreateTreatments(int id,string Name, string description)
+        public void CreateTreatments(Treatment treatment)
         {
-            con.Open();
             try
             {
-
-                string line = "INSERT INTO Treatments (id,Treatment_Name,Description) VALUES ('" +id+ "','"+Name + "','" + description + "')";
-                SqlCommand command = new SqlCommand(line, con);
-                command.ExecuteNonQuery();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Treatments (Treatment_Name, Level, Days) " +
+                    "VALUES (@Name, @Level, @Days)", con);
+                cmd.Parameters.AddWithValue("@Name", treatment.TreatmentName);
+                cmd.Parameters.AddWithValue("@Level", treatment.Level);
+                cmd.Parameters.AddWithValue("@Days", treatment.Days);
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to create Treatment");
+                MessageBox.Show("Failed to create treatment");
                 MessageBox.Show(ex.ToString());
-
             }
             finally
             {
-                MessageBox.Show("Treatment record was successfully created!");
-
+                MessageBox.Show("Treatment created successfully");
             }
-            con.Close();
         }
 
         //search for treatment by ID
@@ -461,6 +541,26 @@ namespace Group11_SEN381_Project.DataAccess
         }
 
         //TODO: CREATE DELETE METHOD FOR TREATMENTS
+        public void DeleteTreatment(Treatment treatment)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Treatments WHERE id = @TreatmentID", con);
+                cmd.Parameters.AddWithValue("@TreatmentID", treatment.TreatmentID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete treatment");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Treatment deleted successfully");
+            }
+        }
 
         //get all the report details
         public DataTable getReport()
