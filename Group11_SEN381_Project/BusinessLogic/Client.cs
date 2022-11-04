@@ -7,11 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Group11_SEN381_Project.DataAccess;
 
 namespace Group11_SEN381_Project.BusinessLogic
 {
     class Client
     {
+        private string id;
         private string fullName;
         private string address;
         private int phoneNum;
@@ -19,7 +21,12 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string dependants;
         private int natID;
 
-        
+
+        public string ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Address { get => address; set => address = value; }
@@ -44,5 +51,29 @@ namespace Group11_SEN381_Project.BusinessLogic
         }
 
 
+        public void CreateClient()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.CreateClient(this);
+            
+        }
+
+        public void updateClient()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.updateClient(this);
+        }
+        
+        public void DeleteClient()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.DeleteClient(this);
+        }
+
+        public void getClient()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.getClient();
+        }
     }
 }

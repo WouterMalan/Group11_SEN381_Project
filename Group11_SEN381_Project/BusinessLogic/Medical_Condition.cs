@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group11_SEN381_Project.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,37 +9,48 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Medical_Condition
     {
+        private string conditionID;
         private string ConditionName;
-        private string ConditionDescription;
+        private string Priority;
+
+        public string ConditionID { get => conditionID; set => conditionID = value; }
+        public string ConditionName1 { get => ConditionName; set => ConditionName = value; }
+        public string Priority1 { get => Priority; set => Priority = value; }
 
         public Medical_Condition()
         {
 
         }
 
-        public Medical_Condition( string conditionName, string conditionDescription)
+        public Medical_Condition(string conditionName, string priority)
         {
-            ConditionName = conditionName;
-            ConditionDescription = conditionDescription;
+            ConditionName1 = conditionName;
+            Priority1 = priority;
+        }
+        
+
+       public void getMedicalCondition()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.getMedicalCondition();
         }
 
-        public void createMedical_Condition(string Description)
+        public void CreateMedicalConditions()
         {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.CreateMedicalConditions(this);
         }
 
-        public void getMedical_Condition(int MedConID)
+        public void UpdateMedicalConditions()
         {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.UpdateMedicalConditions(this);
         }
 
-        public void updateMedical_Condition(int MedConID, string Description)
+        public void DeleteMedicalCondition()
         {
-
-        }
-        public void deleteMedical_Condition(int MedConID)
-        {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.DeleteMedicalCondition(this);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group11_SEN381_Project.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,37 +9,51 @@ namespace Group11_SEN381_Project.BusinessLogic
 {
     class Treatment
     {
-        private string Treatment_Name;
-        private string Description;
-        
+        private int treatmentID;
+        private string treatmentName;
+        private string level;
+        private int days;
+
+        public int TreatmentID { get => treatmentID; set => treatmentID = value; }
+        public string TreatmentName { get => treatmentName; set => treatmentName = value; }
+        public string Level { get => level; set => level = value; }
+        public int Days { get => days; set => days = value; }
+
         public Treatment()
         {
 
         }
 
-        public Treatment(string treatment_Name, string description)
+        public Treatment(int treatmentID, string treatmentName, string level, int days)
         {
-            Treatment_Name = treatment_Name;
-            Description = description;
+            this.TreatmentID = treatmentID;
+            this.TreatmentName = treatmentName;
+            this.Level = level;
+            this.Days = days;
         }
 
-        public void createTreatment(string Description)
+        public void getTreatment()
         {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.getTreatment();
         }
 
-        public void getTreatment(int TreatID)
+        public void CreateTreatments()
         {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.CreateTreatments(this);
+        }
+        
+        public void DeleteTreatment()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.DeleteTreatment(this);
         }
 
-        public void updateTreatment(int TreatID, string Description)
+        public void UpdateTreatments()
         {
-
-        }
-        public void deleteTreatment(int TreatID)
-        {
-
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.UpdateTreatments(this);
         }
     }
 }
