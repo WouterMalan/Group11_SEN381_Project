@@ -60,20 +60,20 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+            treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
             treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
-            treatment.Days = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.Level         = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
+            treatment.Days          = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
             treatment.CreateTreatments();
             treatmentTabSelected();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+            treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
             treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
-            treatment.Days = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.Level         = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
+            treatment.Days          = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
             treatment.UpdateTreatments();
             treatmentTabSelected();
         }

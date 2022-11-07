@@ -62,16 +62,19 @@ namespace Group11_SEN381_Project.BusinessLogic
             dataHandler.DeletePolicy(this);
         }
 
-        public void policyIdGenerator()
+        public void policyIdGenerator(string id)
         {
-            // four numberic digits representing the year the policy was created
-            // an alphabetical character specifying the general contract type (any uppercase letter
-            // from A-Z with exception for I or O)
-            // an alphabetical indicating the importance of the policyholder example A, B, C or D
-            // Six numeric digits left padded with zeros
-            
-            
-            
+            string year = "";
+            string sixDigits = "00";
+            string[] type = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            string[] importance = { "A", "B", "C", "D" };
+            Random ran = new Random();
+            string polCode = "";
+            year = "2022";
+            int iType = ran.Next(0, type.Length);
+            int iImportance = ran.Next(0, importance.Length);
+            polCode = sixDigits + year + type[iType] + importance[iImportance];
+            return polCode;
         }
     }
 }

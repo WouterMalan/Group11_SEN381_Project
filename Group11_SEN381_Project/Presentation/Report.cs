@@ -27,7 +27,6 @@ namespace Group11_SEN381_Project.Presentation
         public void reportTabSelected()
         {
             DataHandler dataHandler = new DataHandler();
-
             //the listview of the policy tab
             materialListView3.Items.Clear();
             foreach (DataRow row in dataHandler.getReport().Rows)
