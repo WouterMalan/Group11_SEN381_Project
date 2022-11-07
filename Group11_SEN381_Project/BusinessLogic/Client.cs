@@ -16,10 +16,11 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string id;
         private string fullName;
         private string address;
-        private int phoneNum;
+        private string phoneNum;
         private string email;
         private string dependants;
-        private int natID;
+        private string natID;
+        private string policyID;
 
 
         public string ID
@@ -30,17 +31,18 @@ namespace Group11_SEN381_Project.BusinessLogic
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Address { get => address; set => address = value; }
-        public int PhoneNum { get => phoneNum; set => phoneNum = value; }
+        public string PhoneNum { get => phoneNum; set => phoneNum = value; }
         public string Email { get => email; set => email = value; }
         public string Dependants { get => dependants; set => dependants = value; }
-        public int NatID { get => natID; set => natID = value; }
+        public string NatID { get => natID; set => natID = value; }
+        public string PolicyID { get => policyID; set => policyID = value; }
 
         public Client()
         {
 
         }
         
-        public Client(string fullName, string address, int phoneNum, string email, string dependants, int natID)
+        public Client(string fullName, string address, string phoneNum, string email, string dependants, string natID,string policy_ID)
         {
             this.FullName = fullName;
             this.Address = address;
@@ -48,6 +50,7 @@ namespace Group11_SEN381_Project.BusinessLogic
             this.Email = email;
             this.Dependants = dependants;
             this.NatID = natID;
+            this.PolicyID = policy_ID;
         }
 
 

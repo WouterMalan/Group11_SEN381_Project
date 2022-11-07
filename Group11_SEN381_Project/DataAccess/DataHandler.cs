@@ -41,7 +41,8 @@ namespace Group11_SEN381_Project.DataAccess
                 try
                 {
                     con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Client", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("ViewClient", con);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
                     sda.Fill(dt);
                     con.Close();
                 }
@@ -53,21 +54,23 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
-        //TODO: ADD POLICY_ID FIELD!!!!!
+        
         // update the client details
         public void updateClient(Client client)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Client SET Name_Surname = @FullName, Address = @Address, Phone_Number = @PhoneNum, Email = @Email, Dependants = @Dependants, National_id = @NatID WHERE ID = @ID", con);
-                cmd.Parameters.AddWithValue("@ID", client.ID);
-                cmd.Parameters.AddWithValue("@FullName", client.FullName);
+                SqlCommand cmd = new SqlCommand("UpdateClient", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", client.ID);
+                cmd.Parameters.AddWithValue("@Name_Surname", client.FullName);
                 cmd.Parameters.AddWithValue("@Address", client.Address);
-                cmd.Parameters.AddWithValue("@PhoneNum", client.PhoneNum);
+                cmd.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
                 cmd.Parameters.AddWithValue("@Email", client.Email);
                 cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
-                cmd.Parameters.AddWithValue("@NatID", client.NatID);
+                cmd.Parameters.AddWithValue("@National_id", client.NatID);
+                cmd.Parameters.AddWithValue("@Policy_ID", client.PolicyID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -99,19 +102,21 @@ namespace Group11_SEN381_Project.DataAccess
 
 
         // add a new client to the database
-        //TODO: Add Policy_ID field!!!!!!
         public void CreateClient(Client client)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Client (Name_Surname, Address, Phone_Number, Email, Dependants, National_id) VALUES (@FullName, @Address, @PhoneNum, @Email, @Dependants, @NatID)", con);
-                cmd.Parameters.AddWithValue("@FullName", client.FullName);
+                SqlCommand cmd = new SqlCommand("InsertClient", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", client.ID);
+                cmd.Parameters.AddWithValue("@Name_Surname", client.FullName);
                 cmd.Parameters.AddWithValue("@Address", client.Address);
-                cmd.Parameters.AddWithValue("@PhoneNum", client.PhoneNum);
+                cmd.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
                 cmd.Parameters.AddWithValue("@Email", client.Email);
                 cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
-                cmd.Parameters.AddWithValue("@NatID", client.NatID);
+                cmd.Parameters.AddWithValue("@National_id", client.NatID);
+                cmd.Parameters.AddWithValue("@Policy_ID", client.PolicyID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -132,8 +137,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Client WHERE ID = @ID", con);
-                cmd.Parameters.AddWithValue("@ID", client.ID);
+                SqlCommand cmd = new SqlCommand("DeleteClient", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", client.ID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -155,11 +161,19 @@ namespace Group11_SEN381_Project.DataAccess
         public DataTable getPolicy()
         {
 
-            // this function will run and send a full view of the respective table in a data table format 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Policy", sqlcon());
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("ViewPolicy", con);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             return dt;
         }
     
@@ -170,13 +184,14 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Policy SET description = @Description, Date_Time = @StartDate, Importance = @Importance, Fee = @Fee, expired = @Expired WHERE id = @PolicyID", con);
-                cmd.Parameters.AddWithValue("@PolicyID", policy.PolicyID1);
-                cmd.Parameters.AddWithValue("@Description", policy.Description1);
-                cmd.Parameters.AddWithValue("@StartDate", policy.StartDate1);
+                SqlCommand cmd = new SqlCommand("UpdatePolicy", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", policy.PolicyID1);
+                cmd.Parameters.AddWithValue("@description", policy.Description1);
+                cmd.Parameters.AddWithValue("@Date_Time", policy.StartDate1);
                 cmd.Parameters.AddWithValue("@Importance", policy.Importance1);
                 cmd.Parameters.AddWithValue("@Fee", policy.Fee1);
-                cmd.Parameters.AddWithValue("@Expired", policy.Expired1);
+                cmd.Parameters.AddWithValue("@expired", policy.Expired1);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -198,13 +213,14 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Policy (description, Date_Time, Importance, Fee, expired) " +
-                    "VALUES (@Description, @StartDate, @Importance, @Fee, @Expired)", con);
-                cmd.Parameters.AddWithValue("@Description", policy.Description1);
-                cmd.Parameters.AddWithValue("@StartDate", policy.StartDate1);
+                SqlCommand cmd = new SqlCommand("InsertPolicy", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", policy.PolicyID1);
+                cmd.Parameters.AddWithValue("@description", policy.Description1);
+                cmd.Parameters.AddWithValue("@Date_Time", policy.StartDate1);
                 cmd.Parameters.AddWithValue("@Importance", policy.Importance1);
                 cmd.Parameters.AddWithValue("@Fee", policy.Fee1);
-                cmd.Parameters.AddWithValue("@Expired", policy.Expired1);
+                cmd.Parameters.AddWithValue("@expired", policy.Expired1);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -225,8 +241,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Policy WHERE id = @PolicyID", con);
-                cmd.Parameters.AddWithValue("@PolicyID", policy.PolicyID1);
+                SqlCommand cmd = new SqlCommand("DeletePolicy", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", policy.PolicyID1);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -263,10 +280,19 @@ namespace Group11_SEN381_Project.DataAccess
         public DataTable getProvider()
         {
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Providers", sqlcon());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("ViewProviders", con);
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
+                    sda.Fill(dt);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
                 return dt;
 
             }
@@ -278,8 +304,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Providers SET Name = @Name, Location = @Location, Rating = @Rating WHERE id = @ProviderID", con);
-                cmd.Parameters.AddWithValue("@ProviderID", provider.ProviderID);
+                SqlCommand cmd = new SqlCommand("UpdateProvider", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", provider.ProviderID);
                 cmd.Parameters.AddWithValue("@Name", provider.ProvName);
                 cmd.Parameters.AddWithValue("@Location", provider.Location);
                 cmd.Parameters.AddWithValue("@Rating", provider.Rating);
@@ -303,8 +330,8 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Providers (Name, Location, Rating) " +
-                    "VALUES (@Name, @Location, @Rating)", con);
+                SqlCommand cmd = new SqlCommand("InsertProviders", con);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Name", provider.ProvName);
                 cmd.Parameters.AddWithValue("@Location", provider.Location);
                 cmd.Parameters.AddWithValue("@Rating", provider.Rating);
@@ -328,8 +355,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Providers WHERE id = @ProviderID", con);
-                cmd.Parameters.AddWithValue("@ProviderID", provider.ProviderID);
+                SqlCommand cmd = new SqlCommand("DeleteProviders", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", provider.ProviderID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -367,11 +395,20 @@ namespace Group11_SEN381_Project.DataAccess
             {
                 {
 
-
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Medical_Conditions", sqlcon());
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    //TODO: DOUBLE CHECK NAME OF PROCEDURE
                     DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    try
+                    {
+                        con.Open();
+                        SqlDataAdapter sda = new SqlDataAdapter("ViewMdicalConditions", con);
+                        sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
+                        sda.Fill(dt);
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                     return dt;
 
                 }
@@ -384,9 +421,10 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Medical_Conditions SET Condition_Name = @Name, Priority = @Priority, Treatment = @Treatment WHERE id = @MedicalConditionID", con);
-                cmd.Parameters.AddWithValue("@MedicalConditionID", medicalCondition.ConditionID);
-                cmd.Parameters.AddWithValue("@Name", medicalCondition.ConditionName1);
+                SqlCommand cmd = new SqlCommand("UpdateMedicalConditions", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", medicalCondition.ConditionID);
+                cmd.Parameters.AddWithValue("@Condition_Name", medicalCondition.ConditionName1);
                 cmd.Parameters.AddWithValue("@Priority", medicalCondition.Priority1);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -408,9 +446,10 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Medical_Conditions (Condition_Name, Priority) " +
-                    "VALUES (@Name, @Priority)", con);
-                cmd.Parameters.AddWithValue("@Name", medicalCondition.ConditionName1);
+                SqlCommand cmd = new SqlCommand("InsertMedicalConditions", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", medicalCondition.ConditionID);
+                cmd.Parameters.AddWithValue("@Condition_Name", medicalCondition.ConditionName1);
                 cmd.Parameters.AddWithValue("@Priority", medicalCondition.Priority1);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -432,8 +471,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Medical_Conditions WHERE id = @MedicalConditionID", con);
-                cmd.Parameters.AddWithValue("@MedicalConditionID", medicalCondition.ConditionID);
+                SqlCommand cmd = new SqlCommand("DeleteMedicalConditions", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", medicalCondition.ConditionID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -470,15 +510,20 @@ namespace Group11_SEN381_Project.DataAccess
         // get all the treatment details
         public DataTable getTreatment()
         {
-                {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Treatments", sqlcon());
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
-
-
-                }
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("ViewTreatments", con);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return dt;
         }
 
         // update the treatment details
@@ -487,9 +532,10 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Treatments SET Treatment_Name = @Name, Level = @Level, Days = @Days WHERE id = @TreatmentID", con);
-                cmd.Parameters.AddWithValue("@TreatmentID", treatment.TreatmentID);
-                cmd.Parameters.AddWithValue("@Name", treatment.TreatmentName);
+                SqlCommand cmd = new SqlCommand("UpdateTreatments", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", treatment.TreatmentID);
+                cmd.Parameters.AddWithValue("@Treatment_Name", treatment.TreatmentName);
                 cmd.Parameters.AddWithValue("@Level", treatment.Level);
                 cmd.Parameters.AddWithValue("@Days", treatment.Days);
                 cmd.ExecuteNonQuery();
@@ -512,9 +558,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Treatments (Treatment_Name, Level, Days) " +
-                    "VALUES (@Name, @Level, @Days)", con);
-                cmd.Parameters.AddWithValue("@Name", treatment.TreatmentName);
+                SqlCommand cmd = new SqlCommand("InsertTreatments", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Treatment_Name", treatment.TreatmentName);
                 cmd.Parameters.AddWithValue("@Level", treatment.Level);
                 cmd.Parameters.AddWithValue("@Days", treatment.Days);
                 cmd.ExecuteNonQuery();
@@ -546,8 +592,9 @@ namespace Group11_SEN381_Project.DataAccess
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM Treatments WHERE id = @TreatmentID", con);
-                cmd.Parameters.AddWithValue("@TreatmentID", treatment.TreatmentID);
+                SqlCommand cmd = new SqlCommand("DeleteTreatments", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", treatment.TreatmentID);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -565,21 +612,104 @@ namespace Group11_SEN381_Project.DataAccess
         //get all the report details
         public DataTable getReport()
         {
-            
-
-
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Report", sqlcon());
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("ViewReport", con);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;// this will call the stored procedure
+                sda.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return dt;
         }
 
-        //TODO: update the report details
+        //update the report details
+        public void UpdateReport(Report report)
+        {
+            try
+            {
+                con.Open();
+                // use the stored procedure name to update the report
+                SqlCommand cmd = new SqlCommand("UpdateReport", con);// stored procedure name
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", report.Id);
+                cmd.Parameters.AddWithValue("@Client_ID", report.Client_ID);
+                cmd.Parameters.AddWithValue("@MC_ID", report.McID);
+                cmd.Parameters.AddWithValue("@Policy_ID", report.Policy_ID);
+                cmd.Parameters.AddWithValue("@ETimeStamp", report.ETimeStamp);
+                cmd.Parameters.AddWithValue("@STimeStamp", report.STimeStamp);
+                cmd.Parameters.AddWithValue("@Claim", report.Claim);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to update report");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Report updated successfully");
+            }
+        }
 
-        //TODO: Create the report details
+        // create a new report and insert it into the database
+        public void CreateReport(Report report)
+        {
+            try
+            {
+                con.Open();
+                // use the stored procedure name to create the report
+                SqlCommand cmd = new SqlCommand("InsertReport", con);// stored procedure name
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", report.Id);
+                cmd.Parameters.AddWithValue("@Client_ID", report.Client_ID);
+                cmd.Parameters.AddWithValue("@MC_ID", report.McID);
+                cmd.Parameters.AddWithValue("@Policy_ID", report.Policy_ID);
+                cmd.Parameters.AddWithValue("@ETimeStamp", report.ETimeStamp);
+                cmd.Parameters.AddWithValue("@STimeStamp", report.STimeStamp);
+                cmd.Parameters.AddWithValue("@Claim", report.Claim);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to create report");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Report created successfully");
+            }
+        }
 
-        //TODO: Delete the report details
+        // delete a report from the database
+        public void DeleteReport(Report report)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DeleteReport", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", report.Id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete report");
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Report deleted successfully");
+            }
+        }
     }
 }
 
