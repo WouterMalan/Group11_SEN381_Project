@@ -18,6 +18,7 @@ namespace Group11_SEN381_Project.Presentation
     {
         private Form currentChildForm;
         DataHandler dataHandler1 = new DataHandler();
+        BusinessLogic.Client client = new BusinessLogic.Client();
         public Client()
         {
             InitializeComponent();
@@ -91,8 +92,14 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreateClient_Click(object sender, EventArgs e)
         {
-            dataHandler1.CreateClient(int.Parse(txtBoxId.Text),txtBoxFullName.Text, txtBoxAddress.Text, txtBoxPhoneNumber.Text, txtBoxEmail.Text, 
-                txtBoxDependents.Text, int.Parse(txtBoxNationalId.Text));
+            client.FullName = txtBoxFullName.Text;
+            client.Address = txtBoxAddress.Text;
+            client.PhoneNum = txtBoxPhoneNumber.Text;
+            client.Email = txtBoxEmail.Text;
+            client.Dependants = txtBoxDependents.Text;
+            client.NatID = txtBoxNationalId.Text;
+            client.PolicyID = txtBoxPolicyId.Text;//TODO:INSERT POLICY ID TEXTBOX
+            client.CreateClient();
             clientTabSelected();
         }
 
@@ -135,9 +142,18 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            dataHandler1.updateClient(int.Parse(txtBoxId.Text), txtBoxFullName.Text, txtBoxAddress.Text, txtBoxPhoneNumber.Text, txtBoxEmail.Text,
-                txtBoxDependents.Text, int.Parse(txtBoxNationalId.Text));
+            client.ID = int.Parse(txtBoxId.Text);
+            client.FullName = txtBoxFullName.Text;
+            client.Address = txtBoxAddress.Text;
+            client.PhoneNum = txtBoxPhoneNumber.Text;
+            client.Email = txtBoxEmail.Text;
+            client.Dependants = txtBoxDependents.Text;
+            client.NatID = txtBoxNationalId.Text;
+            client.PolicyID = txtBoxPolicyId.Text;//TODO:INSERT POLICY ID TEXTBOX
+            client.updateClient();
             clientTabSelected();
         }
+
+        
     }
 }
