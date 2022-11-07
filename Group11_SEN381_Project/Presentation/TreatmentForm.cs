@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Group11_SEN381_Project.Presentation
     public partial class TreatmentForm : Form
     {
         DataHandler dataHandler1 = new DataHandler();
+        Treatment treatment = new Treatment();
         public TreatmentForm()
         {
             InitializeComponent();
@@ -58,13 +60,21 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            dataHandler1.CreateTreatments(int.Parse(txtBoxTreatmentId.Text),txtBoxTreatmentName.Text, txtBoxTreatmentDesc.Text);
+            treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+            treatment.TreatmentName = txtBoxTreatmentName.Text;
+            treatment.Level = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
+            treatment.Days = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.CreateTreatments();
             treatmentTabSelected();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            dataHandler1.UpdateTreatments(int.Parse(txtBoxTreatmentId.Text), txtBoxTreatmentName.Text, txtBoxTreatmentDesc.Text);
+            treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+            treatment.TreatmentName = txtBoxTreatmentName.Text;
+            treatment.Level = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
+            treatment.Days = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.UpdateTreatments();
             treatmentTabSelected();
         }
 
