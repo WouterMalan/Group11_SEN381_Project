@@ -23,11 +23,7 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string policyID;
 
 
-        public string ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public string ID { get => id; set => id = clientIDGenerator(id); }// set the id to the value of the clientIDGenerator method
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Address { get => address; set => address = value; }
@@ -39,11 +35,12 @@ namespace Group11_SEN381_Project.BusinessLogic
 
         public Client()
         {
-
+            
         }
         
         public Client(string fullName, string address, string phoneNum, string email, string dependants, string natID,string policy_ID)
         {
+            
             this.FullName = fullName;
             this.Address = address;
             this.PhoneNum = phoneNum;
@@ -77,6 +74,28 @@ namespace Group11_SEN381_Project.BusinessLogic
         {
             DataHandler dataHandler = new DataHandler();
             dataHandler.getClient();
+        }
+
+        // generate client ID
+        public string clientIDGenerator(string id)
+        {
+            string[] characters = { "G", "H", "J", "K", "L" };
+            string[] numbers = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+            Random ran = new Random();
+            for (int n = 0; n < 200; n++)
+            {
+                string code = "";
+                int letter = ran.Next(0, characters.Length);
+                for (int i = 0; i < 8; i++)
+                {
+                    int number = ran.Next(0, numbers.Length);
+                    code = code + numbers[number];
+                }
+                code = characters[letter] + code;
+                return code;
+            }
+            return null;
+
         }
     }
 }

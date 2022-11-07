@@ -61,5 +61,17 @@ namespace Group11_SEN381_Project.BusinessLogic
             DataHandler dataHandler = new DataHandler();
             dataHandler.DeletePolicy(this);
         }
+
+        public void policyIdGenerator()
+        {
+            // four numberic digits representing the year the policy was created
+            // an alphabetical character specifying the general contract type (any uppercase letter
+            // from A-Z with exception for I or O)
+            // an alphabetical indicating the importance of the policyholder example A, B, C or D
+            // Six numeric digits left padded with zeros
+            
+            
+            
+        }
     }
 }
