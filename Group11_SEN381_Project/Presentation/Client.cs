@@ -92,6 +92,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreateClient_Click(object sender, EventArgs e)
         {
+            client.ID = txtBoxId.Text;
             client.FullName = txtBoxFullName.Text;
             client.Address = txtBoxAddress.Text;
             client.PhoneNum = txtBoxPhoneNumber.Text;
@@ -142,7 +143,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            client.ID = int.Parse(txtBoxId.Text);
+            client.ID = txtBoxId.Text;
             client.FullName = txtBoxFullName.Text;
             client.Address = txtBoxAddress.Text;
             client.PhoneNum = txtBoxPhoneNumber.Text;

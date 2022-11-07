@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Group11_SEN381_Project.Presentation
     public partial class Medical_Condition_Form : Form
     {
         DataHandler dataHandler1 = new DataHandler();
+        Medical_Condition medical_Condition = new Medical_Condition();
         public Medical_Condition_Form()
         {
             InitializeComponent();
@@ -90,14 +92,20 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreateMedicalCondition_Click(object sender, EventArgs e)
         {
-            dataHandler1.CreateMedicalConditions(int.Parse(txtBoxConditionId.Text),txtBoxConditionName.Text, txtBoxConditionDesc.Text);
+            medical_Condition.ConditionID = txtBoxConditionId.Text;
+            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+            medical_Condition.Priority1 = txtBoxConditionDesc.Text;
+            medical_Condition.CreateMedicalConditions();
             medicalConditionTabSelected();// refresh the listview
 
         }
 
         private void btnUpdateMedicalCondition_Click(object sender, EventArgs e)
         {
-            dataHandler1.UpdateMedicalConditions(int.Parse(txtBoxConditionId.Text), txtBoxConditionName.Text, txtBoxConditionDesc.Text);
+            medical_Condition.ConditionID = txtBoxConditionId.Text;
+            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+            medical_Condition.Priority1 = txtBoxConditionDesc.Text;
+            medical_Condition.UpdateMedicalConditions();
             medicalConditionTabSelected();// refresh the listview
         }
     }
