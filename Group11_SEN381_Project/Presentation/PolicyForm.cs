@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Group11_SEN381_Project.Presentation
     public partial class PolicyForm : Form
     {
         DataHandler dataHandler1 = new DataHandler();
+        PolicyBL policy = new PolicyBL();
         public PolicyForm()
         {
             InitializeComponent();
@@ -108,15 +110,25 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            dataHandler1.CreatePolicy(int.Parse(txtBoxPolicyId.Text), txtBoxPolicyDesc.Text, txtBoxPolicyDate.Text, txtBoxPolicyType.Text, int.Parse(txtBoxPolicyFee.Text),
-                int.Parse(cmbExpired.SelectedIndex.ToString()));
+            policy.PolicyID1 = txtBoxPolicyId.Text;
+            policy.Description1 = txtBoxPolicyDesc.Text;
+            policy.StartDate1 = txtBoxPolicyDate.Text;
+            policy.Importance1 = txtBoxPolicyType.Text;//TODO:CHANGE TXT BOX NAME AND ADD MORE
+            policy.Fee1 = txtBoxPolicyFee.Text;
+            policy.Expired1 = cmbExpired.Text;
+            policy.CreatePolicy();
             policyTabSelected();// refresh the listview
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            dataHandler1.UpdatePolicy(int.Parse(txtBoxPolicyId.Text), txtBoxPolicyDesc.Text, txtBoxPolicyDate.Text, txtBoxPolicyType.Text, 
-                int.Parse(txtBoxPolicyFee.Text), int.Parse(cmbExpired.SelectedIndex.ToString()));
+            policy.PolicyID1 = txtBoxPolicyId.Text;
+            policy.Description1 = txtBoxPolicyDesc.Text;
+            policy.StartDate1 = txtBoxPolicyDate.Text;
+            policy.Importance1 = txtBoxPolicyType.Text;//TODO:CHANGE TXT BOX NAME AND ADD MORE
+            policy.Fee1 = txtBoxPolicyFee.Text;
+            policy.Expired1 = cmbExpired.Text;
+            policy.UpdatePolicy();
             policyTabSelected();//refresh the listview
         }
     }

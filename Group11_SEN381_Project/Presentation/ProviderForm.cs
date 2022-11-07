@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Group11_SEN381_Project.Presentation
     public partial class ProviderForm : Form
     {
         DataHandler dataHandler1 = new DataHandler();
+        Provider provider = new Provider();
         public ProviderForm()
         {
             InitializeComponent();
@@ -112,15 +114,37 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            dataHandler1.CreateProvider(int.Parse(txtBoxProviderId.Text),txtBoxProviderName.Text, txtBoxProviderLocation.Text, 
-                int.Parse(cmbProviderRating.SelectedIndex.ToString()));
+            if (txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
+            {
+                provider.ProviderID = int.Parse(txtBoxProviderId.Text);
+                provider.ProvName = txtBoxProviderName.Text;
+                provider.Location = txtBoxProviderLocation.Text;
+                provider.Rating = int.Parse(cmbProviderRating.Text);
+                provider.CreateProvider();
+                providerTabSelected();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             providerTabSelected();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            dataHandler1.UpdateProvider(int.Parse(txtBoxProviderId.Text), txtBoxProviderName.Text, txtBoxProviderLocation.Text,
-                int.Parse(cmbProviderRating.SelectedIndex.ToString()));
+            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
+            {
+                provider.ProviderID = int.Parse(txtBoxProviderId.Text);
+                provider.ProvName = txtBoxProviderName.Text;
+                provider.Location = txtBoxProviderLocation.Text;
+                provider.Rating = int.Parse(cmbProviderRating.Text);
+                provider.UpdateProvider();
+                providerTabSelected();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             providerTabSelected();
         }
     }
