@@ -245,13 +245,15 @@ namespace Group11_SEN381_Project.Presentation
 
         private void idGeneratorPolicy()
         {
-            int id = 0;
-            foreach (DataRow row in policy.getPolicy().Rows)
-            {
-                id = int.Parse(row["id"].ToString());
-            }
-            id++;
-            txtBoxPolicyId.Text = id.ToString();
+            string sixDigits = "00";
+            string[] type = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            Random ran = new Random();
+            string polCode = "";
+            DateTime dt = DateTime.Now;
+            string year = dt.Year.ToString();
+            int iType = ran.Next(0, type.Length);
+            polCode = sixDigits + year + type[iType];
+            txtBoxPolicyId.Text = polCode;
         }
 
         private void clearFields()

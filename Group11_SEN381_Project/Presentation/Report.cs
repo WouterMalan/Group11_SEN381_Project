@@ -51,25 +51,22 @@ namespace Group11_SEN381_Project.Presentation
                     txtBoxReportid.Text = item.SubItems[0].Text;
                     txtBoxClientID.Text = item.SubItems[1].Text;
                     txtBoxMC_ID.Text = item.SubItems[2].Text;
-                    txtBoxETime.Text = item.SubItems[3].Text;
+                    txtBoxPolicyID.Text = item.SubItems[3].Text;
                     txtBoxSTime.Text = item.SubItems[4].Text;
+                    txtBoxETime.Text = item.SubItems[5].Text;
                     //display value from listview in combo box
-                    if (item.SubItems[5].Text == "In Progress")
+                    if (item.SubItems[6].Text == "Unknown")
                     {
-                        cmbExpired.SelectedIndex = 0;
+                        cmbClaim.SelectedIndex = 0;
                     }
-                    else if (item.SubItems[5].Text == "Approved")
+                    else if (item.SubItems[6].Text == "Approved")
                     {
-                        cmbExpired.SelectedIndex = 1;
+                        cmbClaim.SelectedIndex = 1;
                     }
                     else
                     {
-                        cmbExpired.SelectedIndex = 2;
+                        cmbClaim.SelectedIndex = 2;
                     }
-
-
-
-
                 }
             };
             materialListView3.GridLines = false;
@@ -93,7 +90,7 @@ namespace Group11_SEN381_Project.Presentation
                 txtBoxMC_ID.Text = "";
                 txtBoxETime.Text = "";
                 txtBoxSTime.Text = "";
-                cmbExpired.SelectedIndex = -1;
+                cmbClaim.SelectedIndex = -1;
            
             
         }
@@ -101,6 +98,20 @@ namespace Group11_SEN381_Project.Presentation
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void btnUpdateReport_Click(object sender, EventArgs e)
+        {
+            report.Id = int.Parse(txtBoxReportid.Text);
+            report.Client_ID = txtBoxClientID.Text;
+            report.McID = txtBoxMC_ID.Text;
+            report.Policy_ID = txtBoxPolicyID.Text;
+            report.STimeStamp = DateTime.Parse(txtBoxSTime.Text);
+            report.ETimeStamp = DateTime.Parse(txtBoxETime.Text);
+            report.Claim = cmbClaim.SelectedItem.ToString();
+            report.UpdateReport();
+            reportTabSelected();
+
         }
     }
 }

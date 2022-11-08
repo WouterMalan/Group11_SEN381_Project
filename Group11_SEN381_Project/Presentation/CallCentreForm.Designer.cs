@@ -30,7 +30,6 @@
         {
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,14 +38,18 @@
             this.txtBoxMedicalConditionSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.btnEndCall = new MaterialSkin.Controls.MaterialButton();
             this.btnAnswerCall = new MaterialSkin.Controls.MaterialButton();
-            this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxConditionDesc = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxMedicalConditionID = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxPolicyID = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxClientId = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxID = new MaterialSkin.Controls.MaterialTextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,11 +63,13 @@
             this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
-            this.columnHeader9,
             this.columnHeader10,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.materialListView2.Depth = 0;
             this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView2.FullRowSelect = true;
@@ -85,29 +90,24 @@
             this.columnHeader8.Text = "id";
             this.columnHeader8.Width = 100;
             // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Client Name";
-            this.columnHeader9.Width = 120;
-            // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Client Phone";
+            this.columnHeader10.Text = "Name Surname";
             this.columnHeader10.Width = 120;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Client Policy";
+            this.columnHeader1.Text = "Address";
             this.columnHeader1.Width = 120;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Medical Condition";
+            this.columnHeader2.Text = "Phone Number";
             this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Claim";
+            this.columnHeader3.Text = "Email";
             this.columnHeader3.Width = 120;
             // 
             // btnCallCentreSearch
@@ -195,41 +195,41 @@
             this.btnAnswerCall.UseVisualStyleBackColor = true;
             this.btnAnswerCall.Click += new System.EventHandler(this.btnAnswerCall_Click);
             // 
-            // txtBoxConditionName
+            // txtBoxMedicalConditionID
             // 
-            this.txtBoxConditionName.AnimateReadOnly = false;
-            this.txtBoxConditionName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxConditionName.Depth = 0;
-            this.txtBoxConditionName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionName.Hint = "Medical Condition ID";
-            this.txtBoxConditionName.LeadingIcon = null;
-            this.txtBoxConditionName.Location = new System.Drawing.Point(12, 230);
-            this.txtBoxConditionName.MaxLength = 50;
-            this.txtBoxConditionName.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxConditionName.Multiline = false;
-            this.txtBoxConditionName.Name = "txtBoxConditionName";
-            this.txtBoxConditionName.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxConditionName.TabIndex = 49;
-            this.txtBoxConditionName.Text = "";
-            this.txtBoxConditionName.TrailingIcon = null;
+            this.txtBoxMedicalConditionID.AnimateReadOnly = false;
+            this.txtBoxMedicalConditionID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxMedicalConditionID.Depth = 0;
+            this.txtBoxMedicalConditionID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxMedicalConditionID.Hint = "Medical Condition ID";
+            this.txtBoxMedicalConditionID.LeadingIcon = null;
+            this.txtBoxMedicalConditionID.Location = new System.Drawing.Point(12, 290);
+            this.txtBoxMedicalConditionID.MaxLength = 50;
+            this.txtBoxMedicalConditionID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxMedicalConditionID.Multiline = false;
+            this.txtBoxMedicalConditionID.Name = "txtBoxMedicalConditionID";
+            this.txtBoxMedicalConditionID.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxMedicalConditionID.TabIndex = 49;
+            this.txtBoxMedicalConditionID.Text = "";
+            this.txtBoxMedicalConditionID.TrailingIcon = null;
             // 
-            // txtBoxConditionDesc
+            // txtBoxPolicyID
             // 
-            this.txtBoxConditionDesc.AnimateReadOnly = false;
-            this.txtBoxConditionDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxConditionDesc.Depth = 0;
-            this.txtBoxConditionDesc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionDesc.Hint = "Policy ID";
-            this.txtBoxConditionDesc.LeadingIcon = null;
-            this.txtBoxConditionDesc.Location = new System.Drawing.Point(12, 302);
-            this.txtBoxConditionDesc.MaxLength = 50;
-            this.txtBoxConditionDesc.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxConditionDesc.Multiline = false;
-            this.txtBoxConditionDesc.Name = "txtBoxConditionDesc";
-            this.txtBoxConditionDesc.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxConditionDesc.TabIndex = 48;
-            this.txtBoxConditionDesc.Text = "";
-            this.txtBoxConditionDesc.TrailingIcon = null;
+            this.txtBoxPolicyID.AnimateReadOnly = false;
+            this.txtBoxPolicyID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPolicyID.Depth = 0;
+            this.txtBoxPolicyID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxPolicyID.Hint = "Policy ID";
+            this.txtBoxPolicyID.LeadingIcon = null;
+            this.txtBoxPolicyID.Location = new System.Drawing.Point(12, 358);
+            this.txtBoxPolicyID.MaxLength = 50;
+            this.txtBoxPolicyID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxPolicyID.Multiline = false;
+            this.txtBoxPolicyID.Name = "txtBoxPolicyID";
+            this.txtBoxPolicyID.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPolicyID.TabIndex = 48;
+            this.txtBoxPolicyID.Text = "";
+            this.txtBoxPolicyID.TrailingIcon = null;
             // 
             // txtBoxClientId
             // 
@@ -239,7 +239,7 @@
             this.txtBoxClientId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxClientId.Hint = "Client ID";
             this.txtBoxClientId.LeadingIcon = null;
-            this.txtBoxClientId.Location = new System.Drawing.Point(12, 163);
+            this.txtBoxClientId.Location = new System.Drawing.Point(12, 223);
             this.txtBoxClientId.MaxLength = 50;
             this.txtBoxClientId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxClientId.Multiline = false;
@@ -312,23 +312,55 @@
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             // 
+            // txtBoxID
+            // 
+            this.txtBoxID.AnimateReadOnly = false;
+            this.txtBoxID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxID.Depth = 0;
+            this.txtBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxID.Hint = "ID";
+            this.txtBoxID.LeadingIcon = null;
+            this.txtBoxID.Location = new System.Drawing.Point(15, 157);
+            this.txtBoxID.MaxLength = 50;
+            this.txtBoxID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxID.Multiline = false;
+            this.txtBoxID.Name = "txtBoxID";
+            this.txtBoxID.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxID.TabIndex = 53;
+            this.txtBoxID.Text = "";
+            this.txtBoxID.TrailingIcon = null;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Dependents";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "National ID";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Policy ID";
+            // 
             // CallCentreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 622);
+            this.Controls.Add(this.txtBoxID);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEndCall);
             this.Controls.Add(this.btnAnswerCall);
-            this.Controls.Add(this.txtBoxConditionName);
-            this.Controls.Add(this.txtBoxConditionDesc);
+            this.Controls.Add(this.txtBoxMedicalConditionID);
+            this.Controls.Add(this.txtBoxPolicyID);
             this.Controls.Add(this.txtBoxClientId);
             this.Controls.Add(this.materialListView2);
             this.Controls.Add(this.btnCallCentreSearch);
             this.Controls.Add(this.txtBoxMedicalConditionSearch);
             this.Name = "CallCentreForm";
             this.Text = "CallCentreForm";
+            this.Load += new System.EventHandler(this.CallCentreForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -340,14 +372,13 @@
 
         private MaterialSkin.Controls.MaterialListView materialListView2;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private MaterialSkin.Controls.MaterialButton btnCallCentreSearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxMedicalConditionSearch;
         private MaterialSkin.Controls.MaterialButton btnEndCall;
         private MaterialSkin.Controls.MaterialButton btnAnswerCall;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionDesc;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxMedicalConditionID;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyID;
         private MaterialSkin.Controls.MaterialTextBox txtBoxClientId;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -357,5 +388,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxID;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
