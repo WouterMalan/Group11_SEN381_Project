@@ -29,6 +29,8 @@ namespace Group11_SEN381_Project.Presentation
             pbErrorImportance.Visible = false;
             pbErrorFee.Visible = false;
             pbErrorYear.Visible = false;
+            pbErrorExpired.Visible = false;
+            
         }
 
         public void policyTabSelected()
@@ -116,7 +118,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.Text != "")
+            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.SelectedIndex !=-1)
             {
                 policy.PolicyID1 = txtBoxPolicyId.Text;
                 policy.Description1 = txtBoxPolicyDesc.Text;
@@ -128,7 +130,7 @@ namespace Group11_SEN381_Project.Presentation
                 policy.CreatePolicy();
                 policyTabSelected();// refresh the listview
                 idGeneratorPolicy();// generate a new id
-                clearFields();
+               
             }
             else
             {
@@ -157,10 +159,19 @@ namespace Group11_SEN381_Project.Presentation
                 else
                 {
                     pbErrorYear.Visible = false;
-                    
+                }
+                if(cmbExpired.SelectedIndex == -1)
+                {
+                    pbErrorExpired.Visible = true;
                     
                 }
+                else
+                {
+                    pbErrorExpired.Visible = false;
+                }
+            
             }
+            clearFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -177,7 +188,6 @@ namespace Group11_SEN381_Project.Presentation
                 policy.UpdatePolicy();
                 policyTabSelected();// refresh the listview
                 idGeneratorPolicy();// generate a new id
-                clearFields();
             }
             else
             {
@@ -198,8 +208,21 @@ namespace Group11_SEN381_Project.Presentation
                 {
                     pbErrorFee.Visible = false;
                 }
+                if (txtBoxPolicyDate.Text == "")
+                {
+                    pbErrorYear.Visible = true;
+
+                }
+                else
+                {
+                    pbErrorYear.Visible = false;
+
+
+                }
 
             }
+            clearFields();
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -232,6 +255,7 @@ namespace Group11_SEN381_Project.Presentation
             pbErrorFee.Visible = false;
             pbErrorImportance.Visible = false;
             pbErrorYear.Visible = false;
+            pbErrorExpired.Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

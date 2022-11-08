@@ -26,6 +26,8 @@ namespace Group11_SEN381_Project.Presentation
         private void Medical_Condition_Form_Load(object sender, EventArgs e)
         {
             medicalConditionTabSelected();
+            pbErrorConName.Visible = false;
+            pbErrorPriority.Visible = false;
         }
 
         public void medicalConditionTabSelected()
@@ -94,26 +96,83 @@ namespace Group11_SEN381_Project.Presentation
         
         private void btnCreateMedicalCondition_Click(object sender, EventArgs e)
         {
-            medical_Condition.ConditionID = txtBoxConditionId.Text;
-            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
-            medical_Condition.Priority1 = txtBoxPriority.Text;
-            medical_Condition.CreateMedicalConditions();
-            medicalConditionTabSelected();
+            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
+            {
+                    medical_Condition.ConditionID = txtBoxConditionId.Text;
+                    medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+                    medical_Condition.Priority1 = txtBoxPriority.Text;
+                    medical_Condition.CreateMedicalConditions();
+                    medicalConditionTabSelected();
+
+                    clearFields();
+            }
+            else
+            {
+                
+                    MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(txtBoxConditionName.Text == "")
+                {
+                    pbErrorConName.Visible = true;
+                    txtBoxConditionName.Focus();
+                }
+                else
+                {
+                    pbErrorConName.Visible = false;
+                }
+                if (txtBoxPriority.Text == "")
+                {
+                    pbErrorPriority.Visible = true;
+                    txtBoxPriority.Focus();
+
+                }
+                else
+                {
+                    pbErrorPriority.Visible = false;
+                }
+      
+            }
             
-            clearFields();
+           
 
         }
 
         private void btnUpdateMedicalCondition_Click(object sender, EventArgs e)
         {
+            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
+            {
                 medical_Condition.ConditionID = txtBoxConditionId.Text;
                 medical_Condition.ConditionName1 = txtBoxConditionName.Text;
                 medical_Condition.Priority1 = txtBoxPriority.Text;
                 medical_Condition.UpdateMedicalConditions();
                 medicalConditionTabSelected();
-                         
-            
-            clearFields();
+
+                clearFields();
+            }
+            else
+            {
+
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxConditionName.Text == "")
+                {
+                    pbErrorConName.Visible = true;
+                    txtBoxConditionName.Focus();
+                }
+                else
+                {
+                    pbErrorConName.Visible = false;
+                }
+                if (txtBoxPriority.Text == "")
+                {
+                    pbErrorPriority.Visible = true;
+                    txtBoxPriority.Focus();
+
+                }
+                else
+                {
+                    pbErrorPriority.Visible = false;
+                }
+
+            }
         }
 
         private void btnDeleteMedicalCondition_Click(object sender, EventArgs e)
@@ -136,7 +195,9 @@ namespace Group11_SEN381_Project.Presentation
         {
             txtBoxConditionName.Text = "";
                 txtBoxPriority.Text = "";
-            
+            pbErrorConName.Visible = false;
+            pbErrorPriority.Visible = false;
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

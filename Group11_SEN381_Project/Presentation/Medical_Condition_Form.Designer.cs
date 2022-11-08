@@ -41,6 +41,10 @@
             this.txtBoxPriority = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
             this.btnClear = new MaterialSkin.Controls.MaterialButton();
+            this.pbErrorConName = new System.Windows.Forms.PictureBox();
+            this.pbErrorPriority = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorConName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorPriority)).BeginInit();
             this.SuspendLayout();
             // 
             // materialListView2
@@ -272,11 +276,35 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // pbErrorConName
+            // 
+            this.pbErrorConName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorConName.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorConName.Location = new System.Drawing.Point(1005, 256);
+            this.pbErrorConName.Name = "pbErrorConName";
+            this.pbErrorConName.Size = new System.Drawing.Size(29, 23);
+            this.pbErrorConName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorConName.TabIndex = 57;
+            this.pbErrorConName.TabStop = false;
+            // 
+            // pbErrorPriority
+            // 
+            this.pbErrorPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorPriority.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorPriority.Location = new System.Drawing.Point(1005, 325);
+            this.pbErrorPriority.Name = "pbErrorPriority";
+            this.pbErrorPriority.Size = new System.Drawing.Size(29, 23);
+            this.pbErrorPriority.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorPriority.TabIndex = 56;
+            this.pbErrorPriority.TabStop = false;
+            // 
             // Medical_Condition_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 574);
+            this.Controls.Add(this.pbErrorConName);
+            this.Controls.Add(this.pbErrorPriority);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.materialListView2);
             this.Controls.Add(this.btnMedicalConditionSearch);
@@ -290,6 +318,8 @@
             this.Name = "Medical_Condition_Form";
             this.Text = "Medical_Condition_Form";
             this.Load += new System.EventHandler(this.Medical_Condition_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorConName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorPriority)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +340,7 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxPriority;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
         private MaterialSkin.Controls.MaterialButton btnClear;
+        private System.Windows.Forms.PictureBox pbErrorConName;
+        private System.Windows.Forms.PictureBox pbErrorPriority;
     }
 }

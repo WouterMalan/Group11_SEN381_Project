@@ -50,9 +50,11 @@
             this.pbErrorImportance = new System.Windows.Forms.PictureBox();
             this.pbErrorFee = new System.Windows.Forms.PictureBox();
             this.pbErrorYear = new System.Windows.Forms.PictureBox();
+            this.pbErrorExpired = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorImportance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorFee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorExpired)).BeginInit();
             this.SuspendLayout();
             // 
             // materialListView3
@@ -102,7 +104,7 @@
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "Type";
+            this.columnHeader14.Text = "Importance";
             this.columnHeader14.Width = 120;
             // 
             // columnHeader15
@@ -400,11 +402,23 @@
             this.pbErrorYear.TabIndex = 56;
             this.pbErrorYear.TabStop = false;
             // 
+            // pbErrorExpired
+            // 
+            this.pbErrorExpired.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorExpired.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorExpired.Location = new System.Drawing.Point(844, 415);
+            this.pbErrorExpired.Name = "pbErrorExpired";
+            this.pbErrorExpired.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorExpired.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorExpired.TabIndex = 57;
+            this.pbErrorExpired.TabStop = false;
+            // 
             // PolicyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 567);
+            this.Controls.Add(this.pbErrorExpired);
             this.Controls.Add(this.pbErrorYear);
             this.Controls.Add(this.pbErrorImportance);
             this.Controls.Add(this.pbErrorFee);
@@ -427,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorImportance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorFee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorExpired)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,5 +471,6 @@
         private System.Windows.Forms.PictureBox pbErrorImportance;
         private System.Windows.Forms.PictureBox pbErrorFee;
         private System.Windows.Forms.PictureBox pbErrorYear;
+        private System.Windows.Forms.PictureBox pbErrorExpired;
     }
 }
