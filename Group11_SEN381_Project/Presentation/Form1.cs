@@ -15,6 +15,8 @@ using System.Drawing.Text;
 using RJCodeAdvance.RJControls;
 using System.Runtime.InteropServices;
 using Group11_SEN381_Project.Presentation;
+using LiveCharts.Wpf;
+using LiveCharts;
 
 namespace Group11_SEN381_Project
 {
@@ -44,6 +46,37 @@ namespace Group11_SEN381_Project
             this.DoubleBuffered = true;// to remove the flickering of the form
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;// to remove the maximized button and to make the form maximized by default
 
+
+            //pie chart
+            pieChart1.Series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                   // show all the policies that are active
+                    Title = "Active Policies",
+                    // count the number of rows in the Policy table
+                    Values = new ChartValues<int> { 20 },
+                    DataLabels = true
+                },
+                new PieSeries
+                {
+                    //show all the clients
+                    Title = "Clients",
+                    // count the number of rows in the Client table
+                    Values = new ChartValues<int> { 15 },
+            DataLabels = true
+                },
+                new PieSeries
+                {
+                    //show all the providers in the system
+                    Title = "Providers",
+                    Values = new ChartValues<int> { 10 },
+                    DataLabels = true
+
+                }
+            };
+
+            pieChart1.LegendLocation = LegendLocation.Bottom;
         }
         // struct to store the data of the buttons in the menu
         private struct RGBColors
@@ -123,6 +156,7 @@ namespace Group11_SEN381_Project
         {
             DataHandler dh = new DataHandler();
             dh.sqlcon();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -197,6 +231,7 @@ namespace Group11_SEN381_Project
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.RoyalBlue;
             lblTitleChildForm.Text = "Home";
+            
         }
 
         
@@ -290,6 +325,27 @@ namespace Group11_SEN381_Project
         {
             lblTitleChildForm.Text = "Report";
             OpenChildForm(new Report());
+        }
+
+        private void btnOpenClient_Click(object sender, EventArgs e)
+        {
+            iconCurrentChildForm.IconChar = IconChar.User;
+            lblTitleChildForm.Text = "Client";
+            OpenChildForm(new Client());
+        }
+
+        private void btnOpenPolicy_Click(object sender, EventArgs e)
+        {
+            iconCurrentChildForm.IconChar = IconChar.ClipboardList;
+            lblTitleChildForm.Text = "Policy";
+            OpenChildForm(new PolicyForm());
+        }
+
+        private void btnOpenProviders_Click(object sender, EventArgs e)
+        {
+            iconCurrentChildForm.IconChar = IconChar.Hospital;
+            lblTitleChildForm.Text = "Provider";
+            OpenChildForm(new ProviderForm());
         }
     }
     

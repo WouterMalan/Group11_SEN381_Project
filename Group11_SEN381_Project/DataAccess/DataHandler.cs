@@ -54,7 +54,7 @@ namespace Group11_SEN381_Project.DataAccess
             }
         }
 
-        
+
         // update the client details
         public void updateClient(Client client)
         {

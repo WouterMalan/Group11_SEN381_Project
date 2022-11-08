@@ -73,6 +73,36 @@ namespace Group11_SEN381_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_pane_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-pane-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_pane_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-pane-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ukupholisa_Healthcare_1_2_ {
+            get {
+                object obj = ResourceManager.GetObject("Ukupholisa Healthcare-1(2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ukupholisa_Healthcare_logos {
             get {
                 object obj = ResourceManager.GetObject("Ukupholisa Healthcare-logos", resourceCulture);
@@ -86,6 +116,26 @@ namespace Group11_SEN381_Project.Properties {
         internal static System.Drawing.Bitmap Ukupholisa_Healthcare_logos_transparent {
             get {
                 object obj = ResourceManager.GetObject("Ukupholisa Healthcare-logos_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ukupholisa_Healthcare_logos_transparent1 {
+            get {
+                object obj = ResourceManager.GetObject("Ukupholisa Healthcare-logos_transparent1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ukupholisa_Healthcare_logos_transparent2 {
+            get {
+                object obj = ResourceManager.GetObject("Ukupholisa Healthcare-logos_transparent2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
