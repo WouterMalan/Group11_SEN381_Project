@@ -94,7 +94,7 @@ namespace Group11_SEN381_Project.Presentation
                         ListViewItem item = new ListViewItem(row["id"].ToString());
                         item.SubItems.Add(row["description"].ToString());
                         item.SubItems.Add(row["Date_Time"].ToString());
-                        item.SubItems.Add(row["Type_of_Policy"].ToString());
+                        item.SubItems.Add(row["Importance"].ToString());
                         item.SubItems.Add(row["Fee"].ToString());
                         item.SubItems.Add(row["expired"].ToString());
                         materialListView3.Items.Add(item);
@@ -130,7 +130,8 @@ namespace Group11_SEN381_Project.Presentation
                 policy.CreatePolicy();
                 policyTabSelected();// refresh the listview
                 idGeneratorPolicy();// generate a new id
-               
+            clearFields();
+
             }
             else
             {
@@ -171,12 +172,11 @@ namespace Group11_SEN381_Project.Presentation
                 }
             
             }
-            clearFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDesc.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.Text != "")
+            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDesc.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.SelectedIndex !=-1)
             {
                 policy.PolicyID1 = txtBoxPolicyId.Text;
                 policy.Description1 = txtBoxPolicyDesc.Text;
@@ -188,6 +188,8 @@ namespace Group11_SEN381_Project.Presentation
                 policy.UpdatePolicy();
                 policyTabSelected();// refresh the listview
                 idGeneratorPolicy();// generate a new id
+                clearFields();
+                
             }
             else
             {
@@ -219,9 +221,17 @@ namespace Group11_SEN381_Project.Presentation
 
 
                 }
+                if (cmbExpired.SelectedIndex == -1)
+                {
+                    pbErrorExpired.Visible = true;
+
+                }
+                else
+                {
+                    pbErrorExpired.Visible = false;
+                }
 
             }
-            clearFields();
             
         }
 

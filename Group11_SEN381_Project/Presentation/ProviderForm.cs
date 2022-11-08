@@ -118,7 +118,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
+            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.SelectedIndex !=-1)
             {
                 provider.ProviderID = int.Parse(txtBoxProviderId.Text);
                 provider.ProvName = txtBoxProviderName.Text;
@@ -160,7 +160,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
+            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.SelectedIndex != -1)
             {
                 provider.ProviderID = int.Parse(txtBoxProviderId.Text);
                 provider.ProvName = txtBoxProviderName.Text;

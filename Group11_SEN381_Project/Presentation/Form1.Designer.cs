@@ -88,7 +88,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 708);
+            this.panelMenu.Size = new System.Drawing.Size(220, 761);
             this.panelMenu.TabIndex = 1;
             // 
             // btnTreatment
@@ -288,7 +288,7 @@
             this.panelTitleShow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleShow.Location = new System.Drawing.Point(220, 0);
             this.panelTitleShow.Name = "panelTitleShow";
-            this.panelTitleShow.Size = new System.Drawing.Size(1046, 75);
+            this.panelTitleShow.Size = new System.Drawing.Size(1046, 110);
             this.panelTitleShow.TabIndex = 2;
             this.panelTitleShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleShow_MouseDown);
             // 
@@ -367,9 +367,9 @@
             this.panelDesktop.Controls.Add(this.btnOpenClient);
             this.panelDesktop.Controls.Add(this.materialCard1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 75);
+            this.panelDesktop.Location = new System.Drawing.Point(220, 110);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1046, 633);
+            this.panelDesktop.Size = new System.Drawing.Size(1046, 651);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox1
@@ -379,7 +379,7 @@
             this.pictureBox1.Image = global::Group11_SEN381_Project.Properties.Resources.Ukupholisa_Healthcare_logos_transparent2;
             this.pictureBox1.Location = new System.Drawing.Point(6, 156);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 399);
+            this.pictureBox1.Size = new System.Drawing.Size(568, 417);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -391,7 +391,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pieChart1.Location = new System.Drawing.Point(580, 135);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(463, 411);
+            this.pieChart1.Size = new System.Drawing.Size(463, 429);
             this.pieChart1.TabIndex = 26;
             this.pieChart1.Text = "pieChart1";
             // 
@@ -585,7 +585,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 708);
+            this.ClientSize = new System.Drawing.Size(1266, 761);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleShow);
             this.Controls.Add(this.panelMenu);

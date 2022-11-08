@@ -86,7 +86,7 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Description";
+            this.columnHeader10.Text = "Priority";
             this.columnHeader10.Width = 300;
             // 
             // btnMedicalConditionSearch

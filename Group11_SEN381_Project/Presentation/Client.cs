@@ -46,7 +46,7 @@ namespace Group11_SEN381_Project.Presentation
                 item.SubItems.Add(row["Email"].ToString());
                 item.SubItems.Add(row["Dependents"].ToString());
                 item.SubItems.Add(row["National_id"].ToString());
-                item.SubItems.Add(row["Provider_ID"].ToString());
+                item.SubItems.Add(row["Policy_ID"].ToString());
                 materialListView1.Items.Add(item);
             }
             //display the selected listview item in the textboxes
@@ -107,7 +107,7 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["Email"].ToString());
                         item.SubItems.Add(row["Dependents"].ToString());
                         item.SubItems.Add(row["National_id"].ToString());
-                        item.SubItems.Add(row["Provider_ID"].ToString());
+                        item.SubItems.Add(row["Policy_ID"].ToString());
                         materialListView1.Items.Add(item);
                     }
                     clearFields();
@@ -183,6 +183,11 @@ namespace Group11_SEN381_Project.Presentation
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void btnCreateClient_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
