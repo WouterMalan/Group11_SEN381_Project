@@ -25,6 +25,7 @@ namespace Group11_SEN381_Project.Presentation
         private void ProviderForm_Load(object sender, EventArgs e)
         {
             providerTabSelected();
+            idGeneratorProvider();
         }
 
         public void providerTabSelected()
@@ -34,7 +35,7 @@ namespace Group11_SEN381_Project.Presentation
 
                 //the listview of the provider tab
                 ListViewProvider.Items.Clear();
-                foreach (DataRow row in dataHandler.getProvider().Rows)
+                foreach (DataRow row in provider.getProvider().Rows)
                 {
                     ListViewItem item = new ListViewItem(row["id"].ToString());
                     item.SubItems.Add(row["Name"].ToString());
@@ -96,6 +97,7 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["Rating"].ToString());
                         ListViewProvider.Items.Add(item);
                     }
+                    clearFields();
                 }
                 else
                 {
@@ -119,7 +121,7 @@ namespace Group11_SEN381_Project.Presentation
                 provider.ProviderID = int.Parse(txtBoxProviderId.Text);
                 provider.ProvName = txtBoxProviderName.Text;
                 provider.Location = txtBoxProviderLocation.Text;
-                provider.Rating = int.Parse(cmbProviderRating.Text);
+                provider.Rating = int.Parse(cmbProviderRating.SelectedItem.ToString());
                 provider.CreateProvider();
                 providerTabSelected();
             }
@@ -128,6 +130,7 @@ namespace Group11_SEN381_Project.Presentation
                 MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             providerTabSelected();
+            clearFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -137,8 +140,24 @@ namespace Group11_SEN381_Project.Presentation
                 provider.ProviderID = int.Parse(txtBoxProviderId.Text);
                 provider.ProvName = txtBoxProviderName.Text;
                 provider.Location = txtBoxProviderLocation.Text;
-                provider.Rating = int.Parse(cmbProviderRating.Text);
+                provider.Rating = int.Parse(cmbProviderRating.SelectedItem.ToString());
                 provider.UpdateProvider();
+                providerTabSelected();
+                clearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            providerTabSelected();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtBoxProviderId.Text != "")
+            {
+                provider.ProviderID = int.Parse(txtBoxProviderId.Text);
+                provider.DeleteProvider();
                 providerTabSelected();
             }
             else
@@ -146,6 +165,27 @@ namespace Group11_SEN381_Project.Presentation
                 MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             providerTabSelected();
+            clearFields();
+        }
+
+        private void idGeneratorProvider()
+        {
+            int id = 0;
+            foreach (DataRow row in provider.getProvider().Rows)
+            {
+                id = int.Parse(row["id"].ToString());
+            }
+            id++;
+            txtBoxProviderId.Text = id.ToString();
+        }
+
+        private void clearFields()
+        {
+            txtBoxProviderId.Text = "";
+            txtBoxProviderName.Text = "";
+            txtBoxProviderLocation.Text = "";
+            cmbProviderRating.SelectedIndex = -1;
+
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Group11_SEN381_Project.Presentation
         private void TreatmentForm_Load(object sender, EventArgs e)
         {
             treatmentTabSelected();
+            idGeneratorTreatment();
         }
 
         public void treatmentTabSelected()
@@ -33,11 +34,13 @@ namespace Group11_SEN381_Project.Presentation
 
             //the listview of the policy tab
             materialListView5.Items.Clear();
-            foreach (DataRow row in dataHandler.getTreatment().Rows)
+            foreach (DataRow row in treatment.getTreatment().Rows)
             {
                 ListViewItem item = new ListViewItem(row["id"].ToString());
                 item.SubItems.Add(row["Treatment_Name"].ToString());
-                item.SubItems.Add(row["Description"].ToString());
+                item.SubItems.Add(row["Level"].ToString());
+                item.SubItems.Add(row["Days"].ToString());
+                
                 materialListView5.Items.Add(item);
             }
             //display the selected listview item in the textboxes
@@ -48,8 +51,9 @@ namespace Group11_SEN381_Project.Presentation
                     ListViewItem item = materialListView5.SelectedItems[0];
                     txtBoxTreatmentId.Text = item.SubItems[0].Text;
                     txtBoxTreatmentName.Text = item.SubItems[1].Text;
-                    txtBoxTreatmentDesc.Text = item.SubItems[2].Text;
-                    
+                    txtBoxTreatmentLevel.Text = item.SubItems[2].Text;
+                    numericUpDown1.Value = Convert.ToInt32(item.SubItems[3].Text);//Days
+
                 }
             };
             materialListView5.GridLines = false;
@@ -62,20 +66,22 @@ namespace Group11_SEN381_Project.Presentation
         {
             treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
             treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level         = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
-            treatment.Days          = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.Level         = txtBoxTreatmentLevel.Text;
+            treatment.Days = Convert.ToInt32(numericUpDown1.Value);
             treatment.CreateTreatments();
             treatmentTabSelected();
+            clearFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
             treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level         = txtBoxTreatmentDesc.Text;//TODO:CHANGE LEVEL AND TXT BOX NAME
-            treatment.Days          = int.Parse(txtBoxTreatmentDays.Text);//ADD TXT BOX FOR DAYS
+            treatment.Level         = txtBoxTreatmentLevel.Text;
+            treatment.Days          = Convert.ToInt32(numericUpDown1.Value); 
             treatment.UpdateTreatments();
             treatmentTabSelected();
+            clearFields();
         }
 
         private void btnTreatmentSearch_Click(object sender, EventArgs e)
@@ -91,9 +97,11 @@ namespace Group11_SEN381_Project.Presentation
                     {
                         ListViewItem item = new ListViewItem(row["id"].ToString());
                         item.SubItems.Add(row["Treatment_Name"].ToString());
-                        item.SubItems.Add(row["Description"].ToString());
+                        item.SubItems.Add(row["Level"].ToString());
+                        item.SubItems.Add(row["Days"].ToString());
                         materialListView5.Items.Add(item);
                     }
+                    clearFields();
                 }
                 else
                 {
@@ -107,6 +115,32 @@ namespace Group11_SEN381_Project.Presentation
                 treatmentTabSelected();
                 MessageBox.Show("Please enter a valid Treatment id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void idGeneratorTreatment()
+        {
+            int id = 0;
+            foreach (DataRow row in treatment.getTreatment().Rows)
+            {
+                id = int.Parse(row["id"].ToString());
+            }
+            id++;
+            txtBoxTreatmentId.Text = id.ToString();
+        }
+
+        private void clearFields()
+        {
+            
+                txtBoxTreatmentId.Text = "";
+                txtBoxTreatmentName.Text = "";
+                txtBoxTreatmentLevel.Text = "";
+                numericUpDown1.Value = 0;
+            
+        }
+
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Group11_SEN381_Project.Presentation
         private void PolicyForm_Load(object sender, EventArgs e)
         {
             policyTabSelected();
+            idGeneratorPolicy();
         }
 
         public void policyTabSelected()
@@ -33,12 +34,12 @@ namespace Group11_SEN381_Project.Presentation
 
             //the listview of the policy tab
             materialListView3.Items.Clear();
-            foreach (DataRow row in dataHandler.getPolicy().Rows)
+            foreach (DataRow row in policy.getPolicy().Rows)
             {
                 ListViewItem item = new ListViewItem(row["id"].ToString());
                 item.SubItems.Add(row["description"].ToString());
                 item.SubItems.Add(row["Date_Time"].ToString());
-                item.SubItems.Add(row["Type_of_Policy"].ToString());
+                item.SubItems.Add(row["Importance"].ToString());
                 item.SubItems.Add(row["Fee"].ToString());
                 item.SubItems.Add(row["expired"].ToString());
                 materialListView3.Items.Add(item);
@@ -52,7 +53,7 @@ namespace Group11_SEN381_Project.Presentation
                     txtBoxPolicyId.Text = item.SubItems[0].Text;
                     txtBoxPolicyDesc.Text = item.SubItems[1].Text;
                     txtBoxPolicyDate.Text = item.SubItems[2].Text;
-                    txtBoxPolicyType.Text = item.SubItems[3].Text;
+                    txtBoxImportance.Text = item.SubItems[3].Text;
                     txtBoxPolicyFee.Text = item.SubItems[4].Text;
                     //display value from listview in combo box
                     if (item.SubItems[5].Text == "True")
@@ -93,6 +94,8 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["expired"].ToString());
                         materialListView3.Items.Add(item);
                     }
+                    clearFields();
+                    
                 }
                 else
                 {
@@ -112,24 +115,59 @@ namespace Group11_SEN381_Project.Presentation
         {
             policy.PolicyID1 = txtBoxPolicyId.Text;
             policy.Description1 = txtBoxPolicyDesc.Text;
-            policy.StartDate1 = txtBoxPolicyDate.Text;
-            policy.Importance1 = txtBoxPolicyType.Text;//TODO:CHANGE TXT BOX NAME AND ADD MORE
-            policy.Fee1 = txtBoxPolicyFee.Text;
-            policy.Expired1 = cmbExpired.Text;
+            policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
+            policy.Importance1 = txtBoxImportance.Text;
+            policy.Fee1 = Double.Parse(txtBoxPolicyFee.Text);
+            policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
             policy.CreatePolicy();
             policyTabSelected();// refresh the listview
+            clearFields();
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             policy.PolicyID1 = txtBoxPolicyId.Text;
             policy.Description1 = txtBoxPolicyDesc.Text;
-            policy.StartDate1 = txtBoxPolicyDate.Text;
-            policy.Importance1 = txtBoxPolicyType.Text;//TODO:CHANGE TXT BOX NAME AND ADD MORE
-            policy.Fee1 = txtBoxPolicyFee.Text;
-            policy.Expired1 = cmbExpired.Text;
+            policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
+            policy.Importance1 = txtBoxImportance.Text;
+            policy.Fee1 = Double.Parse(txtBoxPolicyFee.Text);
+            policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
             policy.UpdatePolicy();
             policyTabSelected();//refresh the listview
+            clearFields();
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            policy.PolicyID1 = txtBoxPolicyId.Text;
+            policy.DeletePolicy();
+            policyTabSelected();//refresh the listview
+            clearFields();
+        }
+
+        private void idGeneratorPolicy()
+        {
+            int id = 0;
+            foreach (DataRow row in policy.getPolicy().Rows)
+            {
+                id = int.Parse(row["id"].ToString());
+            }
+            id++;
+            txtBoxPolicyId.Text = id.ToString();
+        }
+
+        private void clearFields()
+        {
+
+            txtBoxPolicyId.Text = "";
+            txtBoxPolicyDesc.Text = "";
+            txtBoxPolicyDate.Text = "";
+            txtBoxImportance.Text = "";
+            txtBoxPolicyFee.Text = "";
+            cmbExpired.SelectedIndex = -1;
+
         }
     }
 }

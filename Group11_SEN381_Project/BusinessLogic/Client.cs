@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Group11_SEN381_Project.DataAccess;
+using System.Data;
 
 namespace Group11_SEN381_Project.BusinessLogic
 {
@@ -23,7 +24,7 @@ namespace Group11_SEN381_Project.BusinessLogic
         private string policyID;
 
 
-        public string ID { get => id; set => id = clientIDGenerator(id); }// set the id to the value of the clientIDGenerator method
+        public string ID { get => id; set => id = clientIDGenerator(); }// set the id to the value of the clientIDGenerator method
 
         public string FullName   { get => fullName; set => fullName = value; }
         public string Address    { get => address; set => address = value; }
@@ -64,15 +65,15 @@ namespace Group11_SEN381_Project.BusinessLogic
             DataHandler dataHandler = new DataHandler();
             dataHandler.DeleteClient(this);
         }
-
-        public void getClient()
+        
+        public DataTable getClient()
         {
             DataHandler dataHandler = new DataHandler();
-            dataHandler.getClient();
+            return dataHandler.getClient();
         }
 
         // generate client ID
-        public string clientIDGenerator(string id)
+        public string clientIDGenerator()
         {
             string[] characters = { "G", "H", "J", "K", "L" };
             string[] numbers    = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };

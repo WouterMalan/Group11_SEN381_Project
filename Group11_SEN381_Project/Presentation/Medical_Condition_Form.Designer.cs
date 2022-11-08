@@ -38,7 +38,7 @@
             this.btnUpdateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
             this.btnCreateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxConditionDesc = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxPriority = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
@@ -146,6 +146,7 @@
             this.btnDeleteMedicalCondition.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDeleteMedicalCondition.UseAccentColor = false;
             this.btnDeleteMedicalCondition.UseVisualStyleBackColor = true;
+            this.btnDeleteMedicalCondition.Click += new System.EventHandler(this.btnDeleteMedicalCondition_Click);
             // 
             // btnUpdateMedicalCondition
             // 
@@ -210,24 +211,24 @@
             this.txtBoxConditionName.Text = "";
             this.txtBoxConditionName.TrailingIcon = null;
             // 
-            // txtBoxConditionDesc
+            // txtBoxPriority
             // 
-            this.txtBoxConditionDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxConditionDesc.AnimateReadOnly = false;
-            this.txtBoxConditionDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxConditionDesc.Depth = 0;
-            this.txtBoxConditionDesc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionDesc.Hint = "Description";
-            this.txtBoxConditionDesc.LeadingIcon = null;
-            this.txtBoxConditionDesc.Location = new System.Drawing.Point(707, 308);
-            this.txtBoxConditionDesc.MaxLength = 50;
-            this.txtBoxConditionDesc.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxConditionDesc.Multiline = false;
-            this.txtBoxConditionDesc.Name = "txtBoxConditionDesc";
-            this.txtBoxConditionDesc.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxConditionDesc.TabIndex = 30;
-            this.txtBoxConditionDesc.Text = "";
-            this.txtBoxConditionDesc.TrailingIcon = null;
+            this.txtBoxPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxPriority.AnimateReadOnly = false;
+            this.txtBoxPriority.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPriority.Depth = 0;
+            this.txtBoxPriority.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxPriority.Hint = "Priority";
+            this.txtBoxPriority.LeadingIcon = null;
+            this.txtBoxPriority.Location = new System.Drawing.Point(707, 308);
+            this.txtBoxPriority.MaxLength = 50;
+            this.txtBoxPriority.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxPriority.Multiline = false;
+            this.txtBoxPriority.Name = "txtBoxPriority";
+            this.txtBoxPriority.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPriority.TabIndex = 30;
+            this.txtBoxPriority.Text = "";
+            this.txtBoxPriority.TrailingIcon = null;
             // 
             // txtBoxConditionId
             // 
@@ -260,7 +261,7 @@
             this.Controls.Add(this.btnUpdateMedicalCondition);
             this.Controls.Add(this.btnCreateMedicalCondition);
             this.Controls.Add(this.txtBoxConditionName);
-            this.Controls.Add(this.txtBoxConditionDesc);
+            this.Controls.Add(this.txtBoxPriority);
             this.Controls.Add(this.txtBoxConditionId);
             this.Name = "Medical_Condition_Form";
             this.Text = "Medical_Condition_Form";
@@ -282,7 +283,7 @@
         private MaterialSkin.Controls.MaterialButton btnUpdateMedicalCondition;
         private MaterialSkin.Controls.MaterialButton btnCreateMedicalCondition;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionDesc;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxPriority;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
     }
 }

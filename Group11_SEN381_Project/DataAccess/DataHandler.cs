@@ -68,7 +68,7 @@ namespace Group11_SEN381_Project.DataAccess
                 cmd.Parameters.AddWithValue("@Address", client.Address);
                 cmd.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
                 cmd.Parameters.AddWithValue("@Email", client.Email);
-                cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
+                cmd.Parameters.AddWithValue("@Dependents", client.Dependants);
                 cmd.Parameters.AddWithValue("@National_id", client.NatID);
                 cmd.Parameters.AddWithValue("@Policy_ID", client.PolicyID);
                 cmd.ExecuteNonQuery();
@@ -114,7 +114,7 @@ namespace Group11_SEN381_Project.DataAccess
                 cmd.Parameters.AddWithValue("@Address", client.Address);
                 cmd.Parameters.AddWithValue("@Phone_Number", client.PhoneNum);
                 cmd.Parameters.AddWithValue("@Email", client.Email);
-                cmd.Parameters.AddWithValue("@Dependants", client.Dependants);
+                cmd.Parameters.AddWithValue("@Dependents", client.Dependants);
                 cmd.Parameters.AddWithValue("@National_id", client.NatID);
                 cmd.Parameters.AddWithValue("@Policy_ID", client.PolicyID);
                 cmd.ExecuteNonQuery();
@@ -331,6 +331,7 @@ namespace Group11_SEN381_Project.DataAccess
                 con.Open();
                 SqlCommand cmd = new SqlCommand("InsertProviders", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", provider.ProviderID);
                 cmd.Parameters.AddWithValue("@Name", provider.ProvName);
                 cmd.Parameters.AddWithValue("@Location", provider.Location);
                 cmd.Parameters.AddWithValue("@Rating", provider.Rating);
@@ -559,6 +560,7 @@ namespace Group11_SEN381_Project.DataAccess
                 con.Open();
                 SqlCommand cmd = new SqlCommand("InsertTreatments", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", treatment.TreatmentID);
                 cmd.Parameters.AddWithValue("@Treatment_Name", treatment.TreatmentName);
                 cmd.Parameters.AddWithValue("@Level", treatment.Level);
                 cmd.Parameters.AddWithValue("@Days", treatment.Days);

@@ -41,7 +41,7 @@
             this.cmbExpired = new MaterialSkin.Controls.MaterialComboBox();
             this.btnPolicySearch = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxPolicySearch = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxPolicyType = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxImportance = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyFee = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyDesc = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyDate = new MaterialSkin.Controls.MaterialTextBox();
@@ -128,6 +128,7 @@
             this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDelete.UseAccentColor = false;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -242,24 +243,24 @@
             this.txtBoxPolicySearch.Text = "";
             this.txtBoxPolicySearch.TrailingIcon = null;
             // 
-            // txtBoxPolicyType
+            // txtBoxImportance
             // 
-            this.txtBoxPolicyType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxPolicyType.AnimateReadOnly = false;
-            this.txtBoxPolicyType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxPolicyType.Depth = 0;
-            this.txtBoxPolicyType.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxPolicyType.Hint = "Type of Policy";
-            this.txtBoxPolicyType.LeadingIcon = null;
-            this.txtBoxPolicyType.Location = new System.Drawing.Point(720, 269);
-            this.txtBoxPolicyType.MaxLength = 50;
-            this.txtBoxPolicyType.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxPolicyType.Multiline = false;
-            this.txtBoxPolicyType.Name = "txtBoxPolicyType";
-            this.txtBoxPolicyType.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxPolicyType.TabIndex = 33;
-            this.txtBoxPolicyType.Text = "";
-            this.txtBoxPolicyType.TrailingIcon = null;
+            this.txtBoxImportance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxImportance.AnimateReadOnly = false;
+            this.txtBoxImportance.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxImportance.Depth = 0;
+            this.txtBoxImportance.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxImportance.Hint = "Importance";
+            this.txtBoxImportance.LeadingIcon = null;
+            this.txtBoxImportance.Location = new System.Drawing.Point(720, 269);
+            this.txtBoxImportance.MaxLength = 50;
+            this.txtBoxImportance.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxImportance.Multiline = false;
+            this.txtBoxImportance.Name = "txtBoxImportance";
+            this.txtBoxImportance.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxImportance.TabIndex = 33;
+            this.txtBoxImportance.Text = "";
+            this.txtBoxImportance.TrailingIcon = null;
             // 
             // txtBoxPolicyFee
             // 
@@ -349,7 +350,7 @@
             this.Controls.Add(this.cmbExpired);
             this.Controls.Add(this.btnPolicySearch);
             this.Controls.Add(this.txtBoxPolicySearch);
-            this.Controls.Add(this.txtBoxPolicyType);
+            this.Controls.Add(this.txtBoxImportance);
             this.Controls.Add(this.txtBoxPolicyFee);
             this.Controls.Add(this.txtBoxPolicyDesc);
             this.Controls.Add(this.txtBoxPolicyDate);
@@ -377,7 +378,7 @@
         private MaterialSkin.Controls.MaterialComboBox cmbExpired;
         private MaterialSkin.Controls.MaterialButton btnPolicySearch;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicySearch;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyType;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxImportance;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyFee;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyDesc;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyDate;

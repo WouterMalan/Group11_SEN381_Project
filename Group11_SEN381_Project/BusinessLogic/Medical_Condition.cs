@@ -1,6 +1,7 @@
 ﻿using Group11_SEN381_Project.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,10 +30,11 @@ namespace Group11_SEN381_Project.BusinessLogic
         }
         
 
-       public void getMedicalCondition()
+       public DataTable getMedicalCondition()
         {
             DataHandler dataHandler = new DataHandler();
-            dataHandler.getMedicalCondition();
+            return dataHandler.getMedicalCondition();
+
         }
 
         public void CreateMedicalConditions()

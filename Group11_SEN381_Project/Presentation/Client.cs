@@ -1,7 +1,5 @@
 ﻿using Group11_SEN381_Project.BusinessLogic;
 using Group11_SEN381_Project.DataAccess;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,14 +20,12 @@ namespace Group11_SEN381_Project.Presentation
         public Client()
         {
             InitializeComponent();
-            
-
-
         }
 
         private void Client_Load(object sender, EventArgs e)
         {
             clientTabSelected();
+            txtBoxId.Text = client.clientIDGenerator().ToString();
         }
 
         public void clientTabSelected()
@@ -38,7 +34,7 @@ namespace Group11_SEN381_Project.Presentation
 
             //the listview of the client tab
             materialListView1.Items.Clear();
-            foreach (DataRow row in dataHandler.getClient().Rows)
+            foreach (DataRow row in client.getClient().Rows)
             {
                 ListViewItem item = new ListViewItem(row["id"].ToString());
                 item.SubItems.Add(row["Name_Surname"].ToString());
@@ -47,6 +43,7 @@ namespace Group11_SEN381_Project.Presentation
                 item.SubItems.Add(row["Email"].ToString());
                 item.SubItems.Add(row["Dependents"].ToString());
                 item.SubItems.Add(row["National_id"].ToString());
+                item.SubItems.Add(row["Provider_ID"].ToString());
                 materialListView1.Items.Add(item);
             }
             //display the selected listview item in the textboxes
@@ -89,21 +86,6 @@ namespace Group11_SEN381_Project.Presentation
             childForm.Show();
         }
 
-
-        private void btnCreateClient_Click(object sender, EventArgs e)
-        {
-            client.ID = txtBoxId.Text;
-            client.FullName = txtBoxFullName.Text;
-            client.Address = txtBoxAddress.Text;
-            client.PhoneNum = txtBoxPhoneNumber.Text;
-            client.Email = txtBoxEmail.Text;
-            client.Dependants = txtBoxDependents.Text;
-            client.NatID = txtBoxNationalId.Text;
-            client.PolicyID = txtBoxPolicyId.Text;//TODO:INSERT POLICY ID TEXTBOX
-            client.CreateClient();
-            clientTabSelected();
-        }
-
         private void btnSearchClient_Click(object sender, EventArgs e)
         {
             DataHandler dataHandler = new DataHandler();
@@ -111,7 +93,7 @@ namespace Group11_SEN381_Project.Presentation
             if (txtBoxClientSearch.Text != "")// if the search textbox is not empty
             {
                 // check if the search textbox is a number
-                if(txtBoxClientSearch.Text != null && txtBoxClientSearch.Text.All(char.IsDigit))
+                if (txtBoxClientSearch.Text != null && txtBoxClientSearch.Text.All(char.IsDigit))
                 {
                     foreach (DataRow row in dataHandler.searchClient(int.Parse(txtBoxClientSearch.Text)).Rows)
                     {
@@ -122,8 +104,10 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["Email"].ToString());
                         item.SubItems.Add(row["Dependents"].ToString());
                         item.SubItems.Add(row["National_id"].ToString());
+                        item.SubItems.Add(row["Provider_ID"].ToString());
                         materialListView1.Items.Add(item);
                     }
+                    clearFields();
                 }
                 else
                 {
@@ -138,7 +122,22 @@ namespace Group11_SEN381_Project.Presentation
                 //show error message
                 MessageBox.Show("Please enter a valid client id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void btnCreateClient_Click(object sender, EventArgs e)
+        {
+            
+            client.ID = txtBoxId.Text;
+            client.FullName = txtBoxFullName.Text;
+            client.Address = txtBoxAddress.Text;
+            client.PhoneNum = txtBoxPhoneNumber.Text;
+            client.Email = txtBoxEmail.Text;
+            client.Dependants = txtBoxDependents.Text;
+            client.NatID = txtBoxNationalId.Text;
+            client.PolicyID = txtBoxPolicyId.Text;
+            client.CreateClient();
+            clientTabSelected();
+            clearFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -150,11 +149,32 @@ namespace Group11_SEN381_Project.Presentation
             client.Email = txtBoxEmail.Text;
             client.Dependants = txtBoxDependents.Text;
             client.NatID = txtBoxNationalId.Text;
-            client.PolicyID = txtBoxPolicyId.Text;//TODO:INSERT POLICY ID TEXTBOX
+            client.PolicyID = txtBoxPolicyId.Text;
             client.updateClient();
             clientTabSelected();
+            clearFields();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            client.ID = txtBoxId.Text;
+            client.DeleteClient();
+            clientTabSelected();
+            clearFields();
+        }
         
+        private void clearFields()
+        {
+            
+                txtBoxId.Text = "";
+                txtBoxFullName.Text = "";
+                txtBoxAddress.Text = "";
+                txtBoxPhoneNumber.Text = "";
+                txtBoxEmail.Text = "";
+                txtBoxDependents.Text = "";
+                txtBoxNationalId.Text = "";
+                txtBoxPolicyId.Text = "";
+            
+        }
     }
 }

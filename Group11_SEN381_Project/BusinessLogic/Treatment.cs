@@ -1,6 +1,7 @@
 ﻿using Group11_SEN381_Project.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,10 +33,10 @@ namespace Group11_SEN381_Project.BusinessLogic
             this.Days = days;
         }
 
-        public void getTreatment()
+        public DataTable getTreatment()
         {
             DataHandler dataHandler = new DataHandler();
-            dataHandler.getTreatment();
+            return dataHandler.getTreatment();
         }
 
         public void CreateTreatments()

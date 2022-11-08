@@ -1,4 +1,5 @@
-﻿using Group11_SEN381_Project.DataAccess;
+﻿using Group11_SEN381_Project.BusinessLogic;
+using Group11_SEN381_Project.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Group11_SEN381_Project.Presentation
 {
     public partial class Report : Form
     {
+        BusinessLogic.Report report = new BusinessLogic.Report();
         public Report()
         {
             InitializeComponent();
@@ -29,11 +31,12 @@ namespace Group11_SEN381_Project.Presentation
             DataHandler dataHandler = new DataHandler();
             //the listview of the policy tab
             materialListView3.Items.Clear();
-            foreach (DataRow row in dataHandler.getReport().Rows)
+            foreach (DataRow row in report.getReport().Rows)
             {
                 ListViewItem item = new ListViewItem(row["id"].ToString());
-                item.SubItems.Add(row["Client_Policy_MCTP_ID"].ToString());
+                item.SubItems.Add(row["Client_ID"].ToString());
                 item.SubItems.Add(row["MC_ID"].ToString());
+                item.SubItems.Add(row["Policy_ID"].ToString());
                 item.SubItems.Add(row["STimeStamp"].ToString());
                 item.SubItems.Add(row["ETimeStamp"].ToString());
                 item.SubItems.Add(row["Claim"].ToString());
@@ -46,7 +49,7 @@ namespace Group11_SEN381_Project.Presentation
                 {
                     ListViewItem item = materialListView3.SelectedItems[0];
                     txtBoxReportid.Text = item.SubItems[0].Text;
-                    txtBoxClient_Policy_MCTP_ID.Text = item.SubItems[1].Text;
+                    txtBoxClientID.Text = item.SubItems[1].Text;
                     txtBoxMC_ID.Text = item.SubItems[2].Text;
                     txtBoxETime.Text = item.SubItems[3].Text;
                     txtBoxSTime.Text = item.SubItems[4].Text;
@@ -73,6 +76,13 @@ namespace Group11_SEN381_Project.Presentation
             materialListView3.FullRowSelect = true;
             materialListView3.MultiSelect = false;
             materialListView3.View = View.Details;
+        }
+
+        private void btnDeleteReport_Click(object sender, EventArgs e)
+        {
+            report.Id = int.Parse(txtBoxReportid.Text);
+            report.DeleteReport();
+            reportTabSelected();
         }
     }
 }

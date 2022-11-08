@@ -33,11 +33,11 @@ namespace Group11_SEN381_Project.Presentation
 
             //the listview of the medical Condition tab
             materialListView2.Items.Clear();
-            foreach (DataRow row in dataHandler.getMedicalCondition().Rows)
+            foreach (DataRow row in medical_Condition.getMedicalCondition().Rows)
             {
                 ListViewItem item = new ListViewItem(row["id"].ToString());
                 item.SubItems.Add(row["Condition_Name"].ToString());
-                item.SubItems.Add(row["Description"].ToString());
+                item.SubItems.Add(row["Priority"].ToString());
                 materialListView2.Items.Add(item);
             }
             //display the selected listview item in the textboxes
@@ -48,7 +48,7 @@ namespace Group11_SEN381_Project.Presentation
                     ListViewItem item = materialListView2.SelectedItems[0];
                     txtBoxConditionId.Text = item.SubItems[0].Text;
                     txtBoxConditionName.Text = item.SubItems[1].Text;
-                    txtBoxConditionDesc.Text = item.SubItems[2].Text;
+                    txtBoxPriority.Text = item.SubItems[2].Text;
 
                 }
             };
@@ -71,7 +71,7 @@ namespace Group11_SEN381_Project.Presentation
                     {
                         ListViewItem item = new ListViewItem(row["id"].ToString());
                         item.SubItems.Add(row["Condition_Name"].ToString());
-                        item.SubItems.Add(row["Description"].ToString());
+                        item.SubItems.Add(row["Priority"].ToString());
                         materialListView2.Items.Add(item);
                     }
                 }
@@ -92,21 +92,52 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreateMedicalCondition_Click(object sender, EventArgs e)
         {
-            medical_Condition.ConditionID = txtBoxConditionId.Text;
-            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
-            medical_Condition.Priority1 = txtBoxConditionDesc.Text;
-            medical_Condition.CreateMedicalConditions();
-            medicalConditionTabSelected();// refresh the listview
+            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
+            {
+                medical_Condition.ConditionID = txtBoxConditionId.Text;
+                medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+                medical_Condition.Priority1 = txtBoxPriority.Text;
+                medical_Condition.CreateMedicalConditions();
+                medicalConditionTabSelected();
+                MessageBox.Show("Medical Condition created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
         private void btnUpdateMedicalCondition_Click(object sender, EventArgs e)
         {
-            medical_Condition.ConditionID = txtBoxConditionId.Text;
-            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
-            medical_Condition.Priority1 = txtBoxConditionDesc.Text;
-            medical_Condition.UpdateMedicalConditions();
-            medicalConditionTabSelected();// refresh the listview
+            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
+            {
+                medical_Condition.ConditionID = txtBoxConditionId.Text;
+                medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+                medical_Condition.Priority1 = txtBoxPriority.Text;
+                medical_Condition.UpdateMedicalConditions();
+                medicalConditionTabSelected();
+                MessageBox.Show("Medical Condition updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDeleteMedicalCondition_Click(object sender, EventArgs e)
+        {
+            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
+            {
+                medical_Condition.ConditionID = txtBoxConditionId.Text;
+                medical_Condition.DeleteMedicalCondition();
+                medicalConditionTabSelected();
+                MessageBox.Show("Medical Condition deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

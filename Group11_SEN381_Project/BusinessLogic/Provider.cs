@@ -1,6 +1,7 @@
 ﻿using Group11_SEN381_Project.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,10 +36,10 @@ namespace Group11_SEN381_Project.BusinessLogic
             this.Rating = rating;
         }
 
-        public void getProvider()
+        public DataTable getProvider()
         {
             DataHandler dataHandler = new DataHandler();
-            dataHandler.getClient();
+            return dataHandler.getProvider();
         }
         
         public void UpdateProvider()

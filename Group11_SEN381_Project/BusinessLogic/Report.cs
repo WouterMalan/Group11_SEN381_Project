@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Group11_SEN381_Project.DataAccess;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +28,10 @@ namespace Group11_SEN381_Project.BusinessLogic
             this.eTimeStamp = eTimeStamp;
             this.claim = claim;
         }
+       public Report()
+        {
+
+        }
 
         public int Id { get => id; set => id = value; }
         public string Client_ID { get => client_ID; set => client_ID = value; }
@@ -34,5 +40,29 @@ namespace Group11_SEN381_Project.BusinessLogic
         public DateTime ETimeStamp { get => eTimeStamp; set => eTimeStamp = value; }
         public string Claim { get => claim; set => claim = value; }
         public string Policy_ID { get => policy_ID; set => policy_ID = value; }
+
+        public DataTable getReport()
+        {
+            DataHandler dataHandler = new DataHandler();
+            return dataHandler.getReport();
+        }
+
+        public void CreateReport()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.CreateReport(this);
+        }
+
+        public void DeleteReport()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.DeleteReport(this);
+        }
+
+        public void UpdateReport()
+        {
+            DataHandler dataHandler = new DataHandler();
+            dataHandler.UpdateReport(this);
+        }
     }
 }

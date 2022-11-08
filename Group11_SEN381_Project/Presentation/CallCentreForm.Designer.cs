@@ -32,27 +32,29 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCallCentreSearch = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxMedicalConditionSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.btnEndCall = new MaterialSkin.Controls.MaterialButton();
             this.btnAnswerCall = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionDesc = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxClientId = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialListView2
             // 
-            this.materialListView2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.materialListView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView2.AutoSizeTable = false;
             this.materialListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -93,9 +95,24 @@
             this.columnHeader10.Text = "Client Phone";
             this.columnHeader10.Width = 120;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Client Policy";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Medical Condition";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Claim";
+            this.columnHeader3.Width = 120;
+            // 
             // btnCallCentreSearch
             // 
-            this.btnCallCentreSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCallCentreSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCallCentreSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCallCentreSearch.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCallCentreSearch.Depth = 0;
@@ -116,7 +133,8 @@
             // 
             // txtBoxMedicalConditionSearch
             // 
-            this.txtBoxMedicalConditionSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxMedicalConditionSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxMedicalConditionSearch.AnimateReadOnly = false;
             this.txtBoxMedicalConditionSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxMedicalConditionSearch.Depth = 0;
@@ -135,7 +153,7 @@
             // 
             // btnEndCall
             // 
-            this.btnEndCall.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEndCall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEndCall.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnEndCall.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnEndCall.Depth = 0;
@@ -156,7 +174,7 @@
             // 
             // btnAnswerCall
             // 
-            this.btnAnswerCall.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnswerCall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAnswerCall.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAnswerCall.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnAnswerCall.Depth = 0;
@@ -177,7 +195,6 @@
             // 
             // txtBoxConditionName
             // 
-            this.txtBoxConditionName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxConditionName.AnimateReadOnly = false;
             this.txtBoxConditionName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConditionName.Depth = 0;
@@ -196,7 +213,6 @@
             // 
             // txtBoxConditionDesc
             // 
-            this.txtBoxConditionDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxConditionDesc.AnimateReadOnly = false;
             this.txtBoxConditionDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConditionDesc.Depth = 0;
@@ -213,24 +229,23 @@
             this.txtBoxConditionDesc.Text = "";
             this.txtBoxConditionDesc.TrailingIcon = null;
             // 
-            // txtBoxConditionId
+            // txtBoxClientId
             // 
-            this.txtBoxConditionId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBoxConditionId.AnimateReadOnly = false;
-            this.txtBoxConditionId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxConditionId.Depth = 0;
-            this.txtBoxConditionId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionId.Hint = "Client ID";
-            this.txtBoxConditionId.LeadingIcon = null;
-            this.txtBoxConditionId.Location = new System.Drawing.Point(12, 163);
-            this.txtBoxConditionId.MaxLength = 50;
-            this.txtBoxConditionId.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxConditionId.Multiline = false;
-            this.txtBoxConditionId.Name = "txtBoxConditionId";
-            this.txtBoxConditionId.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxConditionId.TabIndex = 47;
-            this.txtBoxConditionId.Text = "";
-            this.txtBoxConditionId.TrailingIcon = null;
+            this.txtBoxClientId.AnimateReadOnly = false;
+            this.txtBoxClientId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxClientId.Depth = 0;
+            this.txtBoxClientId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxClientId.Hint = "Client ID";
+            this.txtBoxClientId.LeadingIcon = null;
+            this.txtBoxClientId.Location = new System.Drawing.Point(12, 163);
+            this.txtBoxClientId.MaxLength = 50;
+            this.txtBoxClientId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxClientId.Multiline = false;
+            this.txtBoxClientId.Name = "txtBoxClientId";
+            this.txtBoxClientId.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxClientId.TabIndex = 47;
+            this.txtBoxClientId.Text = "";
+            this.txtBoxClientId.TrailingIcon = null;
             // 
             // groupBox1
             // 
@@ -244,29 +259,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phone";
             // 
-            // columnHeader1
+            // materialLabel1
             // 
-            this.columnHeader1.Text = "Client Policy";
-            this.columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Medical Condition";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Claim";
-            this.columnHeader3.Width = 120;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Online/Offline";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(6, 47);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(77, 19);
+            this.materialLabel1.TabIndex = 55;
+            this.materialLabel1.Text = "Call Centre";
             // 
             // label3
             // 
@@ -277,21 +280,18 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "Success Message";
             // 
-            // materialLabel1
+            // label1
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel1.Location = new System.Drawing.Point(6, 47);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(77, 19);
-            this.materialLabel1.TabIndex = 55;
-            this.materialLabel1.Text = "Call Centre";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Online/Offline";
             // 
             // materialButton1
             // 
-            this.materialButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton1.Depth = 0;
@@ -321,7 +321,7 @@
             this.Controls.Add(this.btnAnswerCall);
             this.Controls.Add(this.txtBoxConditionName);
             this.Controls.Add(this.txtBoxConditionDesc);
-            this.Controls.Add(this.txtBoxConditionId);
+            this.Controls.Add(this.txtBoxClientId);
             this.Controls.Add(this.materialListView2);
             this.Controls.Add(this.btnCallCentreSearch);
             this.Controls.Add(this.txtBoxMedicalConditionSearch);
@@ -346,7 +346,7 @@
         private MaterialSkin.Controls.MaterialButton btnAnswerCall;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionDesc;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxClientId;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

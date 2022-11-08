@@ -32,20 +32,22 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
+            this.btnDeleteReport = new MaterialSkin.Controls.MaterialButton();
+            this.btnUpdateReport = new MaterialSkin.Controls.MaterialButton();
+            this.btnCreateReport = new MaterialSkin.Controls.MaterialButton();
             this.cmbExpired = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox10 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnSearchReport = new MaterialSkin.Controls.MaterialButton();
+            this.txtBoxSearchReport = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxSTime = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxETime = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxClient_Policy_MCTP_ID = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxClientID = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxMC_ID = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxReportid = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtBoxPolicyID = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // materialListView3
@@ -60,6 +62,7 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13,
+            this.columnHeader1,
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16});
@@ -73,7 +76,7 @@
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
-            this.materialListView3.Size = new System.Drawing.Size(637, 536);
+            this.materialListView3.Size = new System.Drawing.Size(629, 536);
             this.materialListView3.TabIndex = 52;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
@@ -81,17 +84,22 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "id";
-            this.columnHeader11.Width = 80;
+            this.columnHeader11.Width = 50;
             // 
             // columnHeader12
             // 
-            this.columnHeader12.Text = "Client_Policy_MCTP_ID";
+            this.columnHeader12.Text = "Client ID";
             this.columnHeader12.Width = 120;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "MC_ID";
-            this.columnHeader13.Width = 120;
+            this.columnHeader13.Text = "MC ID";
+            this.columnHeader13.Width = 90;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Policy ID";
+            this.columnHeader1.Width = 120;
             // 
             // columnHeader14
             // 
@@ -108,68 +116,69 @@
             this.columnHeader16.Text = "Claim";
             this.columnHeader16.Width = 120;
             // 
-            // materialButton11
+            // btnDeleteReport
             // 
-            this.materialButton11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton11.Depth = 0;
-            this.materialButton11.HighEmphasis = true;
-            this.materialButton11.Icon = null;
-            this.materialButton11.Location = new System.Drawing.Point(875, 503);
-            this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton11.Name = "materialButton11";
-            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton11.Size = new System.Drawing.Size(73, 36);
-            this.materialButton11.TabIndex = 51;
-            this.materialButton11.Tag = "";
-            this.materialButton11.Text = "Delete";
-            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton11.UseAccentColor = false;
-            this.materialButton11.UseVisualStyleBackColor = true;
+            this.btnDeleteReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteReport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDeleteReport.Depth = 0;
+            this.btnDeleteReport.HighEmphasis = true;
+            this.btnDeleteReport.Icon = null;
+            this.btnDeleteReport.Location = new System.Drawing.Point(883, 534);
+            this.btnDeleteReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDeleteReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDeleteReport.Name = "btnDeleteReport";
+            this.btnDeleteReport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDeleteReport.Size = new System.Drawing.Size(73, 36);
+            this.btnDeleteReport.TabIndex = 51;
+            this.btnDeleteReport.Tag = "";
+            this.btnDeleteReport.Text = "Delete";
+            this.btnDeleteReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDeleteReport.UseAccentColor = false;
+            this.btnDeleteReport.UseVisualStyleBackColor = true;
+            this.btnDeleteReport.Click += new System.EventHandler(this.btnDeleteReport_Click);
             // 
-            // materialButton12
+            // btnUpdateReport
             // 
-            this.materialButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton12.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton12.Depth = 0;
-            this.materialButton12.HighEmphasis = true;
-            this.materialButton12.Icon = null;
-            this.materialButton12.Location = new System.Drawing.Point(772, 503);
-            this.materialButton12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton12.Name = "materialButton12";
-            this.materialButton12.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton12.Size = new System.Drawing.Size(77, 36);
-            this.materialButton12.TabIndex = 50;
-            this.materialButton12.Tag = "";
-            this.materialButton12.Text = "Update";
-            this.materialButton12.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton12.UseAccentColor = false;
-            this.materialButton12.UseVisualStyleBackColor = true;
+            this.btnUpdateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdateReport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnUpdateReport.Depth = 0;
+            this.btnUpdateReport.HighEmphasis = true;
+            this.btnUpdateReport.Icon = null;
+            this.btnUpdateReport.Location = new System.Drawing.Point(780, 534);
+            this.btnUpdateReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpdateReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdateReport.Name = "btnUpdateReport";
+            this.btnUpdateReport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnUpdateReport.Size = new System.Drawing.Size(77, 36);
+            this.btnUpdateReport.TabIndex = 50;
+            this.btnUpdateReport.Tag = "";
+            this.btnUpdateReport.Text = "Update";
+            this.btnUpdateReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnUpdateReport.UseAccentColor = false;
+            this.btnUpdateReport.UseVisualStyleBackColor = true;
             // 
-            // materialButton13
+            // btnCreateReport
             // 
-            this.materialButton13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton13.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton13.Depth = 0;
-            this.materialButton13.HighEmphasis = true;
-            this.materialButton13.Icon = null;
-            this.materialButton13.Location = new System.Drawing.Point(665, 503);
-            this.materialButton13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton13.Name = "materialButton13";
-            this.materialButton13.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton13.Size = new System.Drawing.Size(76, 36);
-            this.materialButton13.TabIndex = 49;
-            this.materialButton13.Tag = "";
-            this.materialButton13.Text = "Create";
-            this.materialButton13.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton13.UseAccentColor = false;
-            this.materialButton13.UseVisualStyleBackColor = true;
+            this.btnCreateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreateReport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnCreateReport.Depth = 0;
+            this.btnCreateReport.HighEmphasis = true;
+            this.btnCreateReport.Icon = null;
+            this.btnCreateReport.Location = new System.Drawing.Point(673, 534);
+            this.btnCreateReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCreateReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCreateReport.Name = "btnCreateReport";
+            this.btnCreateReport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnCreateReport.Size = new System.Drawing.Size(76, 36);
+            this.btnCreateReport.TabIndex = 49;
+            this.btnCreateReport.Tag = "";
+            this.btnCreateReport.Text = "Create";
+            this.btnCreateReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnCreateReport.UseAccentColor = false;
+            this.btnCreateReport.UseVisualStyleBackColor = true;
             // 
             // cmbExpired
             // 
@@ -191,7 +200,7 @@
             "In Progress",
             "Approved",
             "Denied"});
-            this.cmbExpired.Location = new System.Drawing.Point(665, 423);
+            this.cmbExpired.Location = new System.Drawing.Point(665, 447);
             this.cmbExpired.MaxDropDownItems = 4;
             this.cmbExpired.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbExpired.Name = "cmbExpired";
@@ -199,46 +208,46 @@
             this.cmbExpired.StartIndex = 0;
             this.cmbExpired.TabIndex = 48;
             // 
-            // materialButton9
+            // btnSearchReport
             // 
-            this.materialButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton9.Depth = 0;
-            this.materialButton9.HighEmphasis = true;
-            this.materialButton9.Icon = null;
-            this.materialButton9.Location = new System.Drawing.Point(368, 34);
-            this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton9.Name = "materialButton9";
-            this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton9.Size = new System.Drawing.Size(78, 36);
-            this.materialButton9.TabIndex = 47;
-            this.materialButton9.Tag = "";
-            this.materialButton9.Text = "Search";
-            this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton9.UseAccentColor = false;
-            this.materialButton9.UseVisualStyleBackColor = true;
+            this.btnSearchReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearchReport.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSearchReport.Depth = 0;
+            this.btnSearchReport.HighEmphasis = true;
+            this.btnSearchReport.Icon = null;
+            this.btnSearchReport.Location = new System.Drawing.Point(368, 34);
+            this.btnSearchReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearchReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchReport.Name = "btnSearchReport";
+            this.btnSearchReport.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSearchReport.Size = new System.Drawing.Size(78, 36);
+            this.btnSearchReport.TabIndex = 47;
+            this.btnSearchReport.Tag = "";
+            this.btnSearchReport.Text = "Search";
+            this.btnSearchReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSearchReport.UseAccentColor = false;
+            this.btnSearchReport.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox10
+            // txtBoxSearchReport
             // 
-            this.materialTextBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxSearchReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox10.AnimateReadOnly = false;
-            this.materialTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox10.Depth = 0;
-            this.materialTextBox10.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox10.Hint = "Search ID";
-            this.materialTextBox10.LeadingIcon = null;
-            this.materialTextBox10.Location = new System.Drawing.Point(15, 20);
-            this.materialTextBox10.MaxLength = 50;
-            this.materialTextBox10.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox10.Multiline = false;
-            this.materialTextBox10.Name = "materialTextBox10";
-            this.materialTextBox10.Size = new System.Drawing.Size(295, 50);
-            this.materialTextBox10.TabIndex = 46;
-            this.materialTextBox10.Text = "";
-            this.materialTextBox10.TrailingIcon = null;
+            this.txtBoxSearchReport.AnimateReadOnly = false;
+            this.txtBoxSearchReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxSearchReport.Depth = 0;
+            this.txtBoxSearchReport.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxSearchReport.Hint = "Search ID";
+            this.txtBoxSearchReport.LeadingIcon = null;
+            this.txtBoxSearchReport.Location = new System.Drawing.Point(15, 20);
+            this.txtBoxSearchReport.MaxLength = 50;
+            this.txtBoxSearchReport.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxSearchReport.Multiline = false;
+            this.txtBoxSearchReport.Name = "txtBoxSearchReport";
+            this.txtBoxSearchReport.Size = new System.Drawing.Size(295, 50);
+            this.txtBoxSearchReport.TabIndex = 46;
+            this.txtBoxSearchReport.Text = "";
+            this.txtBoxSearchReport.TrailingIcon = null;
             // 
             // txtBoxSTime
             // 
@@ -249,7 +258,7 @@
             this.txtBoxSTime.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxSTime.Hint = "Start Time Stamp";
             this.txtBoxSTime.LeadingIcon = null;
-            this.txtBoxSTime.Location = new System.Drawing.Point(665, 284);
+            this.txtBoxSTime.Location = new System.Drawing.Point(665, 308);
             this.txtBoxSTime.MaxLength = 50;
             this.txtBoxSTime.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxSTime.Multiline = false;
@@ -268,7 +277,7 @@
             this.txtBoxETime.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxETime.Hint = "End Time Stamp";
             this.txtBoxETime.LeadingIcon = null;
-            this.txtBoxETime.Location = new System.Drawing.Point(665, 351);
+            this.txtBoxETime.Location = new System.Drawing.Point(665, 375);
             this.txtBoxETime.MaxLength = 50;
             this.txtBoxETime.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxETime.Multiline = false;
@@ -278,24 +287,24 @@
             this.txtBoxETime.Text = "";
             this.txtBoxETime.TrailingIcon = null;
             // 
-            // txtBoxClient_Policy_MCTP_ID
+            // txtBoxClientID
             // 
-            this.txtBoxClient_Policy_MCTP_ID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxClient_Policy_MCTP_ID.AnimateReadOnly = false;
-            this.txtBoxClient_Policy_MCTP_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxClient_Policy_MCTP_ID.Depth = 0;
-            this.txtBoxClient_Policy_MCTP_ID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxClient_Policy_MCTP_ID.Hint = "Client Policy MCTP ID";
-            this.txtBoxClient_Policy_MCTP_ID.LeadingIcon = null;
-            this.txtBoxClient_Policy_MCTP_ID.Location = new System.Drawing.Point(665, 146);
-            this.txtBoxClient_Policy_MCTP_ID.MaxLength = 50;
-            this.txtBoxClient_Policy_MCTP_ID.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxClient_Policy_MCTP_ID.Multiline = false;
-            this.txtBoxClient_Policy_MCTP_ID.Name = "txtBoxClient_Policy_MCTP_ID";
-            this.txtBoxClient_Policy_MCTP_ID.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxClient_Policy_MCTP_ID.TabIndex = 43;
-            this.txtBoxClient_Policy_MCTP_ID.Text = "";
-            this.txtBoxClient_Policy_MCTP_ID.TrailingIcon = null;
+            this.txtBoxClientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxClientID.AnimateReadOnly = false;
+            this.txtBoxClientID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxClientID.Depth = 0;
+            this.txtBoxClientID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxClientID.Hint = "Client ID";
+            this.txtBoxClientID.LeadingIcon = null;
+            this.txtBoxClientID.Location = new System.Drawing.Point(665, 112);
+            this.txtBoxClientID.MaxLength = 50;
+            this.txtBoxClientID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxClientID.Multiline = false;
+            this.txtBoxClientID.Name = "txtBoxClientID";
+            this.txtBoxClientID.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxClientID.TabIndex = 43;
+            this.txtBoxClientID.Text = "";
+            this.txtBoxClientID.TrailingIcon = null;
             // 
             // txtBoxMC_ID
             // 
@@ -306,7 +315,7 @@
             this.txtBoxMC_ID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxMC_ID.Hint = "MC ID";
             this.txtBoxMC_ID.LeadingIcon = null;
-            this.txtBoxMC_ID.Location = new System.Drawing.Point(665, 211);
+            this.txtBoxMC_ID.Location = new System.Drawing.Point(664, 177);
             this.txtBoxMC_ID.MaxLength = 50;
             this.txtBoxMC_ID.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxMC_ID.Multiline = false;
@@ -325,7 +334,7 @@
             this.txtBoxReportid.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxReportid.Hint = "ID";
             this.txtBoxReportid.LeadingIcon = null;
-            this.txtBoxReportid.Location = new System.Drawing.Point(665, 79);
+            this.txtBoxReportid.Location = new System.Drawing.Point(665, 42);
             this.txtBoxReportid.MaxLength = 50;
             this.txtBoxReportid.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxReportid.Multiline = false;
@@ -335,21 +344,41 @@
             this.txtBoxReportid.Text = "";
             this.txtBoxReportid.TrailingIcon = null;
             // 
+            // txtBoxPolicyID
+            // 
+            this.txtBoxPolicyID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxPolicyID.AnimateReadOnly = false;
+            this.txtBoxPolicyID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPolicyID.Depth = 0;
+            this.txtBoxPolicyID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxPolicyID.Hint = "Policy ID";
+            this.txtBoxPolicyID.LeadingIcon = null;
+            this.txtBoxPolicyID.Location = new System.Drawing.Point(664, 242);
+            this.txtBoxPolicyID.MaxLength = 50;
+            this.txtBoxPolicyID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxPolicyID.Multiline = false;
+            this.txtBoxPolicyID.Name = "txtBoxPolicyID";
+            this.txtBoxPolicyID.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPolicyID.TabIndex = 53;
+            this.txtBoxPolicyID.Text = "";
+            this.txtBoxPolicyID.TrailingIcon = null;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 641);
+            this.Controls.Add(this.txtBoxPolicyID);
             this.Controls.Add(this.materialListView3);
-            this.Controls.Add(this.materialButton11);
-            this.Controls.Add(this.materialButton12);
-            this.Controls.Add(this.materialButton13);
+            this.Controls.Add(this.btnDeleteReport);
+            this.Controls.Add(this.btnUpdateReport);
+            this.Controls.Add(this.btnCreateReport);
             this.Controls.Add(this.cmbExpired);
-            this.Controls.Add(this.materialButton9);
-            this.Controls.Add(this.materialTextBox10);
+            this.Controls.Add(this.btnSearchReport);
+            this.Controls.Add(this.txtBoxSearchReport);
             this.Controls.Add(this.txtBoxSTime);
             this.Controls.Add(this.txtBoxETime);
-            this.Controls.Add(this.txtBoxClient_Policy_MCTP_ID);
+            this.Controls.Add(this.txtBoxClientID);
             this.Controls.Add(this.txtBoxMC_ID);
             this.Controls.Add(this.txtBoxReportid);
             this.Name = "Report";
@@ -369,16 +398,18 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
-        private MaterialSkin.Controls.MaterialButton materialButton11;
-        private MaterialSkin.Controls.MaterialButton materialButton12;
-        private MaterialSkin.Controls.MaterialButton materialButton13;
+        private MaterialSkin.Controls.MaterialButton btnDeleteReport;
+        private MaterialSkin.Controls.MaterialButton btnUpdateReport;
+        private MaterialSkin.Controls.MaterialButton btnCreateReport;
         private MaterialSkin.Controls.MaterialComboBox cmbExpired;
-        private MaterialSkin.Controls.MaterialButton materialButton9;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox10;
+        private MaterialSkin.Controls.MaterialButton btnSearchReport;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxSearchReport;
         private MaterialSkin.Controls.MaterialTextBox txtBoxSTime;
         private MaterialSkin.Controls.MaterialTextBox txtBoxETime;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxClient_Policy_MCTP_ID;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxClientID;
         private MaterialSkin.Controls.MaterialTextBox txtBoxMC_ID;
         private MaterialSkin.Controls.MaterialTextBox txtBoxReportid;
+        private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyID;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

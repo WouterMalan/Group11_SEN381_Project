@@ -1,6 +1,7 @@
 ﻿using Group11_SEN381_Project.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,10 +39,10 @@ namespace Group11_SEN381_Project.BusinessLogic
             Expired1 = expired;
         }
 
-        public void getPolicy()
+        public DataTable getPolicy()
         {
             DataHandler dataHandler = new DataHandler();
-            dataHandler.getPolicy();
+            return dataHandler.getPolicy();
         }
 
         public void CreatePolicy()
@@ -62,7 +63,7 @@ namespace Group11_SEN381_Project.BusinessLogic
             dataHandler.DeletePolicy(this);
         }
 
-        public void policyIdGenerator(string id)
+        public string policyIdGenerator(string id)
         {
             string year = "";
             string sixDigits = "00";
