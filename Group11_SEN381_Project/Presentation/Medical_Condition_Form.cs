@@ -74,6 +74,7 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["Priority"].ToString());
                         materialListView2.Items.Add(item);
                     }
+                    clearFields();
                 }
                 else
                 {
@@ -105,6 +106,7 @@ namespace Group11_SEN381_Project.Presentation
             {
                 MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            clearFields();
 
         }
 
@@ -123,6 +125,7 @@ namespace Group11_SEN381_Project.Presentation
             {
                 MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            clearFields();
         }
 
         private void btnDeleteMedicalCondition_Click(object sender, EventArgs e)
@@ -138,6 +141,19 @@ namespace Group11_SEN381_Project.Presentation
             {
                 MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            clearFields();
+        }
+
+        private void clearFields()
+        {
+            txtBoxConditionName.Text = "";
+                txtBoxPriority.Text = "";
+            
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

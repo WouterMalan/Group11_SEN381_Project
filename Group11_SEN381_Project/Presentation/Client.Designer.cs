@@ -50,11 +50,13 @@
             this.txtBoxFullName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxAddress = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxId = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.panelClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelClient
             // 
+            this.panelClient.Controls.Add(this.btnClear);
             this.panelClient.Controls.Add(this.txtBoxPolicyId);
             this.panelClient.Controls.Add(this.materialListView1);
             this.panelClient.Controls.Add(this.btnSearchClient);
@@ -72,7 +74,7 @@
             this.panelClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelClient.Location = new System.Drawing.Point(0, 0);
             this.panelClient.Name = "panelClient";
-            this.panelClient.Size = new System.Drawing.Size(1015, 603);
+            this.panelClient.Size = new System.Drawing.Size(1038, 700);
             this.panelClient.TabIndex = 0;
             // 
             // txtBoxPolicyId
@@ -84,7 +86,7 @@
             this.txtBoxPolicyId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPolicyId.Hint = "Policy ID";
             this.txtBoxPolicyId.LeadingIcon = null;
-            this.txtBoxPolicyId.Location = new System.Drawing.Point(710, 485);
+            this.txtBoxPolicyId.Location = new System.Drawing.Point(733, 517);
             this.txtBoxPolicyId.MaxLength = 50;
             this.txtBoxPolicyId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicyId.Multiline = false;
@@ -114,13 +116,13 @@
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(13, 81);
+            this.materialListView1.Location = new System.Drawing.Point(13, 109);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(679, 497);
+            this.materialListView1.Size = new System.Drawing.Size(702, 538);
             this.materialListView1.TabIndex = 53;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -168,7 +170,7 @@
             this.btnSearchClient.Depth = 0;
             this.btnSearchClient.HighEmphasis = true;
             this.btnSearchClient.Icon = null;
-            this.btnSearchClient.Location = new System.Drawing.Point(338, 36);
+            this.btnSearchClient.Location = new System.Drawing.Point(361, 36);
             this.btnSearchClient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSearchClient.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSearchClient.Name = "btnSearchClient";
@@ -197,7 +199,7 @@
             this.txtBoxClientSearch.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxClientSearch.Multiline = false;
             this.txtBoxClientSearch.Name = "txtBoxClientSearch";
-            this.txtBoxClientSearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxClientSearch.Size = new System.Drawing.Size(315, 50);
             this.txtBoxClientSearch.TabIndex = 51;
             this.txtBoxClientSearch.Text = "";
             this.txtBoxClientSearch.TrailingIcon = null;
@@ -210,7 +212,7 @@
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(929, 544);
+            this.btnDelete.Location = new System.Drawing.Point(952, 649);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
@@ -232,7 +234,7 @@
             this.btnUpdate.Depth = 0;
             this.btnUpdate.HighEmphasis = true;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(822, 544);
+            this.btnUpdate.Location = new System.Drawing.Point(845, 649);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
@@ -255,7 +257,7 @@
             this.btnCreateClient.Depth = 0;
             this.btnCreateClient.HighEmphasis = true;
             this.btnCreateClient.Icon = null;
-            this.btnCreateClient.Location = new System.Drawing.Point(710, 544);
+            this.btnCreateClient.Location = new System.Drawing.Point(733, 649);
             this.btnCreateClient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreateClient.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreateClient.Name = "btnCreateClient";
@@ -278,7 +280,7 @@
             this.txtBoxDependents.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxDependents.Hint = "Dependents";
             this.txtBoxDependents.LeadingIcon = null;
-            this.txtBoxDependents.Location = new System.Drawing.Point(710, 349);
+            this.txtBoxDependents.Location = new System.Drawing.Point(733, 381);
             this.txtBoxDependents.MaxLength = 50;
             this.txtBoxDependents.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxDependents.Multiline = false;
@@ -297,7 +299,7 @@
             this.txtBoxNationalId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxNationalId.Hint = "National ID";
             this.txtBoxNationalId.LeadingIcon = null;
-            this.txtBoxNationalId.Location = new System.Drawing.Point(710, 418);
+            this.txtBoxNationalId.Location = new System.Drawing.Point(733, 450);
             this.txtBoxNationalId.MaxLength = 50;
             this.txtBoxNationalId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxNationalId.Multiline = false;
@@ -316,7 +318,7 @@
             this.txtBoxPhoneNumber.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPhoneNumber.Hint = "Phone Number";
             this.txtBoxPhoneNumber.LeadingIcon = null;
-            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(710, 217);
+            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(733, 249);
             this.txtBoxPhoneNumber.MaxLength = 50;
             this.txtBoxPhoneNumber.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPhoneNumber.Multiline = false;
@@ -335,7 +337,7 @@
             this.txtBoxEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxEmail.Hint = "Email";
             this.txtBoxEmail.LeadingIcon = null;
-            this.txtBoxEmail.Location = new System.Drawing.Point(710, 284);
+            this.txtBoxEmail.Location = new System.Drawing.Point(733, 316);
             this.txtBoxEmail.MaxLength = 50;
             this.txtBoxEmail.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxEmail.Multiline = false;
@@ -354,7 +356,7 @@
             this.txtBoxFullName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxFullName.Hint = "Full Name";
             this.txtBoxFullName.LeadingIcon = null;
-            this.txtBoxFullName.Location = new System.Drawing.Point(710, 79);
+            this.txtBoxFullName.Location = new System.Drawing.Point(733, 111);
             this.txtBoxFullName.MaxLength = 50;
             this.txtBoxFullName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxFullName.Multiline = false;
@@ -373,7 +375,7 @@
             this.txtBoxAddress.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxAddress.Hint = "Address";
             this.txtBoxAddress.LeadingIcon = null;
-            this.txtBoxAddress.Location = new System.Drawing.Point(710, 144);
+            this.txtBoxAddress.Location = new System.Drawing.Point(733, 176);
             this.txtBoxAddress.MaxLength = 50;
             this.txtBoxAddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxAddress.Multiline = false;
@@ -392,7 +394,7 @@
             this.txtBoxId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxId.Hint = "ID";
             this.txtBoxId.LeadingIcon = null;
-            this.txtBoxId.Location = new System.Drawing.Point(710, 12);
+            this.txtBoxId.Location = new System.Drawing.Point(733, 44);
             this.txtBoxId.MaxLength = 50;
             this.txtBoxId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxId.Multiline = false;
@@ -402,11 +404,33 @@
             this.txtBoxId.Text = "";
             this.txtBoxId.TrailingIcon = null;
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(733, 591);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(66, 36);
+            this.btnClear.TabIndex = 55;
+            this.btnClear.Tag = "";
+            this.btnClear.Text = "Clear";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 603);
+            this.ClientSize = new System.Drawing.Size(1038, 700);
             this.Controls.Add(this.panelClient);
             this.Name = "Client";
             this.Text = "Client";
@@ -441,5 +465,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxAddress;
         private MaterialSkin.Controls.MaterialTextBox txtBoxId;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyId;
+        private MaterialSkin.Controls.MaterialButton btnClear;
     }
 }

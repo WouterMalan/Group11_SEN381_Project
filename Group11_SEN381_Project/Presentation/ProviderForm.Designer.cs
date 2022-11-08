@@ -42,6 +42,7 @@
             this.txtBoxProviderName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderLocation = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderId = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // ListViewProvider
@@ -100,7 +101,7 @@
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(929, 408);
+            this.btnDelete.Location = new System.Drawing.Point(929, 474);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
@@ -122,7 +123,7 @@
             this.btnUpdate.Depth = 0;
             this.btnUpdate.HighEmphasis = true;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(822, 408);
+            this.btnUpdate.Location = new System.Drawing.Point(822, 474);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
@@ -144,7 +145,7 @@
             this.btnCreate.Depth = 0;
             this.btnCreate.HighEmphasis = true;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(710, 408);
+            this.btnCreate.Location = new System.Drawing.Point(710, 474);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
@@ -287,11 +288,34 @@
             this.txtBoxProviderId.Text = "";
             this.txtBoxProviderId.TrailingIcon = null;
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(710, 426);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.TabIndex = 48;
+            this.btnClear.Tag = "";
+            this.btnClear.Text = "Clear";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // ProviderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 585);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.ListViewProvider);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -326,5 +350,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderLocation;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderId;
+        private MaterialSkin.Controls.MaterialButton btnClear;
     }
 }

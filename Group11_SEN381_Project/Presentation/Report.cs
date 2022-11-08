@@ -84,5 +84,22 @@ namespace Group11_SEN381_Project.Presentation
             report.DeleteReport();
             reportTabSelected();
         }
+        
+        private void clearFields()
+        {
+            
+                txtBoxReportid.Text = "";
+                txtBoxClientID.Text = "";
+                txtBoxMC_ID.Text = "";
+                txtBoxETime.Text = "";
+                txtBoxSTime.Text = "";
+                cmbExpired.SelectedIndex = -1;
+            
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
     }
 }

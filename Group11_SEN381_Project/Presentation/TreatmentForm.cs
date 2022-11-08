@@ -131,7 +131,6 @@ namespace Group11_SEN381_Project.Presentation
         private void clearFields()
         {
             
-                txtBoxTreatmentId.Text = "";
                 txtBoxTreatmentName.Text = "";
                 txtBoxTreatmentLevel.Text = "";
                 numericUpDown1.Value = 0;

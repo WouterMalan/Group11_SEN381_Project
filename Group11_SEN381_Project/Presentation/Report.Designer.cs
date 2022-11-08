@@ -48,6 +48,7 @@
             this.txtBoxMC_ID = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxReportid = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyID = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // materialListView3
@@ -124,7 +125,7 @@
             this.btnDeleteReport.Depth = 0;
             this.btnDeleteReport.HighEmphasis = true;
             this.btnDeleteReport.Icon = null;
-            this.btnDeleteReport.Location = new System.Drawing.Point(883, 534);
+            this.btnDeleteReport.Location = new System.Drawing.Point(873, 579);
             this.btnDeleteReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDeleteReport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteReport.Name = "btnDeleteReport";
@@ -146,7 +147,7 @@
             this.btnUpdateReport.Depth = 0;
             this.btnUpdateReport.HighEmphasis = true;
             this.btnUpdateReport.Icon = null;
-            this.btnUpdateReport.Location = new System.Drawing.Point(780, 534);
+            this.btnUpdateReport.Location = new System.Drawing.Point(770, 579);
             this.btnUpdateReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdateReport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdateReport.Name = "btnUpdateReport";
@@ -167,7 +168,7 @@
             this.btnCreateReport.Depth = 0;
             this.btnCreateReport.HighEmphasis = true;
             this.btnCreateReport.Icon = null;
-            this.btnCreateReport.Location = new System.Drawing.Point(673, 534);
+            this.btnCreateReport.Location = new System.Drawing.Point(663, 579);
             this.btnCreateReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreateReport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreateReport.Name = "btnCreateReport";
@@ -363,11 +364,34 @@
             this.txtBoxPolicyID.Text = "";
             this.txtBoxPolicyID.TrailingIcon = null;
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(663, 518);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.TabIndex = 54;
+            this.btnClear.Tag = "";
+            this.btnClear.Text = "Clear";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 641);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtBoxPolicyID);
             this.Controls.Add(this.materialListView3);
             this.Controls.Add(this.btnDeleteReport);
@@ -411,5 +435,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxReportid;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyID;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private MaterialSkin.Controls.MaterialButton btnClear;
     }
 }

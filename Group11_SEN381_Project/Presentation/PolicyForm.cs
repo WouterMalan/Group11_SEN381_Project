@@ -160,14 +160,17 @@ namespace Group11_SEN381_Project.Presentation
 
         private void clearFields()
         {
-
-            txtBoxPolicyId.Text = "";
             txtBoxPolicyDesc.Text = "";
             txtBoxPolicyDate.Text = "";
             txtBoxImportance.Text = "";
             txtBoxPolicyFee.Text = "";
             cmbExpired.SelectedIndex = -1;
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

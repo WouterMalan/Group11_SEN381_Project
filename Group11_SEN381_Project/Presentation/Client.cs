@@ -166,7 +166,6 @@ namespace Group11_SEN381_Project.Presentation
         private void clearFields()
         {
             
-                txtBoxId.Text = "";
                 txtBoxFullName.Text = "";
                 txtBoxAddress.Text = "";
                 txtBoxPhoneNumber.Text = "";
@@ -175,6 +174,11 @@ namespace Group11_SEN381_Project.Presentation
                 txtBoxNationalId.Text = "";
                 txtBoxPolicyId.Text = "";
             
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

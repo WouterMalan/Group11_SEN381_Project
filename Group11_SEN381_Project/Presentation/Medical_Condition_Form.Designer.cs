@@ -40,6 +40,7 @@
             this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPriority = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // materialListView2
@@ -134,7 +135,7 @@
             this.btnDeleteMedicalCondition.Depth = 0;
             this.btnDeleteMedicalCondition.HighEmphasis = true;
             this.btnDeleteMedicalCondition.Icon = null;
-            this.btnDeleteMedicalCondition.Location = new System.Drawing.Point(926, 388);
+            this.btnDeleteMedicalCondition.Location = new System.Drawing.Point(926, 429);
             this.btnDeleteMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDeleteMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteMedicalCondition.Name = "btnDeleteMedicalCondition";
@@ -156,7 +157,7 @@
             this.btnUpdateMedicalCondition.Depth = 0;
             this.btnUpdateMedicalCondition.HighEmphasis = true;
             this.btnUpdateMedicalCondition.Icon = null;
-            this.btnUpdateMedicalCondition.Location = new System.Drawing.Point(819, 388);
+            this.btnUpdateMedicalCondition.Location = new System.Drawing.Point(819, 429);
             this.btnUpdateMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdateMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdateMedicalCondition.Name = "btnUpdateMedicalCondition";
@@ -178,7 +179,7 @@
             this.btnCreateMedicalCondition.Depth = 0;
             this.btnCreateMedicalCondition.HighEmphasis = true;
             this.btnCreateMedicalCondition.Icon = null;
-            this.btnCreateMedicalCondition.Location = new System.Drawing.Point(707, 388);
+            this.btnCreateMedicalCondition.Location = new System.Drawing.Point(707, 429);
             this.btnCreateMedicalCondition.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreateMedicalCondition.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreateMedicalCondition.Name = "btnCreateMedicalCondition";
@@ -249,11 +250,34 @@
             this.txtBoxConditionId.Text = "";
             this.txtBoxConditionId.TrailingIcon = null;
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(707, 381);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.TabIndex = 37;
+            this.btnClear.Tag = "";
+            this.btnClear.Text = "Clear";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Medical_Condition_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 574);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.materialListView2);
             this.Controls.Add(this.btnMedicalConditionSearch);
             this.Controls.Add(this.txtBoxMedicalConditionSearch);
@@ -285,5 +309,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPriority;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
+        private MaterialSkin.Controls.MaterialButton btnClear;
     }
 }

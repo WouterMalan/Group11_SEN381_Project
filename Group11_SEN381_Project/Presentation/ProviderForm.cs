@@ -181,11 +181,15 @@ namespace Group11_SEN381_Project.Presentation
 
         private void clearFields()
         {
-            txtBoxProviderId.Text = "";
             txtBoxProviderName.Text = "";
             txtBoxProviderLocation.Text = "";
             cmbProviderRating.SelectedIndex = -1;
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }
