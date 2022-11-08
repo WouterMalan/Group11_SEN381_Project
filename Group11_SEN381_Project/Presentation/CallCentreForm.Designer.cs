@@ -171,6 +171,7 @@
             this.btnEndCall.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnEndCall.UseAccentColor = false;
             this.btnEndCall.UseVisualStyleBackColor = true;
+            this.btnEndCall.Click += new System.EventHandler(this.btnEndCall_Click);
             // 
             // btnAnswerCall
             // 
@@ -192,6 +193,7 @@
             this.btnAnswerCall.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAnswerCall.UseAccentColor = false;
             this.btnAnswerCall.UseVisualStyleBackColor = true;
+            this.btnAnswerCall.Click += new System.EventHandler(this.btnAnswerCall_Click);
             // 
             // txtBoxConditionName
             // 
@@ -199,7 +201,7 @@
             this.txtBoxConditionName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConditionName.Depth = 0;
             this.txtBoxConditionName.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionName.Hint = "Medical Condition";
+            this.txtBoxConditionName.Hint = "Medical Condition ID";
             this.txtBoxConditionName.LeadingIcon = null;
             this.txtBoxConditionName.Location = new System.Drawing.Point(12, 230);
             this.txtBoxConditionName.MaxLength = 50;
@@ -217,7 +219,7 @@
             this.txtBoxConditionDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConditionDesc.Depth = 0;
             this.txtBoxConditionDesc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxConditionDesc.Hint = "Description";
+            this.txtBoxConditionDesc.Hint = "Policy ID";
             this.txtBoxConditionDesc.LeadingIcon = null;
             this.txtBoxConditionDesc.Location = new System.Drawing.Point(12, 302);
             this.txtBoxConditionDesc.MaxLength = 50;

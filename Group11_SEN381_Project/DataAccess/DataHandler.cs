@@ -15,7 +15,7 @@ namespace Group11_SEN381_Project.DataAccess
 {
     class DataHandler
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Database=MedicalCallCenter;Trusted_Connection=True");
+        SqlConnection con = new SqlConnection(@"Data Source=.;Database=MedicalCallCenter;Trusted_Connection=True");
         public SqlConnection sqlcon()
         {// this will test the connection and open it and retune the connection needed for sqlcommand/saladpater
             try

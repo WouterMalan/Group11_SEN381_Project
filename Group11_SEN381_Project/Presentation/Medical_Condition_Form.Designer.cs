@@ -38,11 +38,11 @@
             this.btnUpdateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
             this.btnCreateMedicalCondition = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxConditionName = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtBoxPriority = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxConditionId = new MaterialSkin.Controls.MaterialTextBox();
             this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.pbErrorConName = new System.Windows.Forms.PictureBox();
             this.pbErrorPriority = new System.Windows.Forms.PictureBox();
+            this.txtBoxPriority = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorConName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbErrorPriority)).BeginInit();
             this.SuspendLayout();
@@ -216,25 +216,6 @@
             this.txtBoxConditionName.Text = "";
             this.txtBoxConditionName.TrailingIcon = null;
             // 
-            // txtBoxPriority
-            // 
-            this.txtBoxPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxPriority.AnimateReadOnly = false;
-            this.txtBoxPriority.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxPriority.Depth = 0;
-            this.txtBoxPriority.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxPriority.Hint = "Priority";
-            this.txtBoxPriority.LeadingIcon = null;
-            this.txtBoxPriority.Location = new System.Drawing.Point(707, 308);
-            this.txtBoxPriority.MaxLength = 50;
-            this.txtBoxPriority.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxPriority.Multiline = false;
-            this.txtBoxPriority.Name = "txtBoxPriority";
-            this.txtBoxPriority.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxPriority.TabIndex = 30;
-            this.txtBoxPriority.Text = "";
-            this.txtBoxPriority.TrailingIcon = null;
-            // 
             // txtBoxConditionId
             // 
             this.txtBoxConditionId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -298,11 +279,40 @@
             this.pbErrorPriority.TabIndex = 56;
             this.pbErrorPriority.TabStop = false;
             // 
+            // txtBoxPriority
+            // 
+            this.txtBoxPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxPriority.AutoResize = false;
+            this.txtBoxPriority.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtBoxPriority.Depth = 0;
+            this.txtBoxPriority.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.txtBoxPriority.DropDownHeight = 174;
+            this.txtBoxPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxPriority.DropDownWidth = 121;
+            this.txtBoxPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxPriority.FormattingEnabled = true;
+            this.txtBoxPriority.Hint = "Priority";
+            this.txtBoxPriority.IntegralHeight = false;
+            this.txtBoxPriority.ItemHeight = 43;
+            this.txtBoxPriority.Items.AddRange(new object[] {
+            "High",
+            "Medium",
+            "Low"});
+            this.txtBoxPriority.Location = new System.Drawing.Point(707, 309);
+            this.txtBoxPriority.MaxDropDownItems = 4;
+            this.txtBoxPriority.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBoxPriority.Name = "txtBoxPriority";
+            this.txtBoxPriority.Size = new System.Drawing.Size(292, 49);
+            this.txtBoxPriority.StartIndex = 0;
+            this.txtBoxPriority.TabIndex = 58;
+            // 
             // Medical_Condition_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 574);
+            this.Controls.Add(this.txtBoxPriority);
             this.Controls.Add(this.pbErrorConName);
             this.Controls.Add(this.pbErrorPriority);
             this.Controls.Add(this.btnClear);
@@ -313,7 +323,6 @@
             this.Controls.Add(this.btnUpdateMedicalCondition);
             this.Controls.Add(this.btnCreateMedicalCondition);
             this.Controls.Add(this.txtBoxConditionName);
-            this.Controls.Add(this.txtBoxPriority);
             this.Controls.Add(this.txtBoxConditionId);
             this.Name = "Medical_Condition_Form";
             this.Text = "Medical_Condition_Form";
@@ -337,10 +346,10 @@
         private MaterialSkin.Controls.MaterialButton btnUpdateMedicalCondition;
         private MaterialSkin.Controls.MaterialButton btnCreateMedicalCondition;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionName;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxPriority;
         private MaterialSkin.Controls.MaterialTextBox txtBoxConditionId;
         private MaterialSkin.Controls.MaterialButton btnClear;
         private System.Windows.Forms.PictureBox pbErrorConName;
         private System.Windows.Forms.PictureBox pbErrorPriority;
+        private MaterialSkin.Controls.MaterialComboBox txtBoxPriority;
     }
 }
