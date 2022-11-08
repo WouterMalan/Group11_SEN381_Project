@@ -96,9 +96,9 @@ namespace Group11_SEN381_Project.Presentation
             if (txtBoxClientSearch.Text != "")// if the search textbox is not empty
             {
                 // check if the search textbox is a number
-                if (txtBoxClientSearch.Text != null && txtBoxClientSearch.Text.All(char.IsDigit))
+                if (txtBoxClientSearch.Text != null)
                 {
-                    foreach (DataRow row in dataHandler.searchClient(int.Parse(txtBoxClientSearch.Text)).Rows)
+                    foreach (DataRow row in dataHandler.searchClient(txtBoxClientSearch.Text).Rows)
                     {
                         ListViewItem item = new ListViewItem(row["id"].ToString());
                         item.SubItems.Add(row["Name_Surname"].ToString());
@@ -110,6 +110,7 @@ namespace Group11_SEN381_Project.Presentation
                         item.SubItems.Add(row["Policy_ID"].ToString());
                         materialListView1.Items.Add(item);
                     }
+                    
                     clearFields();
                 }
                 else

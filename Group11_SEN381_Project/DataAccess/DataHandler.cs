@@ -83,7 +83,7 @@ namespace Group11_SEN381_Project.DataAccess
 
 
         //search for a client by their id
-        public DataTable searchClient(int id)
+        public DataTable searchClient(string id)
         {
             DataTable dt = new DataTable();
             try

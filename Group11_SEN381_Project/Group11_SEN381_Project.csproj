@@ -93,12 +93,6 @@
     <Compile Include="Presentation\Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\ClientDetailEdit_Create.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\ClientDetailEdit_Create.Designer.cs">
-      <DependentUpon>ClientDetailEdit_Create.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\CombinedTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,12 +110,6 @@
     </Compile>
     <Compile Include="Presentation\Medical_Condition_Form.Designer.cs">
       <DependentUpon>Medical_Condition_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Policy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\Policy.Designer.cs">
-      <DependentUpon>Policy.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Form1.cs">
       <SubType>Form</SubType>
@@ -161,17 +149,11 @@
     <EmbeddedResource Include="Presentation\Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\ClientDetailEdit_Create.resx">
-      <DependentUpon>ClientDetailEdit_Create.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CombinedTables.resx">
       <DependentUpon>CombinedTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Medical_Condition_Form.resx">
       <DependentUpon>Medical_Condition_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Policy.resx">
-      <DependentUpon>Policy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

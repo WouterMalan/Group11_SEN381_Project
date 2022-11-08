@@ -159,11 +159,7 @@ namespace Group11_SEN381_Project
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Policy policy = new Policy();
-            policy.Show();
-        }
+        
 
         private void btnClientCentre_Click(object sender, EventArgs e)
         {

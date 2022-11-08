@@ -91,5 +91,43 @@ namespace Group11_SEN381_Project.Presentation
         {
             reportTabSelected();// refresh the listview
         }
+
+        private void btnCallCentreSearch_Click(object sender, EventArgs e)
+        {
+            DataHandler dataHandler = new DataHandler();
+            materialListView2.Items.Clear();
+            if (TxtBoxSearchID.Text != "")// if the search textbox is not empty
+            {
+                // check if the search textbox is a number
+                if (TxtBoxSearchID.Text != null)
+                {
+                    foreach (DataRow row in dataHandler.searchClient(TxtBoxSearchID.Text).Rows)
+                    {
+                        ListViewItem item = new ListViewItem(row["id"].ToString());
+                        item.SubItems.Add(row["Name_Surname"].ToString());
+                        item.SubItems.Add(row["Address"].ToString());
+                        item.SubItems.Add(row["Phone_Number"].ToString());
+                        item.SubItems.Add(row["Email"].ToString());
+                        item.SubItems.Add(row["Dependents"].ToString());
+                        item.SubItems.Add(row["National_id"].ToString());
+                        item.SubItems.Add(row["Policy_ID"].ToString());
+                        materialListView2.Items.Add(item);
+                    }
+                    
+                }
+                else
+                {
+                    //show message when the search textbox is not a number
+                    MessageBox.Show("Please enter a ID number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else// if the search box is empty
+            {
+                
+                //show error message
+                MessageBox.Show("Please enter a valid id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

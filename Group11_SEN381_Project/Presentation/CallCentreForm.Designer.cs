@@ -34,8 +34,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCallCentreSearch = new MaterialSkin.Controls.MaterialButton();
-            this.txtBoxMedicalConditionSearch = new MaterialSkin.Controls.MaterialTextBox();
+            this.TxtBoxSearchID = new MaterialSkin.Controls.MaterialTextBox();
             this.btnEndCall = new MaterialSkin.Controls.MaterialButton();
             this.btnAnswerCall = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxMedicalConditionID = new MaterialSkin.Controls.MaterialTextBox();
@@ -47,9 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxID = new MaterialSkin.Controls.MaterialTextBox();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,18 @@
             this.columnHeader3.Text = "Email";
             this.columnHeader3.Width = 120;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Dependents";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "National ID";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Policy ID";
+            // 
             // btnCallCentreSearch
             // 
             this.btnCallCentreSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -130,26 +142,27 @@
             this.btnCallCentreSearch.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCallCentreSearch.UseAccentColor = false;
             this.btnCallCentreSearch.UseVisualStyleBackColor = true;
+            this.btnCallCentreSearch.Click += new System.EventHandler(this.btnCallCentreSearch_Click);
             // 
-            // txtBoxMedicalConditionSearch
+            // TxtBoxSearchID
             // 
-            this.txtBoxMedicalConditionSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtBoxSearchID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxMedicalConditionSearch.AnimateReadOnly = false;
-            this.txtBoxMedicalConditionSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxMedicalConditionSearch.Depth = 0;
-            this.txtBoxMedicalConditionSearch.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoxMedicalConditionSearch.Hint = "Search ID";
-            this.txtBoxMedicalConditionSearch.LeadingIcon = null;
-            this.txtBoxMedicalConditionSearch.Location = new System.Drawing.Point(345, 12);
-            this.txtBoxMedicalConditionSearch.MaxLength = 50;
-            this.txtBoxMedicalConditionSearch.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoxMedicalConditionSearch.Multiline = false;
-            this.txtBoxMedicalConditionSearch.Name = "txtBoxMedicalConditionSearch";
-            this.txtBoxMedicalConditionSearch.Size = new System.Drawing.Size(292, 50);
-            this.txtBoxMedicalConditionSearch.TabIndex = 43;
-            this.txtBoxMedicalConditionSearch.Text = "";
-            this.txtBoxMedicalConditionSearch.TrailingIcon = null;
+            this.TxtBoxSearchID.AnimateReadOnly = false;
+            this.TxtBoxSearchID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBoxSearchID.Depth = 0;
+            this.TxtBoxSearchID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtBoxSearchID.Hint = "Search ID";
+            this.TxtBoxSearchID.LeadingIcon = null;
+            this.TxtBoxSearchID.Location = new System.Drawing.Point(345, 12);
+            this.TxtBoxSearchID.MaxLength = 50;
+            this.TxtBoxSearchID.MouseState = MaterialSkin.MouseState.OUT;
+            this.TxtBoxSearchID.Multiline = false;
+            this.TxtBoxSearchID.Name = "TxtBoxSearchID";
+            this.TxtBoxSearchID.Size = new System.Drawing.Size(292, 50);
+            this.TxtBoxSearchID.TabIndex = 43;
+            this.TxtBoxSearchID.Text = "";
+            this.TxtBoxSearchID.TrailingIcon = null;
             // 
             // btnEndCall
             // 
@@ -317,7 +330,7 @@
             this.txtBoxID.AnimateReadOnly = false;
             this.txtBoxID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxID.Depth = 0;
-            this.txtBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxID.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxID.Hint = "ID";
             this.txtBoxID.LeadingIcon = null;
             this.txtBoxID.Location = new System.Drawing.Point(15, 157);
@@ -329,18 +342,6 @@
             this.txtBoxID.TabIndex = 53;
             this.txtBoxID.Text = "";
             this.txtBoxID.TrailingIcon = null;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Dependents";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "National ID";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Policy ID";
             // 
             // CallCentreForm
             // 
@@ -357,7 +358,7 @@
             this.Controls.Add(this.txtBoxClientId);
             this.Controls.Add(this.materialListView2);
             this.Controls.Add(this.btnCallCentreSearch);
-            this.Controls.Add(this.txtBoxMedicalConditionSearch);
+            this.Controls.Add(this.TxtBoxSearchID);
             this.Name = "CallCentreForm";
             this.Text = "CallCentreForm";
             this.Load += new System.EventHandler(this.CallCentreForm_Load);
@@ -374,7 +375,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private MaterialSkin.Controls.MaterialButton btnCallCentreSearch;
-        private MaterialSkin.Controls.MaterialTextBox txtBoxMedicalConditionSearch;
+        private MaterialSkin.Controls.MaterialTextBox TxtBoxSearchID;
         private MaterialSkin.Controls.MaterialButton btnEndCall;
         private MaterialSkin.Controls.MaterialButton btnAnswerCall;
         private MaterialSkin.Controls.MaterialTextBox txtBoxMedicalConditionID;
