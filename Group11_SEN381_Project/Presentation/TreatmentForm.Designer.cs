@@ -32,6 +32,7 @@
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnTreatmentSearch = new MaterialSkin.Controls.MaterialButton();
             this.txtBoxTreatmentSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.btnDelete = new MaterialSkin.Controls.MaterialButton();
@@ -42,9 +43,12 @@
             this.txtBoxTreatmentId = new MaterialSkin.Controls.MaterialTextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClearFields = new MaterialSkin.Controls.MaterialButton();
+            this.pbErrorLevel = new System.Windows.Forms.PictureBox();
+            this.pbErrorName = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorName)).BeginInit();
             this.SuspendLayout();
             // 
             // materialListView5
@@ -90,6 +94,11 @@
             this.columnHeader23.Text = "Level";
             this.columnHeader23.Width = 150;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Days";
+            this.columnHeader1.Width = 100;
+            // 
             // btnTreatmentSearch
             // 
             this.btnTreatmentSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -134,14 +143,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(925, 427);
+            this.btnDelete.Location = new System.Drawing.Point(925, 463);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
@@ -153,17 +161,17 @@
             this.btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnDelete.UseAccentColor = false;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnUpdate.Depth = 0;
             this.btnUpdate.HighEmphasis = true;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(818, 427);
+            this.btnUpdate.Location = new System.Drawing.Point(818, 463);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
@@ -179,14 +187,13 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCreate.Depth = 0;
             this.btnCreate.HighEmphasis = true;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(706, 427);
+            this.btnCreate.Location = new System.Drawing.Point(706, 463);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
@@ -278,21 +285,15 @@
             this.materialLabel1.TabIndex = 47;
             this.materialLabel1.Text = "Days";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Days";
-            this.columnHeader1.Width = 100;
-            // 
             // btnClearFields
             // 
-            this.btnClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClearFields.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClearFields.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnClearFields.Depth = 0;
             this.btnClearFields.HighEmphasis = true;
             this.btnClearFields.Icon = null;
-            this.btnClearFields.Location = new System.Drawing.Point(706, 368);
+            this.btnClearFields.Location = new System.Drawing.Point(706, 403);
             this.btnClearFields.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnClearFields.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClearFields.Name = "btnClearFields";
@@ -306,11 +307,35 @@
             this.btnClearFields.UseVisualStyleBackColor = true;
             this.btnClearFields.Click += new System.EventHandler(this.btnClearFields_Click);
             // 
+            // pbErrorLevel
+            // 
+            this.pbErrorLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorLevel.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorLevel.Location = new System.Drawing.Point(1004, 251);
+            this.pbErrorLevel.Name = "pbErrorLevel";
+            this.pbErrorLevel.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorLevel.TabIndex = 49;
+            this.pbErrorLevel.TabStop = false;
+            // 
+            // pbErrorName
+            // 
+            this.pbErrorName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorName.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorName.Location = new System.Drawing.Point(1004, 187);
+            this.pbErrorName.Name = "pbErrorName";
+            this.pbErrorName.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorName.TabIndex = 51;
+            this.pbErrorName.TabStop = false;
+            // 
             // TreatmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 643);
+            this.Controls.Add(this.pbErrorName);
+            this.Controls.Add(this.pbErrorLevel);
             this.Controls.Add(this.btnClearFields);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.numericUpDown1);
@@ -327,6 +352,8 @@
             this.Text = "TreatmentForm";
             this.Load += new System.EventHandler(this.TreatmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +377,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private MaterialSkin.Controls.MaterialButton btnClearFields;
+        private System.Windows.Forms.PictureBox pbErrorLevel;
+        private System.Windows.Forms.PictureBox pbErrorName;
     }
 }

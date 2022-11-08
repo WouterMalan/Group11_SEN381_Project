@@ -26,6 +26,8 @@ namespace Group11_SEN381_Project.Presentation
         {
             providerTabSelected();
             idGeneratorProvider();
+            pbErrorLocation.Visible = false;
+            pbErrorName.Visible = false;
         }
 
         public void providerTabSelected()
@@ -116,7 +118,7 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
+            if (txtBoxProviderId.Text != "" && txtBoxProviderName.Text != "" && txtBoxProviderLocation.Text != "" && cmbProviderRating.Text != "")
             {
                 provider.ProviderID = int.Parse(txtBoxProviderId.Text);
                 provider.ProvName = txtBoxProviderName.Text;
@@ -124,13 +126,36 @@ namespace Group11_SEN381_Project.Presentation
                 provider.Rating = int.Parse(cmbProviderRating.SelectedItem.ToString());
                 provider.CreateProvider();
                 providerTabSelected();
+                idGeneratorProvider();
+                clearFields();
             }
             else
             {
+                
                 MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(txtBoxProviderName.Text == "")
+                {
+                    pbErrorName.Visible = true;
+                    txtBoxProviderName.Focus();
+                }
+                else
+                {
+                    pbErrorName.Visible = false;
+                }
+                if (txtBoxProviderLocation.Text == "")
+                {
+                    pbErrorLocation.Visible = true;
+                    txtBoxProviderLocation.Focus();
+                }
+                else
+                {
+                        pbErrorLocation.Visible = false;
+                }
+                
             }
-            providerTabSelected();
-            clearFields();
+            
+
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -143,13 +168,32 @@ namespace Group11_SEN381_Project.Presentation
                 provider.Rating = int.Parse(cmbProviderRating.SelectedItem.ToString());
                 provider.UpdateProvider();
                 providerTabSelected();
+                idGeneratorProvider();
                 clearFields();
             }
             else
             {
+
                 MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxProviderName.Text == "")
+                {
+                    pbErrorName.Visible = true;
+                    txtBoxProviderName.Focus();
+                }
+                else
+                {
+                    pbErrorName.Visible = false;
+                }
+                if (txtBoxProviderLocation.Text == "")
+                {
+                    pbErrorLocation.Visible = true;
+                    txtBoxProviderLocation.Focus();
+                }
+                else
+                {
+                    pbErrorLocation.Visible = false;
+                }
             }
-            providerTabSelected();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -184,6 +228,9 @@ namespace Group11_SEN381_Project.Presentation
             txtBoxProviderName.Text = "";
             txtBoxProviderLocation.Text = "";
             cmbProviderRating.SelectedIndex = -1;
+            idGeneratorProvider();
+            pbErrorName.Visible = false;
+            pbErrorLocation.Visible = false;
 
         }
 

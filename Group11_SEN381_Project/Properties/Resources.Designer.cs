@@ -73,6 +73,16 @@ namespace Group11_SEN381_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_box_important_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-box-important-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_pane_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-pane-48", resourceCulture);

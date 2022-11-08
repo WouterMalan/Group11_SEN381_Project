@@ -43,6 +43,10 @@
             this.txtBoxProviderLocation = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxProviderId = new MaterialSkin.Controls.MaterialTextBox();
             this.btnClear = new MaterialSkin.Controls.MaterialButton();
+            this.pbErrorName = new System.Windows.Forms.PictureBox();
+            this.pbErrorLocation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // ListViewProvider
@@ -95,7 +99,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDelete.Depth = 0;
@@ -117,7 +121,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnUpdate.Depth = 0;
@@ -139,7 +143,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCreate.Depth = 0;
@@ -290,7 +294,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnClear.Depth = 0;
@@ -301,7 +305,7 @@
             this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
             this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 48;
             this.btnClear.Tag = "";
             this.btnClear.Text = "Clear";
@@ -310,11 +314,35 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // pbErrorName
+            // 
+            this.pbErrorName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorName.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorName.Location = new System.Drawing.Point(1008, 234);
+            this.pbErrorName.Name = "pbErrorName";
+            this.pbErrorName.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorName.TabIndex = 53;
+            this.pbErrorName.TabStop = false;
+            // 
+            // pbErrorLocation
+            // 
+            this.pbErrorLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorLocation.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorLocation.Location = new System.Drawing.Point(1008, 298);
+            this.pbErrorLocation.Name = "pbErrorLocation";
+            this.pbErrorLocation.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorLocation.TabIndex = 52;
+            this.pbErrorLocation.TabStop = false;
+            // 
             // ProviderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 585);
+            this.Controls.Add(this.pbErrorName);
+            this.Controls.Add(this.pbErrorLocation);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.ListViewProvider);
             this.Controls.Add(this.btnDelete);
@@ -329,6 +357,8 @@
             this.Name = "ProviderForm";
             this.Text = "ProviderForm";
             this.Load += new System.EventHandler(this.ProviderForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorLocation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,5 +381,7 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderLocation;
         private MaterialSkin.Controls.MaterialTextBox txtBoxProviderId;
         private MaterialSkin.Controls.MaterialButton btnClear;
+        private System.Windows.Forms.PictureBox pbErrorName;
+        private System.Windows.Forms.PictureBox pbErrorLocation;
     }
 }

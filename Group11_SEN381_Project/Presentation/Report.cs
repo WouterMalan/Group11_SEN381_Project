@@ -94,6 +94,7 @@ namespace Group11_SEN381_Project.Presentation
                 txtBoxETime.Text = "";
                 txtBoxSTime.Text = "";
                 cmbExpired.SelectedIndex = -1;
+           
             
         }
 

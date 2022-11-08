@@ -129,7 +129,7 @@
             // 
             // btnDeleteMedicalCondition
             // 
-            this.btnDeleteMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDeleteMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDeleteMedicalCondition.Depth = 0;
@@ -151,7 +151,7 @@
             // 
             // btnUpdateMedicalCondition
             // 
-            this.btnUpdateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdateMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnUpdateMedicalCondition.Depth = 0;
@@ -173,7 +173,7 @@
             // 
             // btnCreateMedicalCondition
             // 
-            this.btnCreateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateMedicalCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateMedicalCondition.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreateMedicalCondition.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCreateMedicalCondition.Depth = 0;
@@ -252,7 +252,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnClear.Depth = 0;
@@ -263,7 +263,7 @@
             this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
             this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 37;
             this.btnClear.Tag = "";
             this.btnClear.Text = "Clear";

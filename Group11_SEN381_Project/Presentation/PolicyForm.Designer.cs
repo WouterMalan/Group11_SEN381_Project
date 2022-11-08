@@ -47,6 +47,12 @@
             this.txtBoxPolicyDate = new MaterialSkin.Controls.MaterialTextBox();
             this.txtBoxPolicyId = new MaterialSkin.Controls.MaterialTextBox();
             this.btnClear = new MaterialSkin.Controls.MaterialButton();
+            this.pbErrorImportance = new System.Windows.Forms.PictureBox();
+            this.pbErrorFee = new System.Windows.Forms.PictureBox();
+            this.pbErrorYear = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorImportance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorFee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorYear)).BeginInit();
             this.SuspendLayout();
             // 
             // materialListView3
@@ -74,7 +80,7 @@
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
-            this.materialListView3.Size = new System.Drawing.Size(679, 497);
+            this.materialListView3.Size = new System.Drawing.Size(681, 497);
             this.materialListView3.TabIndex = 40;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
@@ -111,13 +117,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(940, 516);
+            this.btnDelete.Location = new System.Drawing.Point(936, 516);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
@@ -133,13 +139,13 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnUpdate.Depth = 0;
             this.btnUpdate.HighEmphasis = true;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(833, 516);
+            this.btnUpdate.Location = new System.Drawing.Point(829, 516);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
@@ -155,13 +161,13 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCreate.Depth = 0;
             this.btnCreate.HighEmphasis = true;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(721, 516);
+            this.btnCreate.Location = new System.Drawing.Point(717, 516);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
@@ -194,7 +200,7 @@
             this.cmbExpired.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cmbExpired.Location = new System.Drawing.Point(721, 404);
+            this.cmbExpired.Location = new System.Drawing.Point(717, 404);
             this.cmbExpired.MaxDropDownItems = 4;
             this.cmbExpired.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbExpired.Name = "cmbExpired";
@@ -210,7 +216,7 @@
             this.btnPolicySearch.Depth = 0;
             this.btnPolicySearch.HighEmphasis = true;
             this.btnPolicySearch.Icon = null;
-            this.btnPolicySearch.Location = new System.Drawing.Point(335, 22);
+            this.btnPolicySearch.Location = new System.Drawing.Point(337, 22);
             this.btnPolicySearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnPolicySearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPolicySearch.Name = "btnPolicySearch";
@@ -239,7 +245,7 @@
             this.txtBoxPolicySearch.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicySearch.Multiline = false;
             this.txtBoxPolicySearch.Name = "txtBoxPolicySearch";
-            this.txtBoxPolicySearch.Size = new System.Drawing.Size(292, 50);
+            this.txtBoxPolicySearch.Size = new System.Drawing.Size(294, 50);
             this.txtBoxPolicySearch.TabIndex = 34;
             this.txtBoxPolicySearch.Text = "";
             this.txtBoxPolicySearch.TrailingIcon = null;
@@ -253,7 +259,7 @@
             this.txtBoxImportance.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxImportance.Hint = "Importance";
             this.txtBoxImportance.LeadingIcon = null;
-            this.txtBoxImportance.Location = new System.Drawing.Point(720, 269);
+            this.txtBoxImportance.Location = new System.Drawing.Point(716, 269);
             this.txtBoxImportance.MaxLength = 50;
             this.txtBoxImportance.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxImportance.Multiline = false;
@@ -272,7 +278,7 @@
             this.txtBoxPolicyFee.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPolicyFee.Hint = "Fee";
             this.txtBoxPolicyFee.LeadingIcon = null;
-            this.txtBoxPolicyFee.Location = new System.Drawing.Point(720, 336);
+            this.txtBoxPolicyFee.Location = new System.Drawing.Point(716, 336);
             this.txtBoxPolicyFee.MaxLength = 50;
             this.txtBoxPolicyFee.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicyFee.Multiline = false;
@@ -291,7 +297,7 @@
             this.txtBoxPolicyDesc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPolicyDesc.Hint = "Description";
             this.txtBoxPolicyDesc.LeadingIcon = null;
-            this.txtBoxPolicyDesc.Location = new System.Drawing.Point(720, 131);
+            this.txtBoxPolicyDesc.Location = new System.Drawing.Point(716, 131);
             this.txtBoxPolicyDesc.MaxLength = 50;
             this.txtBoxPolicyDesc.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicyDesc.Multiline = false;
@@ -310,7 +316,7 @@
             this.txtBoxPolicyDate.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPolicyDate.Hint = "YY/MM/DD";
             this.txtBoxPolicyDate.LeadingIcon = null;
-            this.txtBoxPolicyDate.Location = new System.Drawing.Point(720, 196);
+            this.txtBoxPolicyDate.Location = new System.Drawing.Point(716, 196);
             this.txtBoxPolicyDate.MaxLength = 50;
             this.txtBoxPolicyDate.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicyDate.Multiline = false;
@@ -329,7 +335,7 @@
             this.txtBoxPolicyId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxPolicyId.Hint = "ID";
             this.txtBoxPolicyId.LeadingIcon = null;
-            this.txtBoxPolicyId.Location = new System.Drawing.Point(721, 64);
+            this.txtBoxPolicyId.Location = new System.Drawing.Point(717, 64);
             this.txtBoxPolicyId.MaxLength = 50;
             this.txtBoxPolicyId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBoxPolicyId.Multiline = false;
@@ -341,18 +347,18 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnClear.Depth = 0;
             this.btnClear.HighEmphasis = true;
             this.btnClear.Icon = null;
-            this.btnClear.Location = new System.Drawing.Point(720, 468);
+            this.btnClear.Location = new System.Drawing.Point(717, 468);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
             this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnClear.Size = new System.Drawing.Size(76, 36);
+            this.btnClear.Size = new System.Drawing.Size(66, 36);
             this.btnClear.TabIndex = 41;
             this.btnClear.Tag = "";
             this.btnClear.Text = "Clear";
@@ -361,11 +367,47 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // pbErrorImportance
+            // 
+            this.pbErrorImportance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorImportance.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorImportance.Location = new System.Drawing.Point(1014, 278);
+            this.pbErrorImportance.Name = "pbErrorImportance";
+            this.pbErrorImportance.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorImportance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorImportance.TabIndex = 55;
+            this.pbErrorImportance.TabStop = false;
+            // 
+            // pbErrorFee
+            // 
+            this.pbErrorFee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorFee.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorFee.Location = new System.Drawing.Point(1014, 347);
+            this.pbErrorFee.Name = "pbErrorFee";
+            this.pbErrorFee.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorFee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorFee.TabIndex = 54;
+            this.pbErrorFee.TabStop = false;
+            // 
+            // pbErrorYear
+            // 
+            this.pbErrorYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbErrorYear.Image = global::Group11_SEN381_Project.Properties.Resources.icons8_box_important_96;
+            this.pbErrorYear.Location = new System.Drawing.Point(1014, 207);
+            this.pbErrorYear.Name = "pbErrorYear";
+            this.pbErrorYear.Size = new System.Drawing.Size(29, 26);
+            this.pbErrorYear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbErrorYear.TabIndex = 56;
+            this.pbErrorYear.TabStop = false;
+            // 
             // PolicyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 567);
+            this.ClientSize = new System.Drawing.Size(1044, 567);
+            this.Controls.Add(this.pbErrorYear);
+            this.Controls.Add(this.pbErrorImportance);
+            this.Controls.Add(this.pbErrorFee);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.materialListView3);
             this.Controls.Add(this.btnDelete);
@@ -382,6 +424,9 @@
             this.Name = "PolicyForm";
             this.Text = "PollicyForm";
             this.Load += new System.EventHandler(this.PolicyForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorImportance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorFee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbErrorYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +453,8 @@
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyDate;
         private MaterialSkin.Controls.MaterialTextBox txtBoxPolicyId;
         private MaterialSkin.Controls.MaterialButton btnClear;
+        private System.Windows.Forms.PictureBox pbErrorImportance;
+        private System.Windows.Forms.PictureBox pbErrorFee;
+        private System.Windows.Forms.PictureBox pbErrorYear;
     }
 }

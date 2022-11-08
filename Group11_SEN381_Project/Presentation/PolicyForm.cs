@@ -26,6 +26,9 @@ namespace Group11_SEN381_Project.Presentation
         {
             policyTabSelected();
             idGeneratorPolicy();
+            pbErrorImportance.Visible = false;
+            pbErrorFee.Visible = false;
+            pbErrorYear.Visible = false;
         }
 
         public void policyTabSelected()
@@ -113,30 +116,90 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            policy.PolicyID1 = txtBoxPolicyId.Text;
-            policy.Description1 = txtBoxPolicyDesc.Text;
-            policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
-            policy.Importance1 = txtBoxImportance.Text;
-            policy.Fee1 = Double.Parse(txtBoxPolicyFee.Text);
-            policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
-            policy.CreatePolicy();
-            policyTabSelected();// refresh the listview
-            clearFields();
-            
+            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.Text != "")
+            {
+                policy.PolicyID1 = txtBoxPolicyId.Text;
+                policy.Description1 = txtBoxPolicyDesc.Text;
+                policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
+                policy.Importance1 = txtBoxImportance.Text;
+                //make the fee field round to 2 decimal places
+                policy.Fee1 = Math.Round(double.Parse(txtBoxPolicyFee.Text), 2);
+                policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
+                policy.CreatePolicy();
+                policyTabSelected();// refresh the listview
+                idGeneratorPolicy();// generate a new id
+                clearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxImportance.Text == "")
+                {
+                    pbErrorImportance.Visible = true;
+                }
+                else
+                {
+                    pbErrorImportance.Visible = false;
+                }
+                if (txtBoxPolicyFee.Text == "")
+                {
+                    pbErrorFee.Visible = true;
+                }
+                else
+                {
+                    pbErrorFee.Visible = false;
+                }
+                if (txtBoxPolicyDate.Text == "")
+                {
+                    pbErrorYear.Visible = true;
+
+                }
+                else
+                {
+                    pbErrorYear.Visible = false;
+                    
+                    
+                }
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            policy.PolicyID1 = txtBoxPolicyId.Text;
-            policy.Description1 = txtBoxPolicyDesc.Text;
-            policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
-            policy.Importance1 = txtBoxImportance.Text;
-            policy.Fee1 = Double.Parse(txtBoxPolicyFee.Text);
-            policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
-            policy.UpdatePolicy();
-            policyTabSelected();//refresh the listview
-            clearFields();
-            
+            if (txtBoxPolicyId.Text != "" && txtBoxPolicyDesc.Text != "" && txtBoxPolicyDate.Text != "" && txtBoxImportance.Text != "" && txtBoxPolicyFee.Text != "" && cmbExpired.Text != "")
+            {
+                policy.PolicyID1 = txtBoxPolicyId.Text;
+                policy.Description1 = txtBoxPolicyDesc.Text;
+                policy.StartDate1 = DateTime.Parse(txtBoxPolicyDate.Text);
+                policy.Importance1 = txtBoxImportance.Text;
+                //make the fee field round to 2 decimal places
+                policy.Fee1 = Math.Round(double.Parse(txtBoxPolicyFee.Text), 2);
+                policy.Expired1 = int.Parse(cmbExpired.SelectedIndex.ToString());
+                policy.UpdatePolicy();
+                policyTabSelected();// refresh the listview
+                idGeneratorPolicy();// generate a new id
+                clearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxImportance.Text == "")
+                {
+                    pbErrorImportance.Visible = true;
+                }
+                else
+                {
+                    pbErrorImportance.Visible = false;
+                }
+                if (txtBoxPolicyFee.Text == "")
+                {
+                    pbErrorFee.Visible = true;
+                }
+                else
+                {
+                    pbErrorFee.Visible = false;
+                }
+
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -165,7 +228,10 @@ namespace Group11_SEN381_Project.Presentation
             txtBoxImportance.Text = "";
             txtBoxPolicyFee.Text = "";
             cmbExpired.SelectedIndex = -1;
-
+            idGeneratorPolicy();
+            pbErrorFee.Visible = false;
+            pbErrorImportance.Visible = false;
+            pbErrorYear.Visible = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

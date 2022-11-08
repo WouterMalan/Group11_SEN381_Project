@@ -26,6 +26,8 @@ namespace Group11_SEN381_Project.Presentation
         {
             treatmentTabSelected();
             idGeneratorTreatment();
+            pbErrorLevel.Visible = false;
+            pbErrorName.Visible = false;
         }
 
         public void treatmentTabSelected()
@@ -43,6 +45,7 @@ namespace Group11_SEN381_Project.Presentation
                 
                 materialListView5.Items.Add(item);
             }
+            
             //display the selected listview item in the textboxes
             materialListView5.SelectedIndexChanged += (s, args) =>
             {
@@ -64,24 +67,85 @@ namespace Group11_SEN381_Project.Presentation
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
-            treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level         = txtBoxTreatmentLevel.Text;
-            treatment.Days = Convert.ToInt32(numericUpDown1.Value);
-            treatment.CreateTreatments();
-            treatmentTabSelected();
-            clearFields();
+            if (txtBoxTreatmentName.Text != "" && txtBoxTreatmentLevel.Text != "" )
+            {
+                treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+                treatment.TreatmentName = txtBoxTreatmentName.Text;
+                treatment.Level = txtBoxTreatmentLevel.Text;
+                treatment.Days = Convert.ToInt32(numericUpDown1.Value);
+                treatment.CreateTreatments();
+                treatmentTabSelected();
+                idGeneratorTreatment();
+                clearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxTreatmentName.Text == "")
+                {
+                    pbErrorName.Visible = true;
+                    txtBoxTreatmentName.Focus();
+                }
+                else
+                {
+                    pbErrorName.Visible = false;
+                }
+                if (txtBoxTreatmentLevel.Text == "")
+                {
+                    pbErrorLevel.Visible = true;
+                    txtBoxTreatmentLevel.Focus();
+                }
+                else
+                {
+                    pbErrorLevel.Visible = false;
+                }
+
+
+            }
+            
+
+
+
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            treatment.TreatmentID   = int.Parse(txtBoxTreatmentId.Text);
-            treatment.TreatmentName = txtBoxTreatmentName.Text;
-            treatment.Level         = txtBoxTreatmentLevel.Text;
-            treatment.Days          = Convert.ToInt32(numericUpDown1.Value); 
-            treatment.UpdateTreatments();
-            treatmentTabSelected();
-            clearFields();
+            if (txtBoxTreatmentName.Text != "" && txtBoxTreatmentLevel.Text != "" )
+            {
+                treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+                treatment.TreatmentName = txtBoxTreatmentName.Text;
+                treatment.Level = txtBoxTreatmentLevel.Text;
+                treatment.Days = Convert.ToInt32(numericUpDown1.Value);
+                treatment.UpdateTreatments();
+                treatmentTabSelected();
+                idGeneratorTreatment();
+                clearFields();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtBoxTreatmentName.Text == "")
+                {
+                    pbErrorName.Visible = true;
+                    txtBoxTreatmentName.Focus();
+                }
+                else
+                {
+                    pbErrorName.Visible = false;
+                }
+                if (txtBoxTreatmentLevel.Text == "")
+                {
+                    pbErrorLevel.Visible = true;
+                    txtBoxTreatmentLevel.Focus();
+                }
+                else
+                {
+                    pbErrorLevel.Visible = false;
+                }
+
+
+            }
         }
 
         private void btnTreatmentSearch_Click(object sender, EventArgs e)
@@ -134,11 +198,21 @@ namespace Group11_SEN381_Project.Presentation
                 txtBoxTreatmentName.Text = "";
                 txtBoxTreatmentLevel.Text = "";
                 numericUpDown1.Value = 0;
-            
+            idGeneratorTreatment();
+            pbErrorName.Visible = false;
+            pbErrorLevel.Visible = false;
         }
 
         private void btnClearFields_Click(object sender, EventArgs e)
         {
+            clearFields();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            treatment.TreatmentID = int.Parse(txtBoxTreatmentId.Text);
+            treatment.DeleteTreatment();
+            treatmentTabSelected();
             clearFields();
         }
     }

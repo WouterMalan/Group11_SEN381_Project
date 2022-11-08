@@ -254,5 +254,8 @@
   <ItemGroup>
     <None Include="Resources\Ukupholisa Healthcare-logos_transparent2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-box-important-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

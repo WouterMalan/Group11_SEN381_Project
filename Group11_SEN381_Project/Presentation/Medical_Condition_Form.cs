@@ -4,6 +4,7 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -90,41 +91,28 @@ namespace Group11_SEN381_Project.Presentation
                 MessageBox.Show("Please enter a valid client id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void btnCreateMedicalCondition_Click(object sender, EventArgs e)
         {
-            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
-            {
-                medical_Condition.ConditionID = txtBoxConditionId.Text;
-                medical_Condition.ConditionName1 = txtBoxConditionName.Text;
-                medical_Condition.Priority1 = txtBoxPriority.Text;
-                medical_Condition.CreateMedicalConditions();
-                medicalConditionTabSelected();
-                MessageBox.Show("Medical Condition created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            medical_Condition.ConditionID = txtBoxConditionId.Text;
+            medical_Condition.ConditionName1 = txtBoxConditionName.Text;
+            medical_Condition.Priority1 = txtBoxPriority.Text;
+            medical_Condition.CreateMedicalConditions();
+            medicalConditionTabSelected();
+            
             clearFields();
 
         }
 
         private void btnUpdateMedicalCondition_Click(object sender, EventArgs e)
         {
-            if (txtBoxConditionName.Text != "" && txtBoxPriority.Text != "")
-            {
                 medical_Condition.ConditionID = txtBoxConditionId.Text;
                 medical_Condition.ConditionName1 = txtBoxConditionName.Text;
                 medical_Condition.Priority1 = txtBoxPriority.Text;
                 medical_Condition.UpdateMedicalConditions();
                 medicalConditionTabSelected();
-                MessageBox.Show("Medical Condition updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid medical condition name and description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                         
+            
             clearFields();
         }
 

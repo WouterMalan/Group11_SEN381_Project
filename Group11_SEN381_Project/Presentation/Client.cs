@@ -22,6 +22,7 @@ namespace Group11_SEN381_Project.Presentation
         public Client()
         {
             InitializeComponent();
+           
         }
 
         private void Client_Load(object sender, EventArgs e)
@@ -139,6 +140,7 @@ namespace Group11_SEN381_Project.Presentation
             client.PolicyID = txtBoxPolicyId.Text;
             client.CreateClient();
             clientTabSelected();
+            txtBoxId.Text = client.clientIDGenerator().ToString();
             clearFields();
         }
 
